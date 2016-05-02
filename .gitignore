@@ -1,6 +1,8 @@
 *
 !*.Rmd
 !*.yml
+!img/
+!img/*
 !README.md
 !.gitignore
 .Rproj.user

@@ -50,31 +50,31 @@ success_msg("\u592a\u68d2\u4e86\uff01\u770b\u5230console\u5982\u4f55\u5448\u73fe
 ```
 
 --- type:NormalExercise xp:100 skills:1 key:f50c65ca40332b98e2a74aa17a600d110bc87a81
-## Arithmetic with R
+## R與數學運算
 
-In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
+R可以做為一個簡單的計算機，你可以任意使用下列的運算符號：
 
-- Addition: `+`
-- Subtraction: `-`
-- Multiplication: `*`
-- Division: `/`
-- Exponentiation: `^`
-- Modulo: `%%`
+- 加號： `+`
+- 減號： `-`
+- 乘號： `*`
+- 除號： `/`
+- 次方： `^`
+- 餘數： `%%`
 
-The last two might need some explaining:
-- The `^` operator raises the number to its left to the power of the number to its right: for example `3^2` is 9.
-- The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or `5 %% 3` is 2.
+讓我們多解釋一下最後兩個運算符號：
+- `^` 會將其左邊的數字連續乘上右方數字之次數後回傳，舉例來說： `3^2` 運算結果會得到9。
+- `%%` 會將左邊的數字除以右邊數字後回傳其餘數，舉例來說： `5 %% 3` 運算結果會得到2。
 
-With this knowledge, follow the instructions below to complete the exercise.
+根據前述的解釋，跟著下列說明完成練習。
 
 *** =instructions
-- Type `2^5` in the editor to calculate 2 to the power 5.
-- Type `28 %% 6` to calculate 28 modulo 6.
-- Click 'Submit Answer' and have a look at the R output in the console.
-- Note how the `#` symbol is used to add comments on the R code.
+- 在編輯區輸入 `2^5` 來計算2的5次方為多少。
+- 在編輯區輸入 `28 %% 6` 來計算28除以6的餘數為多少。
+- 點選 'Submit Answer' 並在R Console中查看運算結果。
+- 注意 `#` 是用來為你的R程式碼加上註解的符號。
 
 *** =hint
-Another example of the modulo operator: `9 %% 2` equals `1`.
+另外一個餘數運算範例是： `9 %% 2` ，運算結果會得到 `1`。
 
 *** =pre_exercise_code
 ```{r}
@@ -83,49 +83,49 @@ Another example of the modulo operator: `9 %% 2` equals `1`.
 
 *** =sample_code
 ```{r}
-# An addition
+# 加法
 5 + 5 
 
-# A subtraction
+# 減法
 5 - 5 
 
-# A multiplication
+# 乘法
 3 * 5
 
- # A division
+# 除法
 (5 + 5) / 2 
 
-# Exponentiation
+# 次方
 
 
-# Modulo
+# 餘數
 
 ```
 
 *** =solution
 ```{r}
-# An addition
-5 + 5
+# 加法
+5 + 5 
 
-# A subtraction
+# 減法
 5 - 5 
 
-# A multiplication
+# 乘法
 3 * 5
 
- # A division
+# 除法
 (5 + 5) / 2 
 
-# Exponentiation
+# 次方
 2 ^ 5
 
-# Modulo
+# 餘數
 28 %% 6
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove the other arithmetic examples!"
+msg = "不需要移除其他的數學運算範例！"
 test_output_contains("5 + 5", incorrect_msg = msg)
 test_output_contains("5 - 5", incorrect_msg = msg)
 test_output_contains("(5 + 5)/2", incorrect_msg = msg)

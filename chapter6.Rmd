@@ -3,7 +3,7 @@ title_meta  : Chapter 6
 title       : Lists
 description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:b02020c3b8ccf1d6ea63f5801cc80ae49bf49b15
 ## Lists, why would you need them?
 
 Congratulations! At this point in the course you are already familiar with:
@@ -41,7 +41,7 @@ success_msg("Ready, set, go! Continue to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:d6f368841ef8395b0cf19fbaa2e23c7ce2c8672d
 ## Lists, why would you need them? (2)
 
 A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, type of activity that has to do be done, ... 
@@ -77,7 +77,7 @@ success_msg("Cool. Let's get our hands dirty!")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:3c886887d481e450e4d55fdc6504f4b9cd99083e
 ## Creating a list
 
 Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
@@ -141,7 +141,7 @@ success_msg("Wonderful! Head over to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:60372e4e466c431316ece6222f3385ef239dce7e
 ## Creating a named list
 
 Well done, you're on a roll!
@@ -227,7 +227,7 @@ success_msg("Great! Not only do you know how to construct lists now, you can als
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:cf2bc8104cc549cdd4eab9773bfe0d234effa9d5
 ## Creating a named list (2)
 
 Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
@@ -285,7 +285,7 @@ success_msg("Wonderful! You now know how to construct and name lists. As in the 
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:5bbf2c7bd99765106af3ccb1ee48649d763161ef
 ## Selecting elements from a list
 
 Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
@@ -352,7 +352,7 @@ success_msg("Great! Selecting elements from lists is rather easy isn't it? Conti
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:4cec127e7811993251c89ede9a6e976958f66be5
 ## Adding more movie information to the list
 
 Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members, a guy named M. McDowell, noted that you forgot to add the release year. Given your ambitions to become next year's president of the club, you decide to add this information to the list. 

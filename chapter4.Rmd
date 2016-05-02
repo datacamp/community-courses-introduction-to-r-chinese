@@ -3,7 +3,7 @@ title_meta  : Chapter 4
 title       : Factors
 description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:226aa2797e77894b2083c4471f92b23aae435823
 ## What's a factor and why would you use it?
 
 In this chapter you dive into the wonderful world of **factors**. 
@@ -43,7 +43,7 @@ success_msg("Good job! Ready to start? Continue to the next exercise!")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:86d03f14e0b95e7cdc8cc5163493a156313bf8c6
 ## What's a factor and why would you use it? (2)
 
 To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals: 
@@ -105,7 +105,7 @@ success_msg("Great! If you want to find out more about the `factor()` function, 
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:43072d1299a99d76130f1e45dedf09baac8c8481
 ## What's a factor and why would you use it? (3)
 
 There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**. 
@@ -164,7 +164,7 @@ success_msg("Can you already tell what's happening in this exercise? Awesome! Co
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:d209a65b768975156e39f18fe6e982b30a8b99d9
 ## Factor levels
 
 When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
@@ -233,7 +233,7 @@ success_msg("Wonderful! Proceed to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:1a2235a13a67daf9c186b963a57c9a206a7f43ba
 ## Summarizing a factor
 
 After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable: 
@@ -297,7 +297,7 @@ success_msg("Nice! Have a look at the output. The fact that you identified `\"Ma
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:9247612eea708b363b23b58a9fdff76ba50818e9
 ## Battle of the sexes
 
 In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
@@ -359,7 +359,7 @@ success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to 
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:a25f8ec566840068e4065b4af557ffe8eefa0b53
 ## Ordered factors
 
 Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors. 
@@ -407,7 +407,7 @@ success_msg("A job well done! Continue to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:52c40d180e9661fd82e138f210eef258a81e51e1
 ## Ordered factors (2)
 
 `speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`. 
@@ -470,7 +470,7 @@ success_msg("Great! Have a look at the console. It is now indicated that the Lev
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:6195cdd81bcd1b66d8dde93500dc2e4df63c58d0
 ## Comparing ordered factors
 
 Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true. 

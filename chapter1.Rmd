@@ -1,23 +1,23 @@
 --- 
-title_meta  : Chapter 1
-title       : Intro to basics
-description : "In this chapter, you will take your first steps with R. You will learn how to use the console as a calculator and how to assign variables. You will also get to know the basic data types in R. Let's get started!"
+title_meta  : 第一章
+title       : 基本介紹
+description : "你會初次接觸R，學習到如何使用R當做計算機以及如何宣告變數，也會學習R裡面的基本資料格式，廢話不多說，讓我們趕快開始吧！"
 
 --- type:NormalExercise xp:100 skills:1
-## How it works
+## 如何操作
 
-In the editor on the right you should type R code to solve the exercises. When you hit the 'Submit Answer' button, every line of code is interpreted and executed by R and you get a message whether or not your code was correct. The output of your R code is shown in the console in the lower right corner.
+你要在右邊的編輯區輸入R程式碼來完成練習，當你按下Submit Answer按鈕後，每一行程式碼都會被編譯且執行，然後你將會得到正確或錯誤的訊息，R程式碼的輸出結果會呈現在右下角的console視窗中。
 
-R makes use of the `#` sign to add comments, so that you and others can understand what the R code is about. Just like Twitter! Comments are not run as R code, so they will not influence your result. For example, _Calculate 3 + 4_ in the editor on the right is a comment.
+R使用 `#` 來加入註解，讓你與其他人可以更快了解這段R程式碼的用途，就跟Twitter一樣！註解不會被執行故不影響結果，例如在右方編輯區的_計算 3 + 4_就是一個註解。
 
-You can also execute R commands straight in the console. This is a good way to experiment with R code, as your submission is not checked for correctness.
+你也可以直接在console中執行R程式碼，由於這是一個測試語法是否正確的好方法。
 
 *** =instructions
-- In the editor on the right there is already some sample code. Can you see which lines are actual R code and which are comments?
-- Add a line of code that calculates the sum of 6 and 12, and hit the 'Submit Answer' button.
+- 在右邊的編輯區已經有了一些範例，你看得出來哪些是會被執行的R程式碼，哪些是不會被執行的註解嗎？
+- 加入一行R程式碼相加6與12，然後按下Submit Answer按鈕。
 
 *** =hint
-Just add a line of R code that calculates the sum of 6 and 12, just like the example in the sample code!
+加入一行R程式碼相加6與12，就像範例一樣！
 
 *** =pre_exercise_code
 ```{r}
@@ -26,27 +26,27 @@ Just add a line of R code that calculates the sum of 6 and 12, just like the exa
 
 *** =sample_code
 ```{r}
-# Calculate 3 + 4
+# 計算 3 + 4
 3 + 4
 
-# Calculate 6 + 12
+# 計算 6 + 12
 
 ```
 
 *** =solution
 ```{r}
-# Calculate 3 + 4
+# 計算 3 + 4
 3 + 4
 
-# Calculate 6 + 12
+# 計算 6 + 12
 6 + 12
 ```
 
 *** =sct
 ```{r}
-test_output_contains("7", incorrect_msg = "Do not remove the line of R code that calculates the sum of 3 and 4. Instead, just add another line that calculates the sum of 6 and 12.")
-test_output_contains("18", incorrect_msg = "Make sure to add a line of R code, that calculates the sum of 6 and 12. Do not start the line with a `#`, otherwise your R code is not executed!")
-success_msg("Awesome! See how the console shows the result of the R code you submitted? Now that you're familiar with the interface, let's get down to R business!")
+test_output_contains("7", incorrect_msg = "\u4e0d\u9700\u8981\u79fb\u9664\u8a08\u7b973\u52a04\u7684\u7a0b\u5f0f\u78bc\uff0c\u52a0\u53e6\u5916\u4e00\u884c\u7a0b\u5f0f\u78bc\u8a08\u7b976\u52a012\u5373\u53ef\u3002")
+test_output_contains("18", incorrect_msg = "\u78ba\u5b9a\u4f60\u6709\u52a0\u4e86\u4e00\u884c\u7a0b\u5f0f\u78bc\u8a08\u7b976\u52a012\uff0c\u6ce8\u610f\u4e0d\u8981\u5728\u7a0b\u5f0f\u78bc\u524d\u9762\u52a0\u4e0a `#`\uff0c\u5426\u5247\u5c07\u4e0d\u6703\u88ab\u57f7\u884c\uff01")
+success_msg("\u592a\u68d2\u4e86\uff01\u770b\u5230console\u5982\u4f55\u5448\u73fe\u4f60\u9001\u51fa\u7684\u7a0b\u5f0f\u4e86\u55ce\uff1f\u73fe\u5728\u4f60\u5df2\u7d93\u719f\u6089\u4e86\u4ecb\u9762\uff0c\u63a5\u4e0b\u4f86\u6211\u5011\u4f86\u6df1\u5165\u7814\u7a76R\u5427\uff01")
 ```
 
 --- type:NormalExercise xp:100 skills:1

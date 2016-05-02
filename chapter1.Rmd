@@ -125,34 +125,34 @@ R可以做為一個簡單的計算機，你可以任意使用下列的運算符�
 
 *** =sct
 ```{r}
-msg = "不需要移除其他的數學運算範例！"
+msg = "\u4e0d\u9700\u8981\u79fb\u9664\u5176\u4ed6\u7684\u6578\u5b78\u904b\u7b97\u7bc4\u4f8b\uff01"
 test_output_contains("5 + 5", incorrect_msg = msg)
 test_output_contains("5 - 5", incorrect_msg = msg)
 test_output_contains("(5 + 5)/2", incorrect_msg = msg)
-test_output_contains("2^5", incorrect_msg = "The exponentiation example is not correct. Make sure to read the instructions carefully.")
-test_output_contains("28 %% 6", incorrect_msg = "There seems to be an issue with the modulo example. Make sure to read the instructions carefully.")
-success_msg("Great! Head over to the next exercise.")
+test_output_contains("2^5", incorrect_msg = "\u6b21\u65b9\u7684\u7df4\u7fd2\u4e0d\u6b63\u78ba\uff0c\u518d\u8a73\u7d30\u95b1\u8b80\u4e00\u6b21\u8aaa\u660e\u3002")
+test_output_contains("28 %% 6", incorrect_msg = "\u9918\u6578\u7684\u7df4\u7fd2\u4e0d\u6b63\u78ba\uff0c\u518d\u8a73\u7d30\u95b1\u8b80\u4e00\u6b21\u8aaa\u660e\u3002")
+success_msg("\u592a\u597d\u4e86\uff01\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u5427\u3002")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:2ac26323b43f5ce728fb1e29e18d3afc84160fdc
-## Variable assignment 
+## 宣告變數 
 
-A basic concept in (statistical) programming is called a **variable**. 
+統計程式語言的基本概念是**變數**。 
 
-A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. 
+變數讓你在R儲存一個值(像是：4) 或者一個物件(像是：函數)，之後你就可以用指派的變數名稱來使用這個值或物件。 
 
-You can assign a value 4 to a variable `my_var` with the command
+你可以用以下這段程式宣告變數 `my_var` 並且將4這個數值指派給它：
 
 ```
 my_var <- 4
 ```
 
 *** =instructions
-Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.
+輪到你囉！在編輯區宣告一個變數 `x` 並且將42這個數值指派給它，完成之後按Submit Answer按鈕。注意當你要求R印出 `x` 時，42就出現了。
 
 *** =hint
-Look at how the value 4 was assigned to `my_variable` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+觀察一下如何將4指派給 `my_var` 並且在編輯區中做一樣的事情，但是現在將42指派給變數 `x`。
 
 *** =pre_exercise_code
 ```{r}
@@ -161,42 +161,42 @@ Look at how the value 4 was assigned to `my_variable` in the exercise's assignme
 
 *** =sample_code
 ```{r}
-# Assign the value 42 to x
+# 宣告變數x並將42指派給x
 x <- 
 
-# Print out the value of the variable x
+# 將變數x的值印出
 x
 ```
 
 *** =solution
 ```{r}
-# Assign the value 42 to x
+# 宣告變數x並將42指派給x
 x <- 42
 
-# Print out the value of the variable x
+# 將變數x的值印出
 x
 ```
 
 *** =sct
 ```{r}
-test_object("x", undefined_msg = "Make sure to define a variable `x`.",
-            incorrect_msg = "Make sure that you assign the correct value to `x`.") 
-success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+test_object("x", undefined_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578 `x`\u3002",
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u6307\u6d3e\u6b63\u78ba\u7684\u6578\u503c\u7d66 `x`\u3002") 
+success_msg("做得好！你是否有注意到在你宣告變數的時候，R並沒有將變數的值印出？ `x <- 42` 並沒有輸出，因為R認為你之後還會使用這個變數，否則你不需要先將這個值指派給變數對嗎？前進到下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:2cb4878a22c17d2f5589992697d96223082a42b9
-## Variable assignment (2)
+## 宣告變數 (2)
 
-Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
+假設你有一個水果籃中有5個蘋果，身為一個資料分析師，你希望宣告一個變數 `my_apples` 並將蘋果的個數指派給它。 
 
 *** =instructions
-- Type the following code in the editor: `my_apples <- 5`. This will assign the value 5 to `my_apples`.
-- Type: `my_apples` below the second comment. This will print out the value of `my_apples`.
-- Click 'Submit Answer', and look at the console: you see that the number 5 is printed. So R now links the variable `my_apples` to the value 5.
+- 在編輯區中輸入： `my_apples <- 5` ，這會將5指派給 `my_apples`。
+- 在第二個註解下輸入： `my_apples`，這會在R Console中將 `my_apples` 的值印出。
+- 完成之後按Submit Answer按鈕並且觀察R Console：你可以發現5被印出了，所以R已經將 `my_apples` 跟5這個數值連結在一起了。
 
 *** =hint
-Remember that if you want to assign a number or an object to a variable in R, you can make use of the assignment operator `<-`. Alternatively, you can use `=`, but `<-` is widely preferred in the R community.
+記得在指派數值或物件給變數時，可以使用 `<-` 來指派，或者使用 `=`，但是R的社群偏好 `<-`。
 
 *** =pre_exercise_code
 ```{r}
@@ -205,48 +205,48 @@ Remember that if you want to assign a number or an object to a variable in R, yo
 
 *** =sample_code
 ```{r}
-# Assign the value 5 to the variable my_apples
+# 指派5這個數值給my_apples
 
 
-# Print out the value of the variable my_apples
+# 將my_apples的值印出
 
 ```
 
 *** =solution
 ```{r}
-# Assign the value 5 to the variable my_apples
+# 指派5這個數值給my_apples
 my_apples <- 5
 
-# Print out the value of the variable my_apples
+# 將my_apples的值印出
 my_apples
 ```
 
 *** =sct
 ```{r}
 test_object("my_apples", 
-            undefined_msg = "Please make sure to define a variable `my_apples`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_apples`.")
+            undefined_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578 `my_apples`\u3002",
+            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u6307\u6d3e\u6b63\u78ba\u7684\u6578\u503c\u7d66 `my_apples`\u3002")
 test_output_contains("my_apples", 
-                     incorrect_msg = "Have you explicitly told R to print out the `my_apples` variable to the console?")
-success_msg("Great! Continue to the next exercise!")
+                     incorrect_msg = "\u4f60\u662f\u5426\u6709\u544a\u8a34R\u8981\u5c07 `my_apples` \u7684\u503c\u5370\u51fa\uff1f")
+success_msg("\u592a\u597d\u4e86\uff01\u524d\u9032\u5230\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:a666eb3fb98a7b8cc5930d9c8d2a6997a47561e2
-## Variable assignment (3)
+## 宣告變數 (3)
 
-Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
+美味的水果籃可不能沒有柳橙！所以你決定加入6個柳橙。身為一個資料分析師，你的直覺反應是宣告變數 `my_oranges` 並將6指派給它。接下來你想計算水果籃裡頭的水果總數，既然你已經完成變數宣告，就可以用清楚的方式來寫程式：
 ```
 my_apples + my_oranges
 ```
 
 *** =instructions
-- Assign to `my_oranges` the value 6.
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.
-- Combine the variables `my_apples` and `my_oranges` into a new variable `my_fruit`, which is the total amount of fruits in your fruit basket.
+- 宣告 `my_oranges` 並指派6給它。
+- 將 `my_apples` 與 `my_oranges` 相加並將結果印出。
+- 要計算水果籃裡頭的水果總數，將 `my_apples` 與 `my_oranges` 相加並指派給一個新變數 `my_fruit`。
 
 *** =hint
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+`my_fruit` 單純就是 `my_apples` 加 `my_oranges`. 只要使用 `+` 就可以相加，然後再使用 `<-` 將結果指派給 `my_fruit`。
 
 *** =pre_exercise_code
 ```{r}
@@ -255,58 +255,58 @@ my_apples + my_oranges
 
 *** =sample_code
 ```{r}
-# Assign a value to the variables called my_apples and my_oranges
+# 宣告my_apples與my_oranges並將蘋果個數5、柳橙個數6分別指派
 my_apples <- 5
 
 
-# Add these two variables together and print the result
+# 相加兩個變數然後印出結果
 
 
-# Create the variable my_fruit
+# 宣告變數my_fruit
 
 ```
 
 *** =solution
 ```{r}
-# Assign a value to the variables called my_apples and my_oranges
+# 宣告my_apples與my_oranges並將蘋果個數5、柳橙個數6分別指派
 my_apples  <- 5
 my_oranges <- 6
 
-# Add these two variables together and print the result
+# 相加兩個變數然後印出結果
 my_apples + my_oranges
 
-# Create the variable my_fruit
+# 宣告變數my_fruit
 my_fruit <- my_apples + my_oranges
 ```
 
 *** =sct
 ```{r}
 test_object("my_apples", 
-            undefined_msg = "Please make sure to define a variable `my_apples`.",
-            incorrect_msg = "Do not change the assignment of the `my_apples` variable!")
+            undefined_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578 `my_apples`\u3002",
+            incorrect_msg = "\u4e0d\u8981\u66f4\u52d5\u8b8a\u6578 `my_apples`\uff01")
 test_object("my_oranges", 
-            undefined_msg = "Have you defined a variable `my_oranges`?",
-            incorrect_msg = "Have you assigned the correct value to the variable `my_oranges`?")
+            undefined_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578 `my_oranges`\u3002",
+            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u6307\u6d3e\u6b63\u78ba\u7684\u6578\u503c\u7d66\u8b8a\u6578 `my_oranges`\u3002")
 test_output_contains("my_apples + my_oranges",
-                     incorrect_msg = "Make sure to write `my_apples + my_oranges` on a new line; this will print out the result of the sum.")
+                     incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u65b0\u5beb\u4e00\u6bb5\u7a0b\u5f0f `my_apples + my_oranges`\uff0c\u9019\u6703\u5c07\u76f8\u52a0\u7d50\u679c\u5370\u51fa\u3002")
 test_object("my_fruit",
-            undefined_msg = "Please make sure to define a variable `my_fruit`.",
-            incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
-success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+            undefined_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578`my_fruit`\u3002",
+            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u6307\u6d3e\u6b63\u78ba\u7684\u6578\u503c\u7d66\u8b8a\u6578 `my_fruit`\u3002")
+success_msg("\u505a\u5f97\u592a\u597d\u4e86\uff01\u4f7f\u7528\u8b8a\u6578\u4f86\u505a\u904b\u7b97\u6700\u5927\u7684\u597d\u8655\u5c31\u662f\u91cd\u8907\u4f7f\u7528\uff0c\u5047\u5982\u4f60\u5c07 `my_apples` \u75315\u66f4\u6539\u70ba12\uff0c`my_fruit` \u7684\u7d50\u679c\u6703\u81ea\u52d5\u66f4\u65b0\u3002\u524d\u9032\u5230\u4e0b\u4e00\u500b\u7df4\u7fd2\u5427\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:ff7bb3bd1c38b5db3ce9dde0e45f275163b6a9b6
-## Apples and oranges
+## 蘋果與柳橙
 
-Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+常識告訴你把蘋果與柳橙相加是很愚蠢的:-)在前一個練習中， `my_apples` 與 `my_oranges` 這兩個變數各自含有一個數值，在R中 `+` 可以處理數值。假如你指派了一個文字給變數 `my_oranges` (如編輯區所示)，表示你試著將數值與文字相加後指派給變數 `my_fruit`，這不可能行得通。
 
 *** =instructions
-- Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.
-- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+- 按Submit Answer按鈕並觀察錯誤訊息，了解為什麼會有這個錯誤訊息產生。
+- 修正這段程式碼讓R知道你有6個柳橙，所以水果籃中共有11個水果。
 
 *** =hint
-You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+你必須將數值 `6` 指派給變數 `my_oranges` 而非原本的文字 `"six"`。 注意雙引號是用來告訴R `"six"` 是一個文字。
 
 *** =pre_exercise_code
 ```{r}
@@ -315,34 +315,34 @@ You have to assign the numeric value `6` to the `my_oranges` variable instead of
 
 *** =sample_code
 ```{r}
-# Assign a value to the variable called my_apples
+# 宣告變數my_apples並將5指派給它
 my_apples <- 5 
 
-# Print out the value of my_apples
+# 將my_apples的值印出
 my_apples       
 
-# Assign a value to the variable my_oranges and print it out
+# 宣告變數my_oranges並將"six"指派給它，然後再把my_oranges印出
 my_oranges <- "six" 
 my_oranges 
 
-# New variable that contains the total amount of fruit
+# 宣告變數my_fruit並將my_apples與my_oranges相加後指派給它
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
 
 *** =solution
 ```{r}
-# Assign a value to the variable called my_apples
+# 宣告變數my_apples並將5指派給它
 my_apples <- 5  
 
-# Print out the value of answer
+# 將my_apples的值印出
 my_apples  
 
-# Assign a value to the variable my_oranges and print it out
+# 宣告變數my_oranges並將"six"指派給它，然後再把my_oranges印出
 my_oranges <- 6
 my_oranges 
 
-# New variable that contains the total amount of fruit
+# 宣告變數my_fruit並將my_apples與my_oranges相加後指派給它
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
@@ -351,12 +351,12 @@ my_fruit
 ```{r}
 test_error()
 test_object("my_oranges",
-            incorrect_msg = "Make sure that you assign the correct value to `my_oranges`. Strings and numbers are different things!")
+            incorrect_msg = "確認是否有指派正確的數值給 `my_oranges`。 字串與數值是不一樣的喔！")
 test_output_contains("my_apples + my_oranges", 
-                     incorrect_msg = "The output does not contain the result of adding `my_apples` and `my_oranges`.")
+                     incorrect_msg = "輸出並沒有包含 `my_apples` 加 `my_oranges`的結果。")
 test_object("my_fruit",
-            incorrect_msg = "Make sure that you assign the correct value to `my_fruit`.")
-success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+            incorrect_msg = "確認是否有指派正確的數值給 `my_fruit`。")
+success_msg("太棒了，請繼續保持！前進下一個練習。")
 ```
 
 

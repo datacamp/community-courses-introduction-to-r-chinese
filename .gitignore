@@ -1,0 +1,8 @@
+*
+!*.Rmd
+!*.yml
+!README.md
+!.gitignore
+.Rproj.user
+!datasets/
+!datasets/*

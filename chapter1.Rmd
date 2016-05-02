@@ -3,7 +3,7 @@ title_meta  : 第一章
 title       : 基本介紹
 description : "你會初次接觸R，學習到如何使用R做計算以及如何宣告變數，也會學習R的基本資料類型，讓我們趕快開始吧！"
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:dd8bfba816aff286aa9d14ea7f632bec1e58a1e6
 ## 熟悉環境
 
 你要在右邊的編輯區輸入R程式碼來完成練習，當你按下Submit Answer按鈕後，每一行程式碼都會被編譯且執行，然後你將會得到正確或錯誤的訊息，R程式碼的輸出結果會呈現在右下角的R Console視窗中。
@@ -49,7 +49,7 @@ test_output_contains("18", incorrect_msg = "\u78ba\u5b9a\u4f60\u6709\u52a0\u4e86
 success_msg("\u592a\u68d2\u4e86\uff01\u770b\u5230console\u5982\u4f55\u5448\u73fe\u4f60\u9001\u51fa\u7684\u7a0b\u5f0f\u4e86\u55ce\uff1f\u73fe\u5728\u4f60\u5df2\u7d93\u719f\u6089\u4e86\u4ecb\u9762\uff0c\u63a5\u4e0b\u4f86\u6211\u5011\u4f86\u6df1\u5165\u7814\u7a76R\u5427\uff01")
 ```
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:f50c65ca40332b98e2a74aa17a600d110bc87a81
 ## Arithmetic with R
 
 In its most basic form, R can be used as a simple calculator. Consider the following arithmetic operators:
@@ -135,7 +135,7 @@ success_msg("Great! Head over to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:2ac26323b43f5ce728fb1e29e18d3afc84160fdc
 ## Variable assignment 
 
 A basic concept in (statistical) programming is called a **variable**. 
@@ -185,7 +185,7 @@ success_msg("Good job! Have you noticed that R does not print the value of a var
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:2cb4878a22c17d2f5589992697d96223082a42b9
 ## Variable assignment (2)
 
 Suppose you have a fruit basket with five apples. As a data analyst in training, you want to store the number of apples in a variable with the name `my_apples`. 
@@ -232,7 +232,7 @@ success_msg("Great! Continue to the next exercise!")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:a666eb3fb98a7b8cc5930d9c8d2a6997a47561e2
 ## Variable assignment (3)
 
 Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: 
@@ -296,7 +296,7 @@ success_msg("Nice one! The great advantage of doing calculations with variables 
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:ff7bb3bd1c38b5db3ce9dde0e45f275163b6a9b6
 ## Apples and oranges
 
 Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
@@ -360,7 +360,7 @@ success_msg("Awesome, keep up the good work! Continue to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:40c0d484b0ed0826822600b7c1d896d155e3e411
 ## Basic data types in R
 
 R works with numerous data types. Some of the most basic types to get started are:
@@ -422,7 +422,7 @@ success_msg("Great work! Continue to the next exercise.")
 ```
 
 
---- type:NormalExercise xp:100 skills:1
+--- type:NormalExercise xp:100 skills:1 key:3c8cc5a936ede8b77b123fda57e937afe5cf1f70
 ## What's that data type?
 
 Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code on the right shows.

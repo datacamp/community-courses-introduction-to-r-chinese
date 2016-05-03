@@ -1,20 +1,20 @@
 --- 
-title_meta  : Chapter 2
-title       : Vectors
-description : "In this free R course, we'll take you on a trip to Vegas, where you will learn how to analyze your gambling results using vectors in R! After completing this chapter, you will be able to create vectors in R, name them, select elements from them and compare different vectors."
+title_meta  : 第二章
+title       : 向量
+description : "在第二章的課程中，我們要去拉斯維加斯一趟，學習如何在R使用向量分析博弈的結果！當你完成了本章節，你將學會如何宣告向量、命名向量、從向量選取元素以及比較不同的向量。"
 
 --- type:NormalExercise xp:100 skills:1 key:44ae1c0203a5a327a8b7670514bc5c5d07f05a5c
-## Create a vector
+## 宣告向量
 
-Feeling lucky? You better, because this chapter takes you on a trip to the City of Sins, also known as *Statisticians Paradise*!
+覺得自己運氣好嗎？你最好有點自信，本章節帶你到罪惡都市，傳說中的*統計學家天堂*！
 
-Thanks to R and your new data-analytical skills, you will learn how to uplift your performance at the tables and fire off your career as a professional gambler. This chapter will show how you can easily keep track of your betting progress and how you can do some simple analyses on past actions. Next stop, Vegas Baby... VEGAS!!
+你將利用R與資料分析的技巧來提高賭桌上的表現，展開你專業賭徒的職涯。本章節會告訴你如何輕鬆地記錄下注過程以及如何針對這些記錄做簡單的分析，下一站，拉斯維加斯我們來囉！
 
 *** =instructions
-- Do you still remember what you have learned in the first chapter? Assign the value `"Go!"` to the variable `vegas`. Remember: R is case sensitive!
+- 還記得在第一章學的嗎？宣告一個變數 `vegas` 並且將字串 `"Go!"` 指派給它，要注意大小寫在R是有差別的喔！
 
 *** =hint
-Just type the following line in the editor:
+在編輯區鍵入以下的程式：
 ```
 vegas <- "Go!"
 ```
@@ -26,44 +26,44 @@ vegas <- "Go!"
 
 *** =sample_code
 ```{r}
-# Define the variable vegas
+# 宣告變數vegas
 vegas <- 
 ```
 
 *** =solution
 ```{r}
-# Define the variable vegas
+# 宣告變數vegas
 vegas <- "Go!"
 ```
 
 *** =sct
 ```{r}
-test_object("vegas", incorrect_msg = "Make sure that you assign the correct value to `vegas`. Do not forget that R is case sensitive!")
-success_msg("Great! Head over to the next exercise.")
+test_object("vegas", incorrect_msg = "\u78ba\u8a8d\u4f60\u662f\u5426\u6709\u6307\u6d3e\u6b63\u78ba\u7684\u503c\u7d66\u8b8a\u6578 `vegas` \uff0c\u8981\u6ce8\u610f\u5927\u5c0f\u5beb\u5728R\u662f\u6709\u5dee\u5225\u7684\u5594\uff01")
+success_msg("\u592a\u68d2\u4e86\uff01\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:bbc502a52a960a4d3d17fc01945551cb822cdffa
-## Create a vector (2)
+## 宣告向量 (2)
 
-Let us focus first! 
+保持專注！ 
 
-On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. 
+在你成為富翁的路上會需要使用到非常多的向量，向量是單一維度的陣列，可以包含數值、文字或者邏輯值。換句話說，向量是一種可以儲存資料的方法，例如將你在賭場中每天贏得的錢與每天損失的錢儲存在向量中。
 
-In R, you create a vector with the combine function [`c()`](http://www.rdocumentation.org/packages/base/functions/c). You place the vector elements separated by a comma between the brackets. For example:
+R使用[`c()`](http://www.rdocumentation.org/packages/base/functions/c)來創造向量，並使用逗號分隔向量中的元素，像是：
 
 ```
 numeric_vector <- c(1, 2, 3)
 character_vector <- c("a", "b", "c")
 ```
 
-Once you have created these vectors in R, you can use them to do calculations.
+一旦你成功宣告了這些向量，就可以開始進行向量的計算。
 
 *** =instructions 
-Complete the code such that `boolean_vector` contains the three elements: `TRUE`, `FALSE` and `TRUE` (in that order). 
+宣告一個向量 `boolean_vector` 並讓它包含3個元素：`TRUE` 、 `FALSE` 與 `TRUE` (依序). 
 
 *** =hint 
-Assign `c(TRUE, FALSE, TRUE)` to the variable `boolean_vector` with the `<-` operator.
+利用 `<-` 指派 `c(TRUE, FALSE, TRUE)` 給變數 `boolean_vector`。
 
 *** =pre_exercise_code
 ```{r}
@@ -75,7 +75,7 @@ Assign `c(TRUE, FALSE, TRUE)` to the variable `boolean_vector` with the `<-` ope
 numeric_vector <- c(1, 10, 49)
 character_vector <- c("a", "b", "c")
 
-# Complete the code for boolean_vector
+# 宣告boolean_vector
 boolean_vector <-
 ```
 
@@ -84,13 +84,13 @@ boolean_vector <-
 numeric_vector <- c(1, 10, 49)
 character_vector <- c("a", "b", "c")
 
-# Complete the code for boolean_vector
+# 宣告boolean_vector
 boolean_vector <- c(TRUE, FALSE, TRUE)
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change the code that defined `numeric_vector` and `character_vector`!"
+msg <- "不需要更改宣告 `numeric_vector` 與 `character_vector` 的程式。"
 test_object("numeric_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("character_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("boolean_vector",

@@ -90,12 +90,12 @@ boolean_vector <- c(TRUE, FALSE, TRUE)
 
 *** =sct
 ```{r}
-msg <- "不需要更改宣告 `numeric_vector` 與 `character_vector` 的程式。"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539\u5ba3\u544a `numeric_vector` \u8207 `character_vector` \u7684\u7a0b\u5f0f\u3002"
 test_object("numeric_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("character_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("boolean_vector",
-            incorrect_msg = "Make sure that you assign the correct values to `boolean_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
-success_msg("Perfect! Notice that adding a space behind the commas in the `c()` function improves the readability of your code. Let's practice some more with vector creation in the next exercise.")
+            incorrect_msg = "\u78ba\u8a8d\u4f60\u6307\u6d3e\u4e86\u6b63\u78ba\u7684\u503c\u7d66 `boolean_vector`\uff0c\u6b63\u78ba\u7684\u503c\u70ba `c(TRUE, FALSE, TRUE)`\uff0c\u8a18\u5f97\u4e0d\u8981\u5e6b `TRUE` \u6216 `FALSE` \u52a0\u4e0a\u5f15\u865f\uff0c\u540c\u6642\u78ba\u8a8d\u9806\u5e8f\u8207\u8aaa\u660e\u4e00\u6a23\u3002")
+success_msg("\u5b8c\u7f8e\uff01\u6ce8\u610f\u6211\u5011\u5728 `c()` \u4e2d\u7684\u9017\u865f\u5f8c\u9762\u52a0\u4e0a\u7a7a\u767d\u662f\u70ba\u4e86\u589e\u52a0\u7a0b\u5f0f\u7684\u53ef\u8b80\u6027\uff0c\u6211\u5011\u6703\u5728\u4e0b\u500b\u7df4\u7fd2\u4e2d\u7df4\u7fd2\u66f4\u591a\u5411\u91cf\u7684\u5ba3\u544a\u3002")
 ```
 
 

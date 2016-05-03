@@ -100,79 +100,75 @@ success_msg("\u5b8c\u7f8e\uff01\u6ce8\u610f\u6211\u5011\u5728 `c()` \u4e2d\u7684
 
 
 --- type:NormalExercise xp:100 skills:1 key:25b255d971d82b1adb868a9bd8a1b583b6c071de
-## Create a vector (3)
+## 宣告向量 (3)
 
-After one week in Las Vegas and still zero Ferraris in your garage, you decide that it is time to start using your data analytical superpowers.
+經過一週在賭桌上的奮戰，你還沒有為自己贏到一台法拉利跑車，於是你打算運用資料分析超能力來分析一下過去這週輸贏記錄：
 
-Before doing a first analysis, you decide to first collect all the winnings and losses for the last week: 
+針對樸克牌 `poker_vector`: 
 
-For `poker_vector`: 
+- 星期一贏 \$140
+- 星期二輸 \$50
+- 星期三贏 \$20 
+- 星期四輸 \$120
+- 星期五贏 \$240
 
-- On Monday you won \$140
-- Tuesday you lost \$50
-- Wednesday you won \$20 
-- Thursday you lost \$120
-- Friday you won \$240
+針對俄羅斯輪盤 `roulette_vector`: 
 
-For `roulette_vector`: 
+- 星期一輸 \$24
+- 星期二輸 \$50
+- 星期三贏 \$100
+- 星期四輸 \$350
+- 星期五贏 \$10
 
-- On Monday you lost \$24
-- Tuesday you lost \$50
-- Wednesday you won \$100
-- Thursday you lost \$350
-- Friday you won \$10
-
-You only played poker and roulette, since there was a delegation of mediums that occupied the craps tables. To be able to use this data in R, you decide to create the variables `poker_vector` and `roulette_vector`.
+過去一週你只玩了樸克牌與俄羅斯輪盤，你決定宣告兩個向量 `poker_vector` 與 `roulette_vector`。
 
 *** =instructions
-Assign the winnings/losses for roulette to the variable `roulette_vector`.
+將俄羅斯輪盤的輸贏金額指派給變數 `roulette_vector`。
 
 *** =hint
-To help you with this step, the editor already contains the code for creating `poker_vector`. Assign the correct values to `roulette_vector` based on the numbers in the assignment. Do not forget that losses are negative numbers.
+編輯區已經有了 `poker_vector` 的宣告範例，依樣畫葫蘆你可以順利宣告 `roulette_vector` 並注意輸錢是以負值記錄。
 
 *** =sample_code
 ```{r}
-# Poker winnings from Monday to Friday
+# 星期一至五的樸克牌贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <-  
 ```
 
 *** =solution
 ```{r}
-# Poker winnings from Monday to Friday
+# 星期一至五的樸克牌贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 ```
 
 *** =sct
 ```{r}
 test_object("poker_vector",
-            incorrect_msg = "Make sure that you assign the correct values to `poker_vector`.")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6307\u6d3e\u6b63\u78ba\u7684\u503c\u7d66 `poker_vector`\u3002")
 test_object("roulette_vector",
-            incorrect_msg = "Make sure that you assign the correct values to `roulette_vector`. Make sure to adopt the correct order!")
-success_msg("Very good! To check out the contents of your vectors, remember that you can always simply type the variable in the console and hit Enter. Proceed to the next exercise!")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6307\u6d3e\u6b63\u78ba\u7684\u503c\u7d66 `roulette_vector` \u4e26\u6ce8\u610f\u661f\u671f\u4e00\u81f3\u4e94\u7684\u9806\u5e8f\uff01")
+success_msg("\u592a\u597d\u4e86\uff01\u8a18\u5f97\u4f60\u96a8\u6642\u53ef\u4ee5\u5728R Console\u8f38\u5165\u8b8a\u6578\u540d\u7a31\u5f8c\u6309\u8f38\u5165\u9375(Enter)\u6aa2\u67e5\u4f60\u5ba3\u544a\u7684\u5411\u91cf\uff0c\u8b93\u6211\u5011\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:bfaa5f15a513859fff24771c6d0cd87082211092
-## Naming a vector
+## 為向量命名
 
-As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is therefore essential. 
+資料分析師需要對資料有清楚的認知並了解細節，在前一個練習中我們宣告了過去一週的贏錢記錄，如果能夠在向量中顯示出哪個元素屬於哪一天，將會讓你對資料一目瞭然。
 
-In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. 
-
-You can give a name to the elements of a vector with the `names()` function. Have a look at this example:
+你可以使用 `names()` 函數來辦到這件事：
 
 ```
 some_vector <- c("John Doe", "poker player")
 names(some_vector) <- c("Name", "Profession")
 ```
 
-This code first creates a vector `some_vector` and then gives the two elements a name. The first element is assigned the name `Name`, while the second element is labeled `Profession`. Printing the contents to the console yields following output:
+這段程式首先宣告一個向量 `some_vector` 接著為裡面這兩個元素命名，第一個元素被命名為姓名 `Name` ，第二個元素被命名為職業 `Profession`。在R Console中印出 `some_vector`：
 
 ```
           Name     Profession 
@@ -180,71 +176,71 @@ This code first creates a vector `some_vector` and then gives the two elements a
 ```
 
 *** =instructions
-- The code on the right names the elements in `poker_vector` with the days of the week. Add code to do the same thing for `roulette_vector`.
+- 編輯區已經完成 `poker_vector` 的贏錢記錄命名，接者請你對 `roulette_vector` 做一樣的事情。
 
 *** =hint
-You can use `names(roulette_vector)` to set the names of the variable `roulette_vector`. Make sure to use the same vector with the days of the week as names. Remember that R is case sensitive!
+使用 `names(roulette_vector)` 為 `roulette_vector` 命名，確認使用相同的向量來命名，記得英文字母的大小寫在R中是有差別的！
 
 *** =sample_code
 ```{r}
-# Poker winnings from Monday to Friday
+# 星期一至五的樸克牌贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Assign days as names of poker_vector
+# 用星期一至五命名poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Assign days as names of roulette_vectors
+# 用星期一至五命名roulette_vectors
 ```
 
 *** =solution
 ```{r}
-# Poker winnings from Monday to Friday
+# 星期一至五的樸克牌贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# Assign days as names of poker_vector
+# 用星期一至五命名poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Assign days as names of roulette_vectors
+# 用星期一至五命名roulette_vectors
 names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ```
 
 *** =sct
 ```{r}
 test_object("poker_vector",
-            incorrect_msg = "Do not change the values inside `poker_vector`; they were already coded for you.")
+            incorrect_msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector`\u3002")
 test_object("roulette_vector",
-            incorrect_msg = "Do not change the values inside `roulette_vector`; they were already coded for you.")
+            incorrect_msg = "\u4e0d\u9700\u8981\u66f4\u6539 `roulette_vector`\u3002")
 test_object("poker_vector",
             eq_condition = "equal",
-            incorrect_msg = "Do not change the code that names the elements in `poker_vector`; focus on `roulette_vector`!")
+            incorrect_msg = "\u4e0d\u9700\u8981\u66f4\u6539\u70ba `poker_vector` \u547d\u540d\u7684\u7a0b\u5f0f\uff0c\u628a\u6ce8\u610f\u529b\u96c6\u4e2d\u5728 `roulette_vector`\uff01")
 test_object("roulette_vector",
             eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign the correct names vector to `roulette_vector`. Use the exact same vector as the one that was used to name `poker_vector`.")
-success_msg("Well done! Continue to the next exercise.")
+            incorrect_msg = "\u78ba\u8a8d\u4f60\u6307\u6d3e\u6b63\u78ba\u7684\u547d\u540d\u7d66 `roulette_vector`\u3002\u7528\u547d\u540d `poker_vector` \u7684\u76f8\u540c\u5411\u91cf\u547d\u540d\u5373\u53ef\u3002")
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:cfa4561b5f565645ab272a96838ae690d6ecf621
-## Naming a vector (2)
+## 為向量命名 (2)
 
-If you want to become a good statistician, you have to become lazy. (If you are already lazy, chances are high you are one of those exceptional, natural-born statistical talents.)
+懶惰的人可以成為一個優秀的統計學家(假如你真的非常懶惰，你有很高的機率是那些天生統計學天才的一份子。)
 
-In the previous exercises you probably experienced that it is boring and frustrating to type and retype information such as the days of the week. However, when you look at it from a higher perspective, there is a more efficient way to do this, namely, to assign the days of the week vector to a **variable**! 
+在前一個練習你可能對於不停輸入星期幾感到無聊，其實有一個更有效率的方法，那就是把星期幾指派給一個**變數**！
 
-Just like you did with your poker and roulette returns, you can also create a variable that contains the days of the week. This way you can use and re-use it.
+如同你記錄樸克牌與俄羅斯輪盤贏錢金額，你也可以宣告一個變數包含星期幾的資訊，如此就可以重複使用它。
 
 *** =instructions
-- A variable `days_vector` that contains the days of the week has already been created for you.
-- Use `days_vector` to set the names of `poker_vector` and `roulette_vector`.
+- 包含星期幾的變數 `days_vector` 已經宣告好了。
+- 使用 `days_vector` 為 `poker_vector` 與 `roulette_vector`命名。
 
 *** =hint
-You can use `names(poker_vector) <- days_vector` to set the names of the elements `poker_vector`. Do a similar thing for `roulette_vector`.
+如同使用 `names(poker_vector) <- days_vector` 來為 `poker_vector` 的元素命名一樣，對 `roulette_vector` 做一樣的事情。
 
 *** =pre_exercise_code
 ```{r}
@@ -253,66 +249,66 @@ You can use `names(poker_vector) <- days_vector` to set the names of the element
 
 *** =sample_code
 ```{r}
-# Poker winnings from Monday to Friday
+# 星期一至五的樸克牌贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# The variable days_vector
+# 變數days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
  
-# Assign the names of the day to roulette_vector and poker_vector
+# 指派變數days_vector給roulette_vector與poker_vector
 names(poker_vector) <-   
 names(roulette_vector) <-
 ```
 
 *** =solution
 ```{r}
-# Poker winnings from Monday to Friday
+# 星期一至五的樸克牌贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 
-# Roulette winnings from Monday to Friday
+# 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# The variable days_vector
+# 變數days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# Assign the names of the day to roulette_vector and poker_vector
+# 指派變數days_vector給roulette_vector與poker_vector
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not changes the predefined variables `poker_vector`, `roulette_vector` or `days_vector`."
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u3001 `roulette_vector` \u6216 `days_vector`\u3002"
 test_object("poker_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("poker_vector",
             eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign `days_vector` to the names of `poker_vector`.")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6307\u6d3e `days_vector` \u4f5c\u70ba `poker_vector` \u7684\u547d\u540d\u3002")
 test_object("roulette_vector",
             eq_condition = "equal",
-            incorrect_msg = "Make sure that you assign `days_vector` to the names of `roulette_vector`.")
-success_msg("Nice one! A word of advice: try to avoid code duplication at all times. Continue to the next exercise and learn how to do arithmetic with vectors!")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6307\u6d3e `days_vector` \u4f5c\u70ba `roulette_vector`\u7684\u547d\u540d\u3002")
+success_msg("\u505a\u5f97\u597d\uff01\u826f\u5fc3\u5efa\u8b70\uff1a\u6c38\u9060\u8a66\u8457\u907f\u514d\u5beb\u91cd\u8907\u7684\u7a0b\u5f0f\u3002\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u4e26\u5b78\u7fd2\u5411\u91cf\u7684\u6578\u5b78\u904b\u7b97\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:a0e5bb0a2dfc13b73a6edf7408aedaf100f156ef
-## Calculating total winnings
+## 計算加總贏錢金額
 
-Now that you have the poker and roulette winnings nicely as a named vector, you can start doing some data analytical magic. 
+現在你有了命名過的樸克牌與俄羅斯輪盤的贏錢記錄，你可以開始做點資料分析魔法。
 
-You want to find out the following type of information:
-- How much has been your overall profit or loss per day of the week?
-- Have you lost money over the week in total?
-- Are you winning/losing money on poker or on roulette?
+你心中有這幾個問題：
+- 每日的總獲利或總損失為何？
+- 這週總計有沒有賠錢？
+- 在樸克牌與俄羅斯輪盤的各自表現如何？
 
-To get the answers, you have to do arithmetic calculations on vectors. 
+要回答這些問題，你必須作一些向量的數學運算。
 
-It is important to know is that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:
+在R中相加2個向量會得到元素相加的結果，例如：
 
 ```
 c(1, 2, 3) + c(4, 5, 6)
@@ -320,7 +316,7 @@ c(1 + 4, 2 + 5, 3 + 6)
 c(5, 7, 9)
 ```
 
-You can also do the calculations with variables that represent vectors:
+也可以用變數來代表向量：
 
 ```
 a <- c(1, 2, 3) 
@@ -329,11 +325,11 @@ c <- a + b
 ```
 
 *** =instructions
-- Take the sum of the variables `A_vector` and `B_vector` and it assign to `total_vector`.
-- Inspect the result by printing out `total_vector`.
+- 將 `A_vector` 與 `B_vector` 相加並指派給 `total_vector`。
+- 將 `total_vector` 印出來檢視結果。
 
 *** =hint
-Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the result to `total_vector`.
+使用 `+` 相加 `A_vector` 與 `B_vector` ，並利用 `<-` 將結果指派給 `total_vector`。
 
 *** =pre_exercise_code
 ```{r}
@@ -345,10 +341,10 @@ Use the `+` operator to sum `A_vector` and `B_vector`. Use `<-` to assign the re
 A_vector <- c(1, 2, 3)
 B_vector <- c(4, 5, 6)
 
-# Take the sum of A_vector and B_vector
+# 將A_vector與B_vector相加
 total_vector <- 
   
-# Print out total_vector
+# 印出total_vector
 
 ```
 
@@ -357,36 +353,36 @@ total_vector <-
 A_vector <- c(1, 2, 3)
 B_vector <- c(4, 5, 6)
 
-# Take the sum of A_vector and B_vector
+# 將A_vector與B_vector相加
 total_vector <- A_vector + B_vector
 
-# Print out total_vector
+# 印出total_vector
 total_vector
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change the contents of `A_vector` or `B_vector`!"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `A_vector` \u6216 `B_vector` \u7684\u5167\u5bb9\uff01"
 test_object("A_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("B_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("total_vector", incorrect_msg = "Make sure that `total_vector` contains the sum of `A_vector` and `B_vector`.")
-test_output_contains("total_vector", incorrect_msg = "Don't forget to print out `total_vector`! Simply write `total_vector` on a new line.")
-success_msg("Good job! Continue to the next exercise.")
+test_object("total_vector", incorrect_msg = "\u78ba\u8a8d `total_vector` \u662f\u5426\u70ba `A_vector` \u52a0 `B_vector`\u3002")
+test_output_contains("total_vector", incorrect_msg = "\u5225\u5fd8\u4e86\u5370\u51fa `total_vector`\uff01 \u53ea\u8981\u52a0\u4e00\u884c `total_vector` \u5373\u53ef\u3002")
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:647ae33cb77824ceb0b881a42da73a51dca46c95
-## Calculating total winnings (2)
+## 計算加總贏錢金額 (2)
 
-Now you understand how R does arithmetic with vectors, it is time to get those Ferraris in your garage! First, you need to understand what the overall profit or loss per day of the week was. The total daily profit is the sum of the profit/loss you realized on poker per day, and the profit/loss you realized on roulette per day. 
+你現在瞭解R如何做向量的數學運算，該是把法拉利買回來的時候了！首先你需要了解這一週每日的總獲利或總損失，而每日的總獲利或總損失就是將每天在樸克牌與俄羅斯輪盤的贏錢金額加總。
 
-In R, this is just the sum of `roulette_vector` and `poker_vector`.
+其實就是把 `roulette_vector` 與 `poker_vector` 相加。
 
 *** =instructions
-Assign to the variable `total_daily` how much you won or lost on each day in total (poker and roulette combined).
+將變數 `total_daily` 宣告為每日的總獲利或總損失(樸克牌與俄羅斯輪盤)。
 
 *** =hint
-Similar to the previous exercise, assign the sum of two vectors to a new variable, `total_daily`.
+跟前一個練習類似，將2個向量相加並指派給新變數 `total_daily`。
 
 *** =pre_exercise_code
 ```{r}
@@ -395,61 +391,61 @@ Similar to the previous exercise, assign the sum of two vectors to a new variabl
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Assign to total_daily how much you won/lost on each day
+# 宣告total_daily為每日的總獲利或總損失
 total_daily <- 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Assign to total_daily how much you won/lost on each day
+# 宣告total_daily為每日的總獲利或總損失
 total_daily <- poker_vector + roulette_vector
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector` \u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("total_daily", incorrect_msg = "Make sure that you assign the sum of `poker_vector` and `roulette_vector` to `total_daily`.")
+test_object("total_daily", incorrect_msg = "\u78ba\u8a8d\u4f60\u5c07 `poker_vector` \u8207 `roulette_vector` \u76f8\u52a0\u5f8c\u6307\u6d3e\u7d66 `total_daily`\u3002")
 
-success_msg("Great! Continue to the next exercise.")
+success_msg("\u592a\u68d2\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:ab4e6dfbddc58056dbc98092c89bf568302eecae
-## Calculating total winnings (3)
+## 計算加總贏錢金額 (3)
 
-Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? 
+根據前一個練習，看起來是個輸贏參半的一週，你懷疑是否有可能其實整體結算下來上週是輸錢的呢？
 
-A function that helps you to answer this question is [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum). It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: 
+能夠回答這個問題的函數是[`sum()`](http://www.rdocumentation.org/packages/base/functions/sum)。它可以加總向量中所有的元素，例如計算在樸克牌的總獲利或總損失：
 
 ```
 total_poker <- sum(poker_vector)
 ```
 
 *** =instructions
-- Calculate the total amount of money that you have won/lost with roulette and assign to the variable `total_roulette`.
-- Now that you have the totals for roulette and poker, you can easily calculate `total_week` (which is the sum of all gains and losses of the week).
-- Print out `total_week`.
+- 計算在俄羅斯輪盤的總獲利或總損失並將結果指派給 `total_roulette`。
+- 有了樸克牌與俄羅斯輪盤的總獲利或總損失後，就可以簡單計算 `total_week` (即這一週的總獲利或總損失)。
+- 印出`total_week`。
 
 *** =hint
-Use the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) function to get the total of the `roulette_vector`. `total_week` is then the sum of `roulette_vector` and `poker_vector`.
+使用[`sum()`](http://www.rdocumentation.org/packages/base/functions/sum)函數得到　`roulette_vector`　的總合， `total_week` 就是 `roulette_vector` 加 `poker_vector`。
 
 *** =pre_exercise_code
 ```{r}
@@ -458,63 +454,63 @@ Use the [`sum()`](http://www.rdocumentation.org/packages/base/functions/sum) fun
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Total winnings with poker
+# 樸克牌的總贏錢金額
 total_poker <- sum(poker_vector)
 
-# Total winnings with roulette
+# 俄羅斯輪盤的總贏錢金額
 total_roulette <-  
 
-# Total winnings overall
+# 總贏錢金額
 total_week <- 
 
-# Print out total_week
+# 印出total_week
   
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Total winnings with poker
+# 樸克牌的總贏錢金額
 total_poker <- sum(poker_vector)
 
-# Total winnings with roulette
+# 俄羅斯輪盤的總贏錢金額
 total_roulette <-  sum(roulette_vector)
 
-# Total winnings overall
+# 總贏錢金額
 total_week <- total_roulette + total_poker
 
-# Print out total_week
+# 印出total_week
 total_week
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "不需要更改 `poker_vector` and `roulette_vector`　的宣告與命名。"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("total_poker", 
-            incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`.")
+            incorrect_msg = "確認是否有將　`poker_vector`　的總和指派給 `total_poker`。")
 test_object("total_roulette",
-            incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`.")
+            incorrect_msg = "確認是否有將 `total_roulette` 的總和指派給 `roulette_vector`。")
 test_object("total_week",
-            incorrect_msg = "Make sure that you assign to `total_week` the sum of the other two total vectors: `total_roulette` and `total_poker`.")
+            incorrect_msg = "確認是否有將 `total_roulette` 加 `total_poker` 的結果指派給 `total_week`。")
 
-test_output_contains("total_week", incorrect_msg = "Don't forget to write `total_week` on a new line to print out the variable.")
-success_msg("Well done. This is pretty bad news...")
+test_output_contains("total_week", incorrect_msg = "別忘了再寫一行 `total_week` 把結果印出來。")
+success_msg("做得好，但這個結果真是...")
 ```
 
 

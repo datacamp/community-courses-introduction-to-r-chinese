@@ -374,7 +374,8 @@ R可以運算多種的資料類別，其中較為基本的有：
 
 *** =instructions
 更改變數的數值：
-- 將 `my_numeric` 指派為 `42`.
+
+- 將 `my_numeric` 指派為 `42`。
 - 將 `my_character` 指派為 `"universe"`。 用雙引號包起來的就可以讓R知道 `"universe"` 是一個文字。
 - 將 `my_logical` 指派為 `FALSE`。
 

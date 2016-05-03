@@ -361,28 +361,28 @@ success_msg("太棒了，請繼續保持！前進下一個練習。")
 
 
 --- type:NormalExercise xp:100 skills:1 key:40c0d484b0ed0826822600b7c1d896d155e3e411
-## Basic data types in R
+## R的基本資料類別
 
-R works with numerous data types. Some of the most basic types to get started are:
+R可以運算多種的資料類別，其中較為基本的有：
 
-- Decimals values like `4.5` are called **numerics**.
-- Natural numbers like `4` are called **integers**. Integers are also numerics.
-- Boolean values (`TRUE` or `FALSE`) are called **logical**.
-- Text (or string) values are called **characters**.
+- 有小數點的如 `4.5` 稱為 **數值**。
+- 自然數如 `4` 稱為 **整數**，整數同時也屬於數值。
+- 布林直(`TRUE` or `FALSE`)稱為 **邏輯**。
+- 字元(或者字串)稱為 **文字**。
 
-Note how the quotation marks on the right indicate that "some text" is a character.
+用雙引號包起來的就可以讓R知道這是一個文字，像是"一些文字"。
 
 *** =instructions
-Change the value of the:
-- `my_numeric` variable to `42`.
-- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.
-- `my_logical` variable to `FALSE`.
+更改變數的數值：
+- 將 `my_numeric` 指派為 `42`.
+- 將 `my_character` 指派為 `"universe"`。 用雙引號包起來的就可以讓R知道 `"universe"` 是一個文字。
+- 將 `my_logical` 指派為 `FALSE`。
 
-Note that R is case sensitive!
+注意英文字母的大小寫在R是有差別的！
 
 *** =hint 
-Replace the values in the editor with the values that are provided in the exercise. For example: 
-`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`. 
+在編輯區將數值重新指派： 
+`my_numeric <- 42` 可將42指派給變數 `my_numeric`。
 
 *** =pre_exercise_code
 ```{r}
@@ -391,47 +391,47 @@ Replace the values in the editor with the values that are provided in the exerci
 
 *** =sample_code
 ```{r}
-# Change my_numeric to be 42
+# 指派42給my_numeric
 my_numeric <- 42.5
 
-# Change my_character to be "universe"
+# 指派"universe"給my_character
 my_character <- "some text"
 
-# Change my_logical to be FALSE
+# 指派FALSE給my_logical
 my_logical <- TRUE
 ```
 
 *** =solution
 ```{r}
-# Change my_numeric to be 42
+# 指派42給my_numeric
 my_numeric <- 42
 
-# Change my_character to be "universe"
+# 指派"universe"給my_character
 my_character <- "universe"
 
-# Change my_logical to be FALSE
+# 指派FALSE給my_logical
 my_logical <- FALSE
 ```
 
 *** =sct
 ```{r}
-test_object("my_numeric", incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
-test_object("my_character", incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`. Don't forget the quotes!")
-test_object("my_logical", incorrect_msg = "Have you correctly changes `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
-success_msg("Great work! Continue to the next exercise.")
+test_object("my_numeric", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c0742\u6307\u6d3e\u7d66\u8b8a\u6578 `my_numeric`\uff1f")
+test_object("my_character", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07 `\"universe\"` \u6307\u6d3e\u7d66 `my_character`\uff1f\u5225\u5fd8\u4e86\u7528\u96d9\u5f15\u865f\u628a\u5b57\u4e32\u5305\u8d77\u4f86\uff01")
+test_object("my_logical", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07 `FALSE` \u6307\u6d3e\u7d66 `my_logical`\uff1f\u6ce8\u610f `FALSE` \u6bcf\u500b\u5b57\u6bcd\u90fd\u8981\u4f7f\u7528\u5927\u5beb\uff01")
+success_msg("\u505a\u5f97\u592a\u597d\u4e86\uff01\u7e7c\u7e8c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u5427\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:3c8cc5a936ede8b77b123fda57e937afe5cf1f70
-## What's that data type?
+## 如何判斷資料類別？
 
-Do you remember that when you added `5 + "six"`, you got an error due to a mismatch in data types? You can avoid such embarrassing situations by checking the data type of a variable beforehand. You can do this with the `class()` function, as the code on the right shows.
+還記得先前在執行 `5 + "six"` 的時候因為資料類別不符而得到錯誤訊息嗎？其實透過事先檢查資料類別可以避免這種尷尬的情況，只要善用右方的 `class()` 函數。
 
 *** =instructions
-Complete the code in the editor and also print out the classes of `my_character` and `my_logical`. 
+完成編輯區的程式並將 `my_character` 與 `my_logical` 的資料類別印出。 
 
 *** =hint
-The code that prints the data type of `my_numeric` is already included; do a similar things for `my_character` and `my_logical`. 
+參考範例如何將`my_numeric`的資料類別印出，用同樣的方式把 `my_character` 與 `my_logical` 的資料類別也印出來。
 
 *** =pre_exercise_code
 ```{r}
@@ -440,50 +440,50 @@ The code that prints the data type of `my_numeric` is already included; do a sim
 
 *** =sample_code
 ```{r}
-# Declare variables of different types
+# 宣告不同種類的變數
 my_numeric <- 42
 my_character <- "universe"
 my_logical <- FALSE 
 
-# Check class of my_numeric
+# 檢查my_numeric的類別
 class(my_numeric)
 
-# Check class of my_character
+# 檢查my_character的類別
 
 
-# Check class of my_logical
+# 檢查my_logical的類別 
 
 ```
 
 *** =solution
 ```{r}
-# Declare variables of different types:
+# 宣告不同種類的變數
 my_numeric <- 42
 my_character <- "universe"
 my_logical <- FALSE
 
-# Check class of my_numeric
+# 檢查my_numeric的類別
 class(my_numeric)
 
-# Check class of my_character
+# 檢查my_character的類別
 class(my_character)
 
-# Check class of my_logical
+# 檢查my_logical的類別
 class(my_logical)
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change the declaration of the variables!"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539\u8b8a\u6578\u7684\u5ba3\u544a\u3002"
 lapply(c("my_numeric", "my_character", "my_logical"), test_object, undefined_msg = msg, incorrect_msg = msg)
-patt <- "Have you included `class(%1$s)` to print out the data type of `%1$s`?"
+patt <- "\u78ba\u8a8d\u4f60\u662f\u5426\u6709\u4f7f\u7528 `class(%1$s)` \u4f86\u5370\u51fa `%1$s` \u7684\u8cc7\u6599\u985e\u5225\uff1f"
 test_output_contains("class(my_numeric)",
-                     incorrect_msg = "Do not remove the code that prints out the type of `my_numeric`.")
+                     incorrect_msg = "\u4e0d\u9700\u8981\u79fb\u9664\u5370\u51fa `my_numeric` \u8cc7\u6599\u985e\u5225\u7684\u7a0b\u5f0f")
 test_output_contains("class(my_character)",
                      incorrect_msg = sprintf(patt, "my_character"))
 test_output_contains("class(my_logical)",
                      incorrect_msg = sprintf(patt, "my_logical"))
-success_msg("Congratulations! This was the last exercise for this chapter. Head over to the next chapter to get immersed in the world of vectors!")
+success_msg("\u606d\u559c\u4f60\u5b8c\u6210\u4e86\u672c\u7ae0\u6377\u7684\u6700\u5f8c\u4e00\u500b\u7df4\u7fd2\uff01\u8b93\u6211\u5011\u524d\u9032\u4e0b\u500b\u7ae0\u7bc0\u4f86\u7814\u7a76\u5411\u91cf\u5427\uff01")
 ```
 
 

@@ -510,24 +510,24 @@ test_object("total_week",
             incorrect_msg = "確認是否有將 `total_roulette` 加 `total_poker` 的結果指派給 `total_week`。")
 
 test_output_contains("total_week", incorrect_msg = "別忘了再寫一行 `total_week` 把結果印出來。")
-success_msg("做得好，但這個結果真是...")
+success_msg("做得好，但這個結果真是令人難過...")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:d4aec72e46e130bfc7e3992f07bd6d6cc3b8179b
-## Comparing total winnings
+## 比較總贏錢金額
 
-Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... 
+看起來這一週的豪賭讓你賠了錢，該是時候利用深度分析來調整策略了...
 
-After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or `>` ) than in roulette.
+經過一番思考，你認為問題是出在自己玩俄羅斯輪盤的技巧比玩撲克牌來得差，也許在撲克牌的總贏錢金額比(或 `>` )俄羅斯輪盤來得高。
 
 *** =instructions
-- Calculate `total_poker` and `total_roulette` as in the previous exercise. Use the `sum()` function twice.
-- Check if your total gains in poker are higher than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?
+- 如同前一個練習計算 `total_poker` 與 `total_roulette` ，要使用 `sum()` 函數2次。
+- 使用 `>` 來比較你在撲克牌的總贏錢金額是否比俄羅斯輪盤還要高，並把比較結果印出來。你會如何判讀這個結果，你應該要花更多精力在撲克牌或俄羅斯輪盤呢？
 
 *** =hint
-- You partly calculated the answer to this question in the previous exercise already!
-- To check if 6 is larger than 5, you type `6 > 5`. This returns a logical value (`TRUE` or `FALSE`).
+- 其實在前一個練習你已經算好一部份了！
+- 只要輸入 `6 > 5` 就可以檢查6是否比5大，這會回傳一個邏輯值(`TRUE` 或 `FALSE`)。
 
 *** =pre_exercise_code
 ```{r}
@@ -536,69 +536,69 @@ After a short brainstorm in your hotel's jacuzzi, you realize that a possible ex
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Calculate total gains for poker and roulette
+# 計算樸克牌與俄羅斯輪盤的總贏錢金額
 total_poker <-
 total_roulette <-
 
-# Check if you realized higher total gains in poker than in roulette 
+# 判斷樸克牌的總贏錢金額是否比俄羅斯輪盤為高
 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Calculate total gains for poker and roulette
+# 計算樸克牌與俄羅斯輪盤的總贏錢金額
 total_poker <- sum(poker_vector)
 total_roulette <- sum(roulette_vector)
 
-# Check if you realized higher total gains in poker than in roulette
+# 判斷樸克牌的總贏錢金額是否比俄羅斯輪盤為高
 total_poker > total_roulette
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- "不需要更改 `poker_vector` 與 `roulette_vector` 的宣告與命名。"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("total_poker", 
-            incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`. Use `sum()`.")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07 `poker_vector` \u7684\u7e3d\u548c(\u4f7f\u7528 `sum()` )\u6307\u6d3e\u7d66 `total_poker`\u3002")
 test_object("total_roulette",
-            incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`. Use `sum()`.")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07 `roulette_vector` \u7684\u7e3d\u548c(\u4f7f\u7528 `sum()` )\u6307\u6d3e\u7d66 `total_roulette`\u3002")
 test_output_contains("total_poker > total_roulette",
-                     incorrect_msg = "Have you correctly carried out the comparison? To check if `total_poker` is greater than `total_roulette`, you can use `total_poker > total_roulette`.")
-success_msg("Good job! Continue to the next exercise.")
+                     incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6210\u529f\u6bd4\u8f03 `total_poker` \u8207 `total_roulette` \uff0c\u4f7f\u7528 `total_poker > total_roulette` \u4f86\u505a\u6bd4\u8f03\u3002")
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:cf3480826ff4ed5aa06b4fccf8fa19b30e2f02f6
-## Vector selection: the good times
+## 選擇向量中的元素：美好時光
 
-Your hunch seemed to be right. It appears that the poker game is more your cup of tea than roulette. 
+你的猜測是對的，過去一週在賭桌上的奮鬥顯示你的撲克牌技巧似乎比俄羅斯輪盤好。 
 
-Another possible route for investigation is your performance at the beginning of the working week compared to the end of it. You did have a couple of Margarita cocktails at the end of the week... 
+另外一個可能是你似乎在一週的前幾天表現得後幾天為佳，看來是最後幾天的瑪格麗塔雞尾酒喝太多了... 
 
-To answer that question, you only want to focus on a selection of the `total_vector`. In other words, our goal is to select specific elements of the vector. To select elements of a vector (and later matrices, data frames, ...), you can use square brackets. Between the square brackets, you indicate what elements to select. For example, to select the first element of the vector, you type `poker_vector[1]`. To select the second element of the vector, you type `poker_vector[2]`, etc. Notice that the first element in a vector has index 1, not 0 as in many other programming languages.
+要回答這個問題，你只需要檢視部分 `total_vector` ，換句話說，就是在向量中選擇特定的元素。在R利用中括號就可以選擇向量(之後是矩陣、資料集...)中的元素。例如，要選擇第一個元素就輸入 `poker_vector[1]` ，要選擇第二個元素就輸入 `poker_vector[2]` ...等。注意第一個元素的索引值是1，不像其他程式語言第一個元素的索引值是0。
 
 *** =instructions
-Assign the poker results of Wednesday to the variable `poker_wednesday`.
+將星期三的撲克牌贏錢金額指定給變數 `poker_wednesday`。
 
 *** =hint
-Wednesday is the third element of `poker_vector`, and can thus be selected with `poker_vector[3]`.
+星期三是 `poker_vector` 中的第三個元素，可以使用 `poker_vector[3]` 來選擇。
 
 *** =pre_exercise_code
 ```{r}
@@ -607,49 +607,49 @@ Wednesday is the third element of `poker_vector`, and can thus be selected with 
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Define a new variable based on a selection
+# 宣告一個選擇撲克牌星期三贏錢金額的變數
 poker_wednesday <- 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Define a new variable based on a selection
+# 宣告一個選擇撲克牌星期三贏錢金額的變數
 poker_wednesday <- poker_vector[3]
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "不需要更改 `poker_vector` 與 `roulette_vector` 的宣告與命名。"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_wednesday", 
-            undefined_msg = "Please make sure to define a variable `poker_wednesday`.",
-            incorrect_msg = "It looks like `poker_wednesday` does not contain the correct value of the `poker_vector`.")
-success_msg("Great! R also makes it possible to select multiple elements from a vector at once. Learn how in the next exercise!")
+            undefined_msg = "請確認是否有宣告變數 `poker_wednesday`。",
+            incorrect_msg = "看起來 `poker_wednesday` 並沒有從 `poker_vector` 選到正確的數值。")
+success_msg("太棒了，R還可以從向量中一次選擇多個元素，在下一個練習中就可以學會！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:961b3b1c8a4721c71a6f099daacf17156b59b6a1
-## Vector selection: the good times (2)
+## 選擇向量中的元素：美好時光 (2)
 
-How about analyzing your midweek results? 
+何不分析一下中間幾天的表現呢？
 
-To select multiple elements from a vector, you can add square brackets at the end of it. You can indicate between the brackets what elements should be selected. For example: suppose you want to select the first and the fifth day of the week: use the vector `c(1, 5)` between the square brackets. For example, the code below selects the first and fifth element of `poker_vector`:
+從向量中選擇多個元素要在中括號中告知R你要選哪些，假如你想選擇星期一與星期五，在中括號中使用 `c(1, 5)` 參考這個範例：
 
 ```
 poker_vector[c(1, 5)]

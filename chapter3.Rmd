@@ -53,21 +53,21 @@ success_msg("\u597d\u68d2\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01"
 
 
 --- type:NormalExercise xp:100 skills:1 key:befa6552ba5318e95e3c954443aa6ec643d1827f
-## Analyzing matrices, you shall
+## 分析矩陣
 
-It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! 
+該是捲起袖子來寫程式的時候了，在接下來的練習中你要分析星際大戰首映票房記錄，願原力與你同在！
 
-In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).
+有3個向量已經在編輯區被宣告好了，每個向量分別代表著前三部推出的星際大戰電影(曙光乍現、帝國大反擊與絕地大反攻)票房收入，向量中的第一個元素代表美國票房收入，第二個元素代表非美國票房收入(資料來源：維基百科)。
 
-In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.
+在這個練習中你要合併這三個向量然後建立一個矩陣。
 
 *** =instructions
-- Use `c(new_hope, empire_strikes, return_jedi)` to combine the three vectors into one vector. Call this vector `box_office`.
-- Construct a matrix with 3 rows, where each row represents a movie. Use the `matrix()` function to this. The first argument is the vector `box_office`, containing all box office figures. Next, you'll have to specify `nrow = 3` and `byrow = TRUE`. Name the resulting matrix `star_wars_matrix`.
+- 利用 `c(new_hope, empire_strikes, return_jedi)` 合併這三個向量並指派給一個新向量 `box_office`。
+- 使用 `matrix()` 函數建立一個擁有3列的矩陣，每一列都代表一部電影，第一個參數為 `box_office` 它包含所有票房收入記錄，第二個與第三個參數你要指定 `nrow = 3` 以及 `byrow = TRUE`。命名這個新建立的矩陣為 `star_wars_matrix`。
 
 *** =hint
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` will combine all numbers in the different vectors into a single vector with 6 elements.
-- `matrix(box_office, nrow = ..., by_row ...)` is a template for the solution to the second instruction.
+- `box_office <- c(new_hope, empire_strikes, return_jedi)` 可以合併成一個有6個元素的向量。
+- `matrix(box_office, nrow = ..., by_row ...)` 是建立矩陣的函數架構。
 
 *** =pre_exercise_code
 ```{r}
@@ -76,72 +76,70 @@ In this exercise, you'll combine all these figures into a single vector. Next, y
 
 *** =sample_code
 ```{r}
-# Box office Star Wars (in millions!)
+# 星際大戰票房(百萬元美金！)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Create box_office
+# 宣告box_office
 box_office <- 
 
-# Construct star_wars_matrix
+# 建立star_wars_matrix
 star_wars_matrix <- 
 ```
 
 *** =solution
 ```{r}
-# Box office Star Wars (in millions!)
+# 星際大戰票房(百萬元美金！)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Create box_office
+# 宣告box_office
 box_office <- c(new_hope, empire_strikes, return_jedi)
 
-# Construct star_wars_matrix
+# 建立star_wars_matrix
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE) 
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `new_hope` \u3001 `empire_strikes` \u8207 `return_jedi`\u3002"
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("box_office", incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+test_object("box_office", incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u5408\u4f75 `new_hope` \u3001 `empire_strikes` \u8207 `return_jedi` \u6210\u70ba `box_office`\uff1f")
 
 test_function("matrix", c("data", "nrow", "byrow"),
-              incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+              incorrect_msg = "\u8acb\u78ba\u8a8d\u3000`matrix()`\u3000\u7684\u53c3\u6578\uff1a `box_office`\u3000\u3001 `nrow = 3`\u3000\u3001 `by_row = TRUE`\u3002")
 
 test_object("star_wars_matrix",
-            incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6307\u6d3e `matrix()` \u7684\u7d50\u679c\u7d66 `star_wars_matrix`\uff1f")
 
-success_msg("The force is actually with you! Continue to the next exercise.")
+success_msg("\u539f\u529b\u771f\u7684\u8207\u4f60\u540c\u5728\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:37aed0b157460a60af201e3dc57142bbbf187c71
-## Naming a matrix
+## 為矩陣命名
 
-To help you remember what is stored in `star_wars_matrix`, you would like to add the names of the movies for the rows. Not only does this help you to read the data, but it is also useful to select certain elements from the matrix. 
-
-Similar to vectors, you can add names for the rows and the columns of a matrix
+為了記住 `star_wars_matrix` 中儲存的資料，你打算在列與欄都加上命名。
 
 ```
 rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-We went ahead and prepared two vectors for you: `region`, and `titles`. You will need these vectors to name the columns and rows of `star_wars_matrix`, respectively.
+我們準備了2個向量 `region` 與 `titles` 。你會需要用這兩個向量來分別為 `star_wars_matrix` 的列與欄命名。
 
 *** =instructions
-- Use `colnames()` to name the columns of `star_wars_matrix` with the `region` vector.
-- Use `rownames()` to name the columns of `star_wars_matrix` with the `titles` vector.
-- Print out `star_wars_matrix` to see the result of your work.
+- 使用 `colnames()` 將 `region` 指派給 `star_wars_matrix` 的欄名稱。
+- 使用 `rownames()` 將 `titles` 指派給 `star_wars_matrix` 的列名稱。
+- 印出 `star_wars_matrix` 看結果。
 
 *** =hint
-You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_wars_matrix`. Do a similar thing to name the rows.
+你可以使用 `colnames(star_wars_matrix) <- region` 來為 `star_wars_matrix` 命名，列的命名也很類似。
 
 *** =pre_exercise_code
 ```{r}
@@ -150,87 +148,87 @@ You can use `colnames(star_wars_matrix) <- region` to name the columns of `star_
 
 *** =sample_code
 ```{r}
-# Box office Star Wars (in millions!)
+# 星際大戰票房(百萬元美金！)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Construct matrix
+# 建立star_wars_matrix
 star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
 
-# Vectors region and titles, used for naming
+# 用來命名的向量region與titles
 region <- c("US", "non-US")
 titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 
-# Name the columns with region
+# 用region為欄命名 
 
 
-# Name the rows with titles
+# 用titles為列命名
 
 
-# Print out star_wars_matrix
+# 印出star_wars_matrix
 ```
 
 *** =solution
 ```{r}
-# Box office Star Wars (in millions!)
+# 星際大戰票房(百萬元美金！)
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# Construct matrix
+# 建立star_wars_matrix
 star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
 
-# Vectors region and titles, used for naming
+# 用來命名的向量region與titles
 region <- c("US", "non-US")
 titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 
-# Name the columns with region
+# 用region為欄命名
 colnames(star_wars_matrix) <- region
 
-# Name the rows with titles
+# 用titles為列命名
 rownames(star_wars_matrix) <- titles
 
-# Print out star_wars_matrix
+# 印出star_wars_matrix
 star_wars_matrix
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `new_hope` \u3001 `empire_strikes` \u8207 `return_jedi`\u3002"
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Don't change the contents of `star_wars_matrix`; only the names of the rows and columns!" 
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `star_wars_matrix` \uff0c\u53ea\u8981\u5e6b\u5217\u8207\u6b04\u547d\u540d\u3002" 
 test_object("star_wars_matrix", incorrect_msg = msg)
-msg <- "Don't change anything about the `region` and `titles` vectors that have been defined for you."
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `region` \u8207 `titles` \u90192\u500b\u5df2\u7d93\u5e6b\u4f60\u5b9a\u7fa9\u597d\u7684\u5411\u91cf\u3002"
 test_object("region", undefined_msg = msg, incorrect_msg = msg)
 test_object("titles", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", eq_condition = "equal",
-            incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
-test_output_contains("star_wars_matrix", incorrect_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
-success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u6b63\u78ba\u547d\u540d `star_wars_matrix` \u7684\u5217\u8207\u6b04\uff1f \u4f7f\u7528 `colnames(star_wars_matrix) <- region` \u70ba\u6b04\u547d\u540d\uff0c\u7528\u540c\u6a23\u65b9\u6cd5\u5c0d\u5217\u547d\u540d\u3002")
+test_output_contains("star_wars_matrix", incorrect_msg = "\u5225\u5fd8\u4e86\u8981\u628a `star_wars_matrix` \u5370\u51fa\u4f86\u770b\u770b\u3002")
+success_msg("\u592a\u68d2\u4e86\uff0c\u4f60\u6b63\u5728\u6210\u70ba\u4e00\u500bR\u7d55\u5730\u6b66\u58eb\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:99052c568114e85002519d338103ed0c8521ce61
-## Calculating the worldwide box office 
+## 計算全球票房
 
-The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. 
+全球票房收入是在好萊塢要成為傳奇的首要條件。
 
-To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. 
+你必須知道如何把美國票房收入與非美國票房收入相加才能計算這三部星際大戰電影的全球票房收入。
 
-In R, the function [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) conveniently calculates the totals for each row of a matrix. This function creates a new vector:
+R的[`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)函數可以方便你計算矩陣中每一列的總和，它會產生一個新的向量：
 
 ```
 rowSums(my_matrix)
 ```
 
 *** =instructions
-Calculate the worldwide box office figures for the three movies and put these in the vector named `worldwide_vector`.
+計算三部電影的全球票房收入並指派給向量 `worldwide_vector`。
 
 *** =hint
-`rowSums(star_wars_matrix)` will calculate the sum of every row, so the total box office for each movie.
+`rowSums(star_wars_matrix)` 可以計算矩陣每一列的總和，即每一部電影的全球票房收入。
 
 *** =pre_exercise_code
 ```{r}
@@ -239,54 +237,54 @@ Calculate the worldwide box office figures for the three movies and put these in
 
 *** =sample_code
 ```{r}
-# Construct star_wars_matrix
+# 建立star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
                                            c("US", "non-US")))
 
-# Calculate worldwide box office figures
+# 計算全球票房收入
 worldwide_vector <- 
 ```
 
 *** =solution
 ```{r}
-# Construct star_wars_matrix
+# 建立star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
                                            c("US", "non-US")))
 
-# Calculate worldwide box office figures
+# 計算全球票房收入
 worldwide_vector <- rowSums(star_wars_matrix)
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `box_office_all` \u8207 `star_wars_marix`\u3002"
 test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-test_object("worldwide_vector", incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
-success_msg("Well done! Continue to the next exercise.")
+test_object("worldwide_vector", incorrect_msg = "\u5c0d `star_wars_matrix` \u4f7f\u7528 `rowSums()` \u51fd\u6578\u4e26\u5c07\u7d50\u679c\u6307\u6d3e\u7d66 `worldwide_vector`\u3002")
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:b3920821c2964147c5db451c4d66c8e6172dfda4
-## Adding a column for the Worldwide box office 
+## 再多加一欄 
 
-In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of `star_wars_matrix`.
+前一個練習中你記算了3部星際大戰訂影的全球票房收入，但是這個向量沒有合併至 `star_wars_matrix` 。
 
-You can add a column or multiple columns to a matrix with the [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function, which merges matrices and/or vectors together by column. For example: 
+使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數將一個或更多的欄加入矩陣，例如：
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 ```
 
 *** =instructions
-Add `worldwide_vector` as a new column to the `star_wars_matrix` and assign the result to `all_wars_matrix`. Use the [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) function.
+使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數加入 `worldwide_vector` 做為 `star_wars_matrix` 中新的一欄，並將結果指派給 `all_wars_matrix`。
 
 *** =hint
-In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix` and `worldwide_vector`, in this order. Assign the result to `all_wars_matrix`.
+將2個變數 `star_wars_matrix` 與 `worldwide_vector` 做為 `cbind()` 的參數然後指派給 `all_wars_matrix`。
 
 *** =pre_exercise_code
 ```{r}
@@ -295,44 +293,44 @@ In this exercise, you should pass two variables to `cbind()`: `star_wars_matrix`
 
 *** =sample_code
 ```{r}
-# Construct star_wars_matrix
+# 建立star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
                                            c("US", "non-US")))
 
-# The worldwide box office figures
+# 計算全球票房收入
 worldwide_vector <- rowSums(star_wars_matrix)
 
-# Bind the new variable worldwide_vector as a column to star_wars_matrix
+# 將worldwide_vector加入star_wars_matrix
 all_wars_matrix <- 
 ```
 
 *** =solution
 ```{r}
-# Construct star_wars_matrix
+# 建立star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
                                            c("US", "non-US")))
 
-# The worldwide box office figures
+# 計算全球票房收入
 worldwide_vector <- rowSums(star_wars_matrix)
 
-# Bind the new variable worldwide_vector as a column to star_wars_matrix
+# 將worldwide_vector加入star_wars_matrix
 all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `box_office_all` \u8207 `star_wars_marix`\u3002"
 test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("worldwide_vector",
-            incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+            incorrect_msg = "\u5c07 `rowSums(star_wars_matrix)` \u7684\u7d50\u679c\u5132\u5b58\u5728 `worldwide_vector` \u4e2d\u3002")
 
 # TODO: Fix in testwhat
-msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
+msg <- "\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u4f7f\u7528 `cbind()` \u4f86\u5408\u4f75 `worldwide_vector` \u8207 `star_wars_matrix`\uff1f\u4f60\u61c9\u8a72\u4f9d\u5e8f\u5c07 `star_wars_matrix` \u8207 `world_wide_vector` \u505a\u70ba `cbind()` \u7684\u5169\u500b\u53c3\u6578\uff0c\u5982\u6b64\u4e00\u4f86 `all_wars_matrix` \u5c07\u6709\u4e09\u5217\u8207\u4e09\u6b04\u3002"
 test_object("all_wars_matrix", eval = FALSE)
 test_what(
   expect_equal(
@@ -341,46 +339,46 @@ test_what(
   feedback = msg)
 
 test_object("all_wars_matrix", incorrect_msg = msg)
-success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+success_msg("\u505a\u5f97\u597d\uff0c\u63a5\u4e0b\u4f86\u6211\u5011\u4f86\u8a66\u8457\u52a0\u5217\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:31368f587442b9db1b8836534e6998b0d024835e
-## Adding a row
+## 新增一列
 
-Just like every action has a reaction, every [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has an [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind). (We admit, we are pretty bad with metaphors.) 
+就如同作用力與反作用力，有[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)自然也會有[`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)。(我們實在不太會用譬喻法。) 
 
-Your R workspace, where all variables you defined 'live' ([check out what a workspace is](http://www.statmethods.net/interface/workspace.html)), has already been initialized and contains two matrices: 
-- `star_wars_matrix` that we have used all along, with data on the first trilogy,
-- `star_wars_matrix2`, with similar data for the second trilogy. 
+在R工作區已經宣告好兩個矩陣([工作區是什麼](http://www.statmethods.net/interface/workspace.html))：
+- 我們一直在使用的第一個三部曲電影矩陣 `star_wars_matrix`。
+- 第二個三部曲點影矩陣`star_wars_matrix2`。 
 
-Type the name of these matrices in the console and hit Enter if you want to have a closer look. If you want to check out the contents of the workspace, you can type `ls()` in the console.
+在R Console輸入 `ls()` 可以檢視工作區的內容，輸入已經宣告好的2個矩陣可以看到他們的內容。
 
 *** =instructions
-Use `rbind()` to paste together `star_wars_matrix` and `star_wars_matrix2`, in this order. Assign the resulting matrix to `all_wars_matrix`.
+用 `rbind()` 把 `star_wars_matrix` 和 `star_wars_matrix2` 合併並將結果指派給 `all_wars_matrix`。
 
 *** =hint
-Bind the two matrices together like this:
+合併兩個矩陣：
 ```
 rbind(matrix1, matrix2)
 ```
-Assign the result to `all_wars_matrix`.
+把結果指派給 `all_wars_matrix`。
 
 
 *** =pre_exercise_code
 ```{r}
-# Construct matrix
+# 建立star_wars_matrix
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
-# Construct matrix2
+# 建立star_wars_matrix2
 box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
 star_wars_matrix2 <- matrix(box_office_all2, nrow=3, byrow = TRUE, dimnames = list(movie_names2, col_titles))
 
-# remove all except all_wars_matrix
+# 移除所有物件只留下all_wars_matrix
 rm(box_office_all)
 rm(movie_names)
 rm(col_titles)
@@ -390,27 +388,27 @@ rm(movie_names2)
 
 *** =sample_code
 ```{r}
-# star_wars_matrix and star_wars_matrix2 are available in your workspace
+# star_wars_matrix與star_wars_matrix2已經存在於工作區中
 star_wars_matrix  
 star_wars_matrix2 
 
-# Combine both Star Wars trilogies in one matrix
+# 合併2個三部曲
 all_wars_matrix <- 
 ```
 
 *** =solution
 ```{r}
-# star_wars_matrix and star_wars_matrix2 are available in your workspace
+# star_wars_matrix與star_wars_matrix2已經存在於工作區中
 star_wars_matrix  
 star_wars_matrix2 
 
-# Combine both Star Wars trilogies in one matrix
+# 合併2個三部曲
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539`star_wars_matrix` \u8207 `star_wars_matrix2`\u3002"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
@@ -422,27 +420,27 @@ test_what(
     dim(get("all_wars_matrix", get_solution_env())), 
     dim(get("all_wars_matrix", .GlobalEnv))),
   feedback = 
-    paste("Be sure to use the the function `rbind()` with 2 arguments: `star_wars_matrix`",
-          "and `star_wars_matrix2`. You should end up with a matrix",
-          "of the correct dimensions: 6 rows and 2 columns."))
+    paste("\u8acb\u78ba\u8a8d `rbind()` \u53c3\u6578\u4e2d\u76842\u500b\u53c3\u6578\uff1a `star_wars_matrix`",
+          "\u8207 `star_wars_matrix2`\uff0c\u7d50\u679c\u61c9\u8a72\u662f\u4e00\u500b\u5177\u6709",
+          "6\u5217\u82072\u6b04\u7684\u77e9\u9663\u3002"))
 
-test_object("all_wars_matrix", incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+test_object("all_wars_matrix", incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u4f7f\u7528 `rbind()` \u5275\u9020 `all_wars_matrix()`\uff1f `rbind()` \u61c9\u8a72\u8981\u4f9d\u5e8f\u67092\u500b\u53c3\u6578\uff1a `star_wars_matrix` \u8207 `star_wars_matrix2`\u3002")
 
-success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
+success_msg("\u592a\u5b8c\u7f8e\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u4e26\u52a0\u5165 `colSums()` \u51fd\u6578\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:7dfd6a4e59e15742efd72fee93321ec289165846
-## The total box office revenue for the entire saga
+## 星際大戰六部曲票房總收入
 
-Just like every [`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind) has a [`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind), every [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) has a [`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums). Your R workspace already contains the `all_wars_matrix` that you constructed in the previous exercise; type `all_wars_matrix` to have another look. Let's now calculate the total box office revenue for the entire saga.
+如同[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)與[`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)，[`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)也有對應的[`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)。R工作區已經有你在前一個練習建立的 `all_wars_matrix`， 輸入 `all_wars_matrix` 看看，接著我們要計算六部曲的票房總收入。
 
 *** =instructions
-- Calculate the total revenue for the US and the non-US region and assign `total_revenue_vector`. You can use the [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function.
-- Print out `total_revenue_vector` to have a look at the results.
+- 計算美國與非美國的票房總收入並指派給 `total_revenue_vector`，你可以使用[`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)函數。
+- 印出 `total_revenue_vector` 看看結果。
 
 *** =hint
-You should use the [`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums) function with `star_wars_matrix` as the argument to find the total box office per region.
+使用[`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)函數function，以 `star_wars_matrix` 做為參數找出各區域票房收入。
 
 *** =pre_exercise_code
 ```{r}
@@ -451,62 +449,62 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars
 
 *** =sample_code
 ```{r}
-# all_wars_matrix is available in your workspace
+# all_wars_matrix已經存在於工作區中
 all_wars_matrix
 
-# Total revenue for US and non-US
+# 美國與非美國的票房收入
 total_revenue_vector <- 
   
-# Print out total_revenue_vector
+# 印出total_revenue_vector
 ```
 
 *** =solution
 ```{r}
-# all_wars_matrix is available in your workspace
+# all_wars_matrix已經存在於工作區中
 all_wars_matrix
 
-# Total revenue for US and non-US
+# 美國與非美國的票房收入
 total_revenue_vector <- colSums(all_wars_matrix)
 
-# Print out total_revenue_vector
+# 印出total_revenue_vector
 total_revenue_vector
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; it was created for you in the workspace."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
 test_object("all_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_function("colSums", "x", incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
+test_function("colSums", "x", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c0dall_wars_matrix\u4f7f\u7528 `colSums()` \u51fd\u6578\uff1f")
 test_object("total_revenue_vector",
-            incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
-test_output_contains("total_revenue_vector", incorrect_msg = "Don't forget to print out `total_revenue_vector`!")
-success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetting.")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07 `colSums(all_wars_matrix)` \u6307\u6d3e\u7d66 `total_revenue_vector`\uff1f")
+test_output_contains("total_revenue_vector", incorrect_msg = "\u5225\u5fd8\u8a18\u628a `total_revenue_vector` \u5370\u51fa\u4f86\uff01")
+success_msg("\u592a\u7f8e\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u77e9\u9663\u7684\u9078\u64c7\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:3f713b0c9ff675bf457941041819813ad7a5c19d
-## Selection of matrix elements
+## 選擇矩陣中的元素
 
-Similar to vectors, you can use the square brackets `[ ]` to select one or multiple elements from a matrix. Whereas vectors have one dimension, matrices have two dimensions. You should therefore use a comma to separate that what to select from the rows from that what you want to select from the columns. For example: 
+跟向量一樣都是使用中括號 `[ ]` 來選擇矩陣中的一個或多個元素，因為矩陣具有2個維度，你應該使用逗號分格哪些列要選、哪些欄要選，例如：
 
-- `my_matrix[1,2]` selects the element at the first row and second column.
-- `my_matrix[1:3,2:4]` results in a matrix with the data on the rows 1, 2, 3 and columns 2, 3, 4.
+- `my_matrix[1,2]` 可以將矩陣中第一列與第二欄的元素選出。
+- `my_matrix[1:3,2:4]` 可以將矩陣中第一列至第三列與第二欄至第四欄的資料選出。
 
-If you want to select all elements of a row or a column, no number is needed before or after the comma, respectively:
+如果你希望選出列或欄的所有元素，就不需要在逗號前後加上數字，例如：
 
-- `my_matrix[,1]` selects all elements of the first column.
-- `my_matrix[1,]` selects all elements of the first row.
+- `my_matrix[,1]` 可以把第一欄所有元素選出。
+- `my_matrix[1,]` 可以把第一列所有元素選出。
 
-Back to Star Wars with this newly acquired knowledge! As in the previous exercise, `all_wars_matrix` is already available in your workspace.
+讓我們繼續回到星際大戰，在前一個練習中 `all_wars_matrix` 已經存在於工作區中。
 
 *** =instructions
-- Select the non-US revenue for all movies (the entire second column of `all_wars_matrix`), store the result as `non_us_all`.
-- Use `mean()` on `non_us` to calculate the average non-US revenue for all movies. Simply print out the result.
-- This time, select the non-US revenue for the first two movies in `all_wars_matrix`. Store the result as `non_us_some`.
-- Use `mean()` again to print out the average of the values in `non_us_some`.
+- 把六部曲非美國的電影票房收入( `all_wars_matrix` 中第二欄所有的元素)指派給 `non_us_all`。
+- 對 `non_us_all` 使用 `mean()` 函數來計算非美國票房收入的平均值並簡單印出結果。
+- 從 `all_wars_matrix` 選出前兩部電影的非美國票房收入並指派給 `non_us_some`。
+- 對 `non_us_some` 使用 `mean()` 函數計算平均值並印出。
 
 *** =hint
-You can select the entire second column of a matrix `my_matrix` with `my_matrix[,2]`.
+用 `my_matrix[,2]` 可以將 `my_matrix` 的第二欄中所有元素選出。
 
 *** =pre_exercise_code
 ```{r}
@@ -515,72 +513,72 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars
 
 *** =sample_code
 ```{r}
-# all_wars_matrix is available in your workspace
+# all_wars_matrix已經存在於工作區中
 all_wars_matrix
 
-# Select the non-US revenue for all movies
+# 選出全部電影的非美國票房收入
 non_us_all <- 
   
-# Average non-US revenue
+# 平均非美國票房收入
 
   
-# Select the non-US revenue for first two movies
+# 選出前兩部電影的非美國票房收入
 non_us_some <- 
   
-# Average non-US revenue for first two movies
+# 前兩部電影的非美國票房平均收入
 
 ```
 
 *** =solution
 ```{r}
-# all_wars_matrix is available in your workspace
+# all_wars_matrix已經存在於工作區中
 all_wars_matrix
 
-# Select the non-US revenue for all movies
+# 選出全部電影的非美國票房收入
 non_us_all <- all_wars_matrix[,2]
   
-# Average non-US revenue
+# 平均非美國票房收入
 mean(non_us_all)
   
-# Select the non-US revenue for first two movies
+# 選出前兩部電影的非美國票房收入
 non_us_some <- all_wars_matrix[1:2,2]
   
-# Average non-US revenue for first two movies
+# 前兩部電影的非美國票房平均收入
 mean(non_us_some)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("non_us_all",
-            incorrect_msg = "Did you assign to `non_us_all` the entire second column of `all_wars_matrix`? You can use `[, 2]` to do this!")
+            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u5c07 `all_wars_matrix` \u7684\u7b2c\u4e8c\u6b04\u6307\u6d3e\u7d66 `non_us_all` \uff1f\u4f60\u53ef\u4ee5\u4f7f\u7528 `[, 2]` \u8fa6\u5230\uff01")
 test_output_contains("mean(non_us_all)",
-                     incorrect_msg = "Have you calculated the average of the values in `non_us_all` by calling `mean(non_us_all)`? Simply print out the result.")
+                     incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u4f7f\u7528 `mean(non_us_all)` \u8a08\u7b97 `non_us_all` \u7684\u5e73\u5747\u503c\u4e26\u5370\u51fa\u7d50\u679c\uff1f")
 test_object("non_us_some",
-            incorrect_msg = "Did you assign to `non_us_some` the non-US revenue for the first two movies? You can use `[1:2,2]` to do this!")
+            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6307\u6d3e\u524d2\u90e8\u96fb\u5f71\u7684\u975e\u7f8e\u570b\u7968\u623f\u6536\u5165\u7d66 `non_us_some` \uff1f\u4f60\u53ef\u4ee5\u4f7f\u7528 `[1:2,2]` \u8fa6\u5230\uff01")
 test_output_contains("mean(non_us_some)",
-                     incorrect_msg = "Have you calculated the average of the values in `non_us_some` by calling `mean(non_us_some)`? Simply print out the result.")
-success_msg("Nice one! Continue to the next exercise.")
+                     incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u4f7f\u7528 `mean(non_us_some)` \u8a08\u7b97 `non_us_some` \u7684\u5e73\u5747\u503c\u4e26\u5370\u51fa\u7d50\u679c\uff1f")
+success_msg("\u592a\u53b2\u5bb3\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:4859ff893aeb0e78190fbece8655b0a65b58a814
-## A little arithmetic with matrices
+## 一點點矩陣數學運算
 
-Similar to what you have learned with vectors, the standard operators like `+`, `-`, `/`, `*`, etc. work in an element-wise way on matrices in R. 
+跟你在向量學到的相同，標準運算子 `+` 、 `-` 、 `/` 、 `*` 等等都可以用在矩陣計算。
 
-For example, `2 * my_matrix` multiplies each element of `my_matrix` by two.
+例如 `2 * my_matrix` 會將每個 `my_matrix` 中的元素均乘以2。
 
-As a newly-hired data analyst for Lucasfilm, it is your job is to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in `all_wars_matrix`. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.
+身為盧卡斯影業新聘雇的資料分析師，你想找出不同地理區的六部曲觀看人數。你已經建立好總票房收入的 `all_wars_matrix`，現在假設電影票價格為5元，將票房收入除以5就可以得到觀看人數。
 
 *** =instructions
-- Divide `all_wars_matrix` by 5, giving you the number of visitors in millions. Assign the resulting matrix to `visitors`.
-- Print out `visitors` so you can have a look.
+- 將 `all_wars_matrix` 除以5得到觀看人數(百萬人)，指派結果給 `visitors`。
+- 印出 `visitors` 看看。
 
 *** =hint
-The number of visitors is equal to `all_wars_matrix` divided by 5.
+觀看人數為 `all_wars_matrix` 除以5。
 
 *** =pre_exercise_code
 ```{r}
@@ -589,57 +587,57 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars
 
 *** =sample_code
 ```{r}
-# all_wars_matrix is available in your workspace
+# all_wars_matrix已經存在於工作區中
 all_wars_matrix
 
-# Estimate the visitors
+# 估計觀看人數
 visitors <- 
   
-# Print the estimate to the console
+# 印出觀看人數
 
 ```
 
 *** =solution
 ```{r}
-# all_wars_matrix is available in your workspace
+# all_wars_matrix已經存在於工作區中
 all_wars_matrix
 
-# Estimate the visitors
+# 估計觀看人數
 visitors <- all_wars_matrix / 5
 
-# Print the estimate to the console
+# 印出觀看人數
 visitors
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("visitors",
-            incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
-test_output_contains("visitors", incorrect_msg = "Don't forget to also print out `visitors` so you can have a look.")
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.")
+            incorrect_msg = "\u770b\u8d77\u4f86 `visitors` \u4e0d\u6b63\u78ba\uff0c\u5c07 `all_wars_matrix` \u9664\u4ee55\u4e26\u5c07\u7d50\u679c\u6307\u6d3e\u7d66 `visitors`\u3002")
+test_output_contains("visitors", incorrect_msg = "\u5225\u5fd8\u4e86\u5c07 `visitors` \u5370\u51fa\u4f86\u770b\u770b\u3002")
+success_msg("\u8a08\u7b97\u7d50\u679c\u544a\u8a34\u4f60\uff0c\u661f\u969b\u5927\u6230\u56db\u90e8\u66f2\uff1a\u66d9\u5149\u4e4d\u73fe\u5149\u662f\u5728\u7f8e\u570b\u5c31\u67099\u53432\u767e\u842c\u500b\u89c0\u770b\u4eba\u6578\uff0c\u5f88\u9a5a\u4eba\u5c0d\u55ce\uff1f\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:6c34c3c66d9f2d2996cb8288112f2e604feac8ab
-## A little arithmetic with matrices (2) 
+## 一點點矩陣數學運算 (2) 
 
-Just like `2 * my_matrix` multiplied every element of `my_matrix` by two, `my_matrix1 * my_matrix2` creates a matrix where each element is the product of the corresponding elements in `my_matrix1` and `my_matrix2`. 
+如同 `2 * my_matrix` 會將 `my_matrix` 中得每個元素都乘以2， `my_matrix1 * my_matrix2` 會產生一個對應元素相乘的矩陣。 
 
-After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in `ticket_prices_matrix` (source: imagination).
+老闆盧卡斯看了前一個練習的結果後指出電影票價其實是有隨著時間調漲，要求你利用 `ticket_prices_matrix` 中的票價資料(資料來源：imagination) 重做一次分析。
 
-_Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use `%*%` in R._
+_對於矩陣熟悉的使用者注意這不是標準的矩陣運算，標準矩陣運算子要使用 `%*%`。_
 
 *** =instructions
-- Divide `all_wars_matrix` by `ticket_prices_matrix` to get the estimated number of US and non-US visitors for the six movies. Assign the result to `visitors`.
-- From the `visitors` matrix, select the entire first column, representing the number of visitors in the US. Store this selection as `us_visitors`.
-- Calculate the average number of US visitors; print out the result.
+- `all_wars_matrix` 除以 `ticket_prices_matrix` 可以得到美國與非美國的六部曲觀看人數，將結果指派給 `visitors`。
+- 選擇 `visitors` 中代表美國觀看人數的第一欄資料指派給 `us_visitors`。
+- 計算美國的平均觀看人數並印出結果。
 
 *** =hint
-- You can use the function `mean()` to calculate the average of the inputs to the function.
-- To get the number of visitors in the US, select the first column from `visitors` using `visitors[ ,1]`.
+- 使用 `mean()` 函數計算。
+- 使用 `visitors[ ,1]` 來取出 `visitors` 的第一欄以得到美國的觀看人數。
 
 *** =pre_exercise_code
 ```{r}
@@ -651,48 +649,48 @@ ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7, 4, 4, 4.5, 4.5, 4.9, 4.9), nr
 
 *** =sample_code
 ```{r}
-# all_wars_matrix and ticket_prices_matrix are available in your workspace
+# all_wars_matrix與ticket_prices_matrix已建立於工作區
 all_wars_matrix
 ticket_prices_matrix
 
-# Estimated number of visitors
+# 估計觀看人數
 visitors <- 
 
-# US visitors
+# 美國觀看人數
 us_visitors <- 
 
-# Average number of US visitors
+# 美國平均觀看人數
 
 ```
 
 *** =solution
 ```{r}
-# all_wars_matrix and ticket_prices_matrix are available in your workspace
+# all_wars_matrix與ticket_prices_matrix已建立於工作區
 all_wars_matrix
 ticket_prices_matrix
 
-# Estimated number of visitors
+# 估計觀看人數
 visitors <- all_wars_matrix / ticket_prices_matrix
 
-# US visitors
+# 美國觀看人數
 us_visitors <- visitors[ ,1]
 
-# Average number of US visitors
+# 美國平均觀看人數
 mean(us_visitors)
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("visitors",
-            incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
-test_object("us_visitors", incorrect_msg = "To created `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
-test_output_contains("mean(us_visitors)", incorrect_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u5efa\u7acb\u77e9\u9663 `visitors`\uff1f \u5c07 `all_wars_matrix` \u9664\u4ee5 `ticket_prices_matrix` \u5c31\u53ef\u4ee5\u7b97\u51fa\u3002")
+test_object("us_visitors", incorrect_msg = "\u4f60\u53ef\u4ee5\u4f7f\u7528 `[,1]` \u4f86\u9078\u51fa `visitors` \u7684\u7b2c\u4e00\u6b04\u4e26\u6307\u6d3e\u7d66 `us_visitors`\uff01")
+test_output_contains("mean(us_visitors)", incorrect_msg = "\u4e00\u65e6\u4f60\u5efa\u7acb\u597d `us_visitors` \u5c31\u53ef\u4ee5\u4f7f\u7528 `mean()` \u4f86\u8a08\u7b97\u7f8e\u570b\u5e73\u5747\u89c0\u770b\u4eba\u6578\u4e26\u8a18\u5f97\u8981\u628a\u7d50\u679c\u5370\u51fa\u4f86\u3002")
 
-success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")
+success_msg("R\u7684\u539f\u529b\u8207\u4f60\u540c\u5728\uff0c\u9019\u662f\u77e9\u9663\u55ae\u5143\u7684\u6700\u5f8c\u4e00\u500b\u7df4\u7fd2\uff0c\u4e0b\u4e00\u500b\u7ae0\u7bc0\u662f\u56e0\u7d20\u5411\u91cf\uff01")
 ```
 
 

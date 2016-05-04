@@ -1,30 +1,30 @@
 --- 
-title_meta  : Chapter 3
-title       : Matrices
-description : In this chapter you will learn how to work with matrices in R. By the end of the chapter, you will be able to create matrices and to understand how you can do basic computations with them. You will analyze the box office numbers of Star Wars to illustrate the use of matrices in R. May the force be with you!
+title_meta  : 第三章
+title       : 矩陣
+description : 在本章節你將學會如何在R使用矩陣，包括宣告以及運算，你會用矩陣來分析星際大戰的票房記錄，願原力與你同在！
 
 --- type:NormalExercise xp:100 skills:1 key:61a40bda779e572e5cc17be23357c98bceb73943
-## What's a matrix?
+## 矩陣是什麼？
 
-In R, a matrix is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two-dimensional. 
+矩陣是一種相同資料類別的集合(數值、文字或邏輯)排序在固定數量的列與欄，因為有列與欄故矩陣具有二個維度。
 
-You can construct a matrix in R with the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function. Consider the following example: 
+你可以使用[`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix)函數創造一個矩陣，例如：
 
 ```
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
-In the [`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix) function:
+在[`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix)函數中：
 
-- The first argument is the collection of elements that R will arrange into the rows and columns of the matrix. Here, we use `1:9` which is a shortcut for `c(1, 2, 3, 4, 5, 6, 7, 8, 9)`.
-- The argument `byrow` indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place `byrow = FALSE`. 
-- The third argument `nrow` indicates that the matrix should have three rows.
+- 第一個參數是R會放進列與欄的元素，這裡我們使用 `1:9` 即 `c(1, 2, 3, 4, 5, 6, 7, 8, 9)` 的簡單寫法。
+- 參數 `byrow` 表示矩陣在填滿的時候是以列的方向，如果你希望以欄的方向填滿，要調整為 `byrow = FALSE`。 
+- 第三個參數 `nrow` 表示矩陣有3列。
 
 *** =instructions
-Construct a matrix with 3 rows containing the numbers 1 up to 9, filled row-wise.
+宣告一個具有3列的矩陣並以列的方向將1到9填入。
 
 *** =hint
-Read the assignment carefully, the answer is already given!
+再詳讀一次說明，答案其實已經很明顯了！
 
 *** =pre_exercise_code
 ```{r}
@@ -33,22 +33,22 @@ Read the assignment carefully, the answer is already given!
 
 *** =sample_code
 ```{r}
-# Construct a matrix with 3 rows that contain the numbers 1 up to 9
+# 宣告一個具有3列的矩陣並將1到9填入
 ```
 
 *** =solution
 ```{r}
-# Construct a matrix with 3 rows that contain the numbers 1 up to 9
+# 宣告一個具有3列的矩陣並將1到9填入
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
 *** =sct
 ```{r}
 test_function("matrix", c("data", "byrow", "nrow"),
-              incorrect_msg = "Have you correctly created the matrix? Have a look at the assignment, the answer is already given!")
+              incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u5730\u5ba3\u544a\u77e9\u9663\uff1f\u518d\u8a73\u8b80\u4e00\u6b21\u8aaa\u660e\uff0c\u7b54\u6848\u5176\u5be6\u5df2\u7d93\u5f88\u660e\u986f\u4e86\uff01")
 test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)",
-                     incorrect_msg = "There seems to be an issue with the matrix definition. Have a look at the assignment, the answer is already given!")
-success_msg("Great! Continue to the next exercise.")
+                     incorrect_msg = "\u770b\u8d77\u4f86\u77e9\u9663\u7684\u5ba3\u544a\u6709\u554f\u984c\uff0c\u518d\u8a73\u8b80\u4e00\u6b21\u8aaa\u660e\uff0c\u7b54\u6848\u5176\u5be6\u5df2\u7d93\u5f88\u660e\u986f\u4e86\uff01")
+success_msg("\u597d\u68d2\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 

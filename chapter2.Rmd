@@ -498,19 +498,19 @@ total_week
 
 *** =sct
 ```{r}
-msg = "不需要更改 `poker_vector` and `roulette_vector`　的宣告與命名。"
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` and `roulette_vector`\u3000\u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("total_poker", 
-            incorrect_msg = "確認是否有將　`poker_vector`　的總和指派給 `total_poker`。")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u5c07 `poker_vector` \u7684\u7e3d\u548c\u6307\u6d3e\u7d66 `total_poker`\u3002")
 test_object("total_roulette",
-            incorrect_msg = "確認是否有將 `total_roulette` 的總和指派給 `roulette_vector`。")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u5c07 `total_roulette` \u7684\u7e3d\u548c\u6307\u6d3e\u7d66 `roulette_vector`\u3002")
 test_object("total_week",
-            incorrect_msg = "確認是否有將 `total_roulette` 加 `total_poker` 的結果指派給 `total_week`。")
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u5c07 `total_roulette` \u52a0 `total_poker` \u7684\u7d50\u679c\u6307\u6d3e\u7d66 `total_week`\u3002")
 
-test_output_contains("total_week", incorrect_msg = "別忘了再寫一行 `total_week` 把結果印出來。")
-success_msg("做得好，但這個結果真是令人難過...")
+test_output_contains("total_week", incorrect_msg = "\u5225\u5fd8\u4e86\u518d\u5beb\u4e00\u884c `total_week` \u628a\u7d50\u679c\u5370\u51fa\u4f86\u3002")
+success_msg("\u505a\u5f97\u597d\uff0c\u4f46\u9019\u500b\u7d50\u679c\u771f\u662f\u4ee4\u4eba\u96e3\u904e...")
 ```
 
 
@@ -570,7 +570,7 @@ total_poker > total_roulette
 
 *** =sct
 ```{r}
-msg <- "不需要更改 `poker_vector` 與 `roulette_vector` 的宣告與命名。"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector` \u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
@@ -633,14 +633,14 @@ poker_wednesday <- poker_vector[3]
 
 *** =sct
 ```{r}
-msg = "不需要更改 `poker_vector` 與 `roulette_vector` 的宣告與命名。"
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector` \u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_wednesday", 
-            undefined_msg = "請確認是否有宣告變數 `poker_wednesday`。",
-            incorrect_msg = "看起來 `poker_wednesday` 並沒有從 `poker_vector` 選到正確的數值。")
-success_msg("太棒了，R還可以從向量中一次選擇多個元素，在下一個練習中就可以學會！")
+            undefined_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578 `poker_wednesday`\u3002",
+            incorrect_msg = "\u770b\u8d77\u4f86 `poker_wednesday` \u4e26\u6c92\u6709\u5f9e `poker_vector` \u9078\u5230\u6b63\u78ba\u7684\u6578\u503c\u3002")
+success_msg("\u592a\u68d2\u4e86\uff0cR\u9084\u53ef\u4ee5\u5f9e\u5411\u91cf\u4e2d\u4e00\u6b21\u9078\u64c7\u591a\u500b\u5143\u7d20\uff0c\u5728\u4e0b\u4e00\u500b\u7df4\u7fd2\u4e2d\u5c31\u53ef\u4ee5\u5b78\u6703\uff01")
 ```
 
 
@@ -656,10 +656,10 @@ poker_vector[c(1, 5)]
 ```
 
 *** =instructions
-Assign the poker results of Tuesday, Wednesday and Thursday to the variable `poker_midweek`.
+指派星期二、星期三與星期四的撲克牌贏錢金額給變數 `poker_midweek`。
 
 *** =hint
-Use the vector `c(2, 3, 4)` between square brackets to select the correct elements of `poker_vector`.
+中括號裡使用向量 `c(2, 3, 4)` 來選擇 `poker_vector` 中的元素。
 
 *** =pre_exercise_code
 ```{r}
@@ -668,119 +668,119 @@ Use the vector `c(2, 3, 4)` between square brackets to select the correct elemen
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Define a new variable based on a selection
+# 宣告一個選擇後的變數
 poker_midweek <- 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Define a new variable based on a selection
+# 宣告一個選擇後的變數
 poker_midweek <- poker_vector[c(2, 3, 4)]
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector` \u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_midweek", 
-            incorrect_msg = "It looks like `poker_midweek` does not contain the correct values from `poker_vector`. You can use the vector `c(2, 3, 4)` inside square brackets.")
-success_msg("Well done! Continue to the next exercise to specialize in vector selection some more!");
+            incorrect_msg = "\u770b\u8d77\u4f86 `poker_midweek` \u4e26\u6c92\u6709\u5f9e `poker_vector` \u9078\u5230\u6b63\u78ba\u7684\u6578\u503c\u3002\u4f60\u61c9\u8a72\u8981\u5728\u4e2d\u62ec\u865f\u4e2d\u8f38\u5165 `c(2, 3, 4)`\u3002")
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u505a\u66f4\u591a\u7684\u9078\u64c7\uff01");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:30b0e8c9fe371d8f3f1391c1088fce05c195c52a
-## Vector selection: the good times (3)
+## 選擇向量中的元素：美好時光 (3)
 
-Selecting multiple elements of `poker_vector` with `c(2, 3, 4)` is not very convenient. Many statisticians are lazy people by nature, so they created an easier way to do this: `c(2, 3, 4)` can be abbreviated to`2:4`, which generates a vector with all natural numbers from 2 up to 4.
+利用 `c(2, 3, 4)` 從 `poker_vector`中選擇元素不是非常方便，許多統計學家都是懶人，所以他們創造了一個更簡單的方法 `c(2, 3, 4)` 可以簡化為 `2:4`。
 
-So, another way to find the mid-week results is `poker_vector[2:4]`. Notice how the vector `2:4` is placed between the square brackets to select element 2 up to 4.
+所以想找出中間幾天的贏錢金額的另外一個方法是用 `poker_vector[2:4]`。注意 `2:4` 要擺在中括號裡面選出第二至第四個元素。
 
 *** =instructions
-Assign to `roulette_selection_vector` the roulette results from Tuesday up to Friday; make use of `:` if it makes things easier for you.
+將星期二到星期五的俄羅斯輪盤贏錢金額指派給 `roulette_selection_vector` ，使用 `:` 會很方便。
 
 *** =hint
-Assign a selection of `roulette_vector` to `roulette_selection_vector` by placing `2:5` between square brackets.
+在中括號裡放置 `2:5` 選擇 `roulette_vector` 中的第二至第五個元素指派給 `roulette_selection_vector` 。
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Define a new variable based on a selection
+# 宣告一個選擇後的變數
 roulette_selection_vector <- 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Define a new variable based on a selection
+# 宣告一個選擇後的變數
 roulette_selection_vector <- roulette_vector[2:5]
 ```
 
 *** =sct
 
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector` \u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_selection_vector", 
-            undefined_msg = "Please make sure to define a variable `roulette_selection_vector`.",
-            incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
-success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
+            undefined_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578 `roulette_selection_vector`\u3002",
+            incorrect_msg = "\u770b\u8d77\u4f86 `roulette_selection_vector` \u4e26\u6c92\u6709\u5f9e `roulette_vector` \u9078\u5230\u6b63\u78ba\u7684\u6578\u503c\uff0c\u8acb\u78ba\u8a8d\u7d22\u5f15\u503c\u662f\u5426\u6b63\u78ba\u3002")
+success_msg("\u592a\u68d2\u4e86\uff01\u5206\u865f\u975e\u5e38\u6709\u7528\u800c\u4e14\u5e38\u898b\uff0c\u628a\u5b83\u7262\u8a18\u4e26\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:479dfd0f8bc1f275c5cfd65b9f801be9f6498855
-## Vector selection: the good times (4)
+## 選擇向量中的元素：美好時光 (4)
 
-Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, 
+另外一個完成前一個練習的方式為指定元素的命名(Monday, Tuesday, ...)而不是用索引值，例如：
 
 ```
 poker_vector["Monday"]
 ```
 
-will select the first element of `poker_vector` since `"Monday"` is the name of that first element.
+能夠將 `poker_vector` 中的第一個元素選出，因為 `"Monday"` 是第一個元素的命名。
 
-Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: 
+如同你在前一個練習所做的，用元素的命名同樣可以選出多個元素，例如：
 
 ```
 poker_vector[c("Monday","Tuesday")]
 ```
 
 *** =instructions
-- Select the first three elements in `poker_vector` by using their names: `"Monday"`, `"Tuesday"` and `"Wednesday"`. Assign the result of the selection to `poker_start`.
-- Calculate the average of the values in `poker_start` with the [`mean()`](http://www.rdocumentation.org/packages/base/functions/mean) function. Simply print out the result so you can inspect it.
+- 用命名選擇 `poker_vector` 的前三個元素： `"Monday"`　、　`"Tuesday"` 與 `"Wednesday"`，將選擇的結果指定給 `poker_start`。
+- 利用[`mean()`](http://www.rdocumentation.org/packages/base/functions/mean)凾數計算 `poker_start` 的平均數並將結果印出來。
 
 *** =hint
-- You can use `c("Monday", "Tuesday", "Wednesday")` inside square brackets to subset `poker_vector` appropriately.
-- You can use `mean(poker_start)` to get the mean of the elements in `poker_start`. You do not need the mean of all poker elements, but only of the first three days.
+- 在中括號輸入 `c("Monday", "Tuesday", "Wednesday")` 選擇 `poker_vector` 裡面的元素。
+- 使用 `mean(poker_start)` 獲得 `poker_start` 裡面元素的平均值，你不需要所有撲克牌元素的平均贏錢金額，只要前三天就可以。
 
 *** =pre_exercise_code
 ```{r}
@@ -789,78 +789,78 @@ poker_vector[c("Monday","Tuesday")]
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Select poker results for Monday, Tuesday and Wednesday
+# 選擇星期一至三的撲克牌贏錢金額
 poker_start <- 
   
-# Calculate the average of the elements in poker_start
+# 計算poker_start元素的平均值
 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Select poker results for Monday, Tuesday and Wednesday
+# 選擇星期一至三的撲克牌贏錢金額
 poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
   
-# Calculate the average of the elements in poker_start
+# 計算poker_start元素的平均值
 mean(poker_start)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector`\u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_start", 
-            incorrect_msg = "It looks like `poker_start` does not contain the first three values of `poker_vector`. You can use `c(\"Monday\", \"Tuesday\", \"Wednesday\")` inside square brackets to do this.")
-test_output_contains("mean(poker_start)", incorrect_msg = "Have you correctly calculated the average of the values in `poker_start` and printed it out? Use `mean(poker_start)`.")
-success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
+            incorrect_msg = "\u770b\u8d77\u4f86 `poker_start` \u4e26\u6c92\u6709\u9078\u5230 `poker_vector` \u7684\u524d\u4e09\u500b\u503c\uff0c\u4f60\u53ef\u4ee5\u5c07 `c(\"Monday\", \"Tuesday\", \"Wednesday\")` \u653e\u5728\u4e2d\u62ec\u865f\u4e2d\u3002")
+test_output_contains("mean(poker_start)", incorrect_msg = "\u8acb\u78ba\u8a8d\u4f60\u662f\u5426\u6709\u8a08\u7b97\u51fa `poker_start` \u7684\u5e73\u5747\u503c\u4e26\u4e14\u5c07\u7d50\u679c\u5370\u51fa\u4f86\uff1f\u8a08\u5f97\u4f7f\u7528 `mean(poker_start)`\u3002")
+success_msg("\u592a\u597d\u4e86\uff0c\u9664\u4e86\u7528\u7d22\u5f15\u503c\u6216\u547d\u540d\u53ef\u4ee5\u9078\u64c7\u4ee5\u5916\uff0c\u4f60\u6703\u5728\u4e0b\u4e00\u500b\u7df4\u7fd2\u4e2d\u5b78\u5230\u5982\u4f55\u7528\u6bd4\u8f03\u7684\u65b9\u5f0f\u9078\u64c7\u5411\u91cf\u4e2d\u7684\u5143\u7d20\uff01");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:11850f807f9b0fad101a88004291b7ced6397083
-## Selection by comparison - Step 1
+## 用比較的方式選擇 - 第一步
 
-By making use of comparison operators, we can approach the previous question in a more proactive way. 
+使用比較運算子可以用更主動的方法解決前一個練習的問題。
 
-The (logical) comparison operators known to R are:
+R使用的比較運算子有：
 
-- `<` for less than
-- `>` for greater than
-- `<=` for less than or equal to
-- `>=` for greater than or equal to
-- `==` for equal to each other
-- `!=` not equal to each other
+- `<` 小於
+- `>` 大於
+- `<=` 小於或等於
+- `>=` 大於或等於
+- `==` 等於
+- `!=` 不等於
 
-As seen in the previous chapter, stating `6 > 5` returns `TRUE`. The nice thing about R is that you can use these comparison operators also on vectors. For example:
+在R Console輸入 `6 > 5` 會回傳 `TRUE`。R的好處是可以對向量使用比較運算子，例如：
 
 ```
 > c(4, 5, 6) > 5
 [1] FALSE FALSE TRUE
 ```
 
-This command tests for every element of the vector if the condition stated by the comparison operator is `TRUE` or `FALSE`.
+這段程式測試向量中的每個元素是否滿足比較運算子的條件，回傳 `TRUE` 或 `FALSE`。
 
 *** =instructions
-- Check which elements in `poker_vector` are positive (i.e. > 0) and assign this to `selection_vector`. 
-- Print out `selection_vector` so you can inspect it. The printout tells you whether you won (`TRUE`) or lost (`FALSE`) any money for each day.
+- 檢查 `poker_vector` 中哪些元素是正數(即 > 0) 並指派這個結果給 `selection_vector`。
+- 印出 `selection_vector` 讓你知道每天是贏錢(`TRUE`)或者輸錢(`FALSE`)。
 
 *** =hint
-In order to check for which days your poker gains are positive, R should check for each element of `poker_vector` whether it is larger than zero. `some_vector > 0` is the way to tell R what you are after.
+為了檢驗哪些天你的撲克牌在贏錢，R會利用 `some_vector > 0` 檢查 `poker_vector` 中的每個元素是否大於零。
 
 *** =pre_exercise_code
 ```{r}
@@ -869,69 +869,69 @@ In order to check for which days your poker gains are positive, R should check f
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Which days did you make money on poker?
+# 哪幾天你玩撲克牌是贏錢的
 selection_vector <- 
   
-# Print out selection_vector
+# 印出selection_vector
 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Which days did you make money on poker?
+# 哪幾天你玩撲克牌是贏錢的
 selection_vector <- poker_vector > 0
   
-# Print out selection_vector
+# 印出selection_vector
 selection_vector
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector` \u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("selection_vector", incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Remember that R uses element wise operations for vectors.")
-test_output_contains("selection_vector", incorrect_msg = "Don't forget to print out `selection_vector` by writing the variable name on a new line.")
-success_msg("Great!")
+test_object("selection_vector", incorrect_msg = "\u770b\u8d77\u4f86 `selection_vector` \u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u5143\u7d20\uff0c\u8a18\u5f97R\u7684\u5411\u91cf\u904b\u7b97\u662f\u4ee5\u5143\u7d20\u5c0d\u5143\u7d20\u7684\u65b9\u5f0f\u5728\u9032\u884c\u3002")
+test_output_contains("selection_vector", incorrect_msg = "\u5225\u5fd8\u4e86\u52a0\u5165\u4e00\u884c `selection_vector` \u628a\u7d50\u679c\u5370\u51fa")
+success_msg("\u592a\u68d2\u4e86\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:8521f1e1993a6154e68ccfa75e29e517955343ac
-## Selection by comparison - Step 2
+## 用比較的方式選擇 - 第二步
 
-Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. 
+善用比較會讓你的分析省時省力，與其自己檢查要選擇哪幾天，不如讓R告訴你哪些天的撲克牌贏錢金額是正的。 
 
-In the previous exercises you used `selection_vector <- poker_vector > 0` to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. 
+在前一個練習中你使用了 `selection_vector <- poker_vector > 0` 來找出哪幾天撲克牌贏錢金額為正，除此之外你現在還想知道這幾天贏了多少錢。
 
-You can select the desired elements, by putting `selection_vector` between the square brackets that follow `poker_vector`:
+你可以把 `selection_vector` 放在中括號裡並接在 `poker_vector` 之後：
 
 ```
 poker_vector[selection_vector]
 ```
 
-R knows what to do when you pass a logical vector in square brackets: it will only select the elements that correspond to `TRUE` in `selection_vector`.
+R就會把 `selection_vector` 之中符合 `TRUE` 的元素選擇出來。
 
 *** =instructions
-Use `selection_vector` in square brackets to assign the amounts that you won on the profitable days to the variable `poker_winning_days`.
+在中括號裡使用 `selection_vector` 來將撲克牌贏錢的那幾天指派給 `poker_winning_days`。
 
 *** =hint
-Use `poker_vector[selection_vector]` to select the desired elements from `poker_vector`, and assign the result to `poker_winning_days`.
+利用 `poker_vector[selection_vector]` 從 `poker_vector` 中選擇適當的元素並指派給 `poker_winning_days`。
 
 *** =pre_exercise_code
 ```{r}
@@ -940,60 +940,60 @@ Use `poker_vector[selection_vector]` to select the desired elements from `poker_
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Which days did you make money on poker?
+# 哪幾天你玩撲克牌是贏錢的
 selection_vector <- poker_vector > 0
 
-# Select from poker_vector these days
+# 從poker_vector中選出這些天
 poker_winning_days <- 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Which days did you make money on poker?
+# 哪幾天你玩撲克牌是贏錢的
 selection_vector <- poker_vector > 0
 
-# Select from poker_vector these days
+# 從poker_vector中選出這些天
 poker_winning_days <- poker_vector[selection_vector]
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector` \u7684\u5ba3\u544a\u8207\u547d\u540d\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_object("selection_vector", incorrect_msg = "Don't change the way `selection_vector` is calculated.")
+test_object("selection_vector", incorrect_msg = "\u4e0d\u9700\u8981\u66f4\u6539 `selection_vector` \u7684\u8a08\u7b97\u65b9\u5f0f\u3002")
 test_object("poker_winning_days",
-            incorrect_msg =  "It looks like `poker_winning_days` does not contain the correct result. Use `poker_vector[selection_vector]`.")
-success_msg("Good job! Continue to the next exercise.")
+            incorrect_msg =  "\u770b\u8d77\u4f86 `poker_winning_days` \u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u7d50\u679c\uff0c\u8acb\u8f38\u5165 `poker_vector[selection_vector]`\u3002")
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:921c6ad3b79b9b3532c7f4201d5202516b755324
-## Advanced selection
+## 進階選擇
 
-Just like you did for poker, you also want to know those days where you realized a positive return for roulette.
+就如前面的練習，你也想知道有哪幾天俄羅斯輪盤是有贏錢的。
 
 *** =instructions
-- Create the variable `selection_vector`, this time to see if you made profit with roulette for different days.
-- Assign the amounts that you made on the days that you ended positively for roulette to the variable `roulette_winning_days`. This vector thus contains the positive winnings of `roulette_vector`.
+- 宣告變數 `selection_vector` ，這次要檢驗在哪些天俄羅斯輪盤有獲利。
+- 從 `roulette_vector` 中選出金額為正的天數指派給 `roulette_winning_days`。
 
 *** =hint
-Once you've correctly calculated `selection_vector`, you can again use `roulette_vector[selection_vector]` to select the positive results from `roulette_vector`.
+宣告 `selection_vector` 之後使用 `roulette_vector[selection_vector]` 將 `roulette_vector` 中的正數選出。
 
 *** =pre_exercise_code
 ```{r}
@@ -1002,48 +1002,48 @@ Once you've correctly calculated `selection_vector`, you can again use `roulette
 
 *** =sample_code
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Which days did you make money on roulette?
+# 哪幾天你玩俄羅斯輪盤是贏錢的
 selection_vector <-
 
-# Select from roulette_vector these days
+# 從roulette_vector中選出這些天
 roulette_winning_days <- 
 ```
 
 *** =solution
 ```{r}
-# Poker and roulette winnings from Monday to Friday:
+# 星期一至五的樸克牌與俄羅斯輪盤贏錢金額
 poker_vector <- c(140, -50, 20, -120, 240)
 roulette_vector <- c(-24, -50, 100, -350, 10)
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# Which days did you make money on roulette?
+# 哪幾天你玩俄羅斯輪盤是贏錢的
 selection_vector <- roulette_vector > 0
 
-# Select from roulette_vector these days
+# 從roulette_vector中選出這些天
 roulette_winning_days <- roulette_vector[selection_vector]
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `poker_vector` \u8207 `roulette_vector \u7684\u5ba3\u544a\u8207\u547d\u540d`\u3002"
 test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("selection_vector", 
-            incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Use `roulette_vector > 0`.")
+            incorrect_msg = "\u770b\u8d77\u4f86 `selection_vector` \u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u7d50\u679c\uff0c\u4f7f\u7528 `roulette_vector > 0`\u3002")
 test_object("roulette_winning_days",
-            incorrect_msg = "It looks like `roulette_winning_days` does not contain the correct result. Use `roulette_vector[selection_vector]`.")
+            incorrect_msg = "\u770b\u8d77\u4f86 `roulette_winning_days` \u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u7d50\u679c\uff0c\u4f7f\u7528 `roulette_vector[selection_vector]`\u3002")
 
-success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
+success_msg("\u592a\u68d2\u4e86\uff0c\u4f60\u5b8c\u6210\u4e86\u672c\u7ae0\u7bc0\u7684\u6700\u5f8c\u4e00\u500b\u7df4\u7fd2\uff0c\u63a5\u4e0b\u4f86\u6703\u4ecb\u7d39\u4e8c\u7dad\u7684\u5411\u91cf\uff1a\u77e9\u9663\u3002")
 ```
 
 

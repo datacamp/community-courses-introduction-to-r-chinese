@@ -179,8 +179,8 @@ x
 
 *** =sct
 ```{r}
-test_object("x", undefined_msg = "\\u78ba\\u8a8d\\u662f\\u5426\\u6709\\u5ba3\\u544a\\u8b8a\\u6578 `x`\\u3002",
-            incorrect_msg = "\\u78ba\\u8a8d\\u662f\\u5426\\u6709\\u6307\\u6d3e\\u6b63\\u78ba\\u7684\\u6578\\u503c\\u7d66 `x`\\u3002") 
+test_object("x", undefined_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u5ba3\u544a\u8b8a\u6578 `x`\u3002",
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u6307\u6d3e\u6b63\u78ba\u7684\u6578\u503c\u7d66 `x`\u3002") 
 # success_msg("做得好！你是否有注意到在你宣告變數的時候，R並沒有將變數的值印出？ `x <- 42` 並沒有輸出，因為R認為你之後還會使用這個變數，否則你不需要先將這個值指派給變數對嗎？前進到下一個練習！")
 success_msg("Still 'unicode' the success message!")
 ```

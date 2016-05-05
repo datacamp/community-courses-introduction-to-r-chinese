@@ -45,10 +45,10 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 *** =sct
 ```{r}
 test_function("matrix", c("data", "byrow", "nrow"),
-              incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u5730\u5ba3\u544a\u77e9\u9663\uff1f\u518d\u8a73\u8b80\u4e00\u6b21\u8aaa\u660e\uff0c\u7b54\u6848\u5176\u5be6\u5df2\u7d93\u5f88\u660e\u986f\u4e86\uff01")
+              incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#22320;&#23459;&#21578;&#30697;&#38499;&#65311;&#20877;&#35443;&#35712;&#19968;&#27425;&#35498;&#26126;&#65292;&#31572;&#26696;&#20854;&#23526;&#24050;&#32147;&#24456;&#26126;&#39023;&#20102;&#65281;")
 test_output_contains("matrix(1:9, byrow=TRUE, nrow=3)",
-                     incorrect_msg = "\u770b\u8d77\u4f86\u77e9\u9663\u7684\u5ba3\u544a\u6709\u554f\u984c\uff0c\u518d\u8a73\u8b80\u4e00\u6b21\u8aaa\u660e\uff0c\u7b54\u6848\u5176\u5be6\u5df2\u7d93\u5f88\u660e\u986f\u4e86\uff01")
-success_msg("\u597d\u68d2\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
+                     incorrect_msg = "&#30475;&#36215;&#20358;&#30697;&#38499;&#30340;&#23459;&#21578;&#26377;&#21839;&#38988;&#65292;&#20877;&#35443;&#35712;&#19968;&#27425;&#35498;&#26126;&#65292;&#31572;&#26696;&#20854;&#23526;&#24050;&#32147;&#24456;&#26126;&#39023;&#20102;&#65281;")
+success_msg("&#22909;&#26834;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
 ```
 
 
@@ -104,20 +104,20 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE)
 
 *** =sct
 ```{r}
-msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `new_hope` \u3001 `empire_strikes` \u8207 `return_jedi`\u3002"
+msg <- "&#19981;&#38656;&#35201;&#26356;&#25913; `new_hope` &#12289; `empire_strikes` &#33287; `return_jedi`&#12290;"
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
 
-test_object("box_office", incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u5408\u4f75 `new_hope` \u3001 `empire_strikes` \u8207 `return_jedi` \u6210\u70ba `box_office`\uff1f")
+test_object("box_office", incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#21512;&#20341; `new_hope` &#12289; `empire_strikes` &#33287; `return_jedi` &#25104;&#28858; `box_office`&#65311;")
 
 test_function("matrix", c("data", "nrow", "byrow"),
-              incorrect_msg = "\u8acb\u78ba\u8a8d\u3000`matrix()`\u3000\u7684\u53c3\u6578\uff1a `box_office`\u3000\u3001 `nrow = 3`\u3000\u3001 `by_row = TRUE`\u3002")
+              incorrect_msg = "&#35531;&#30906;&#35469;&#12288;`matrix()`&#12288;&#30340;&#21443;&#25976;&#65306; `box_office`&#12288;&#12289; `nrow = 3`&#12288;&#12289; `by_row = TRUE`&#12290;")
 
 test_object("star_wars_matrix",
-            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6307\u6d3e `matrix()` \u7684\u7d50\u679c\u7d66 `star_wars_matrix`\uff1f")
+            incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#25351;&#27966; `matrix()` &#30340;&#32080;&#26524;&#32102; `star_wars_matrix`&#65311;")
 
-success_msg("\u539f\u529b\u771f\u7684\u8207\u4f60\u540c\u5728\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
+success_msg("&#21407;&#21147;&#30495;&#30340;&#33287;&#20320;&#21516;&#22312;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
 ```
 
 
@@ -195,19 +195,19 @@ star_wars_matrix
 
 *** =sct
 ```{r}
-msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `new_hope` \u3001 `empire_strikes` \u8207 `return_jedi`\u3002"
+msg <- "&#19981;&#38656;&#35201;&#26356;&#25913; `new_hope` &#12289; `empire_strikes` &#33287; `return_jedi`&#12290;"
 test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
 test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
 test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
-msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `star_wars_matrix` \uff0c\u53ea\u8981\u5e6b\u5217\u8207\u6b04\u547d\u540d\u3002" 
+msg <- "&#19981;&#38656;&#35201;&#26356;&#25913; `star_wars_matrix` &#65292;&#21482;&#35201;&#24171;&#21015;&#33287;&#27396;&#21629;&#21517;&#12290;" 
 test_object("star_wars_matrix", incorrect_msg = msg)
-msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `region` \u8207 `titles` \u90192\u500b\u5df2\u7d93\u5e6b\u4f60\u5b9a\u7fa9\u597d\u7684\u5411\u91cf\u3002"
+msg <- "&#19981;&#38656;&#35201;&#26356;&#25913; `region` &#33287; `titles` &#36889;2&#20491;&#24050;&#32147;&#24171;&#20320;&#23450;&#32681;&#22909;&#30340;&#21521;&#37327;&#12290;"
 test_object("region", undefined_msg = msg, incorrect_msg = msg)
 test_object("titles", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", eq_condition = "equal",
-            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6709\u6b63\u78ba\u547d\u540d `star_wars_matrix` \u7684\u5217\u8207\u6b04\uff1f \u4f7f\u7528 `colnames(star_wars_matrix) <- region` \u70ba\u6b04\u547d\u540d\uff0c\u7528\u540c\u6a23\u65b9\u6cd5\u5c0d\u5217\u547d\u540d\u3002")
-test_output_contains("star_wars_matrix", incorrect_msg = "\u5225\u5fd8\u4e86\u8981\u628a `star_wars_matrix` \u5370\u51fa\u4f86\u770b\u770b\u3002")
-success_msg("\u592a\u68d2\u4e86\uff0c\u4f60\u6b63\u5728\u6210\u70ba\u4e00\u500bR\u7d55\u5730\u6b66\u58eb\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
+            incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#26377;&#27491;&#30906;&#21629;&#21517; `star_wars_matrix` &#30340;&#21015;&#33287;&#27396;&#65311; &#20351;&#29992; `colnames(star_wars_matrix) <- region` &#28858;&#27396;&#21629;&#21517;&#65292;&#29992;&#21516;&#27171;&#26041;&#27861;&#23565;&#21015;&#21629;&#21517;&#12290;")
+test_output_contains("star_wars_matrix", incorrect_msg = "&#21029;&#24536;&#20102;&#35201;&#25226; `star_wars_matrix` &#21360;&#20986;&#20358;&#30475;&#30475;&#12290;")
+success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#27491;&#22312;&#25104;&#28858;&#19968;&#20491;R&#32085;&#22320;&#27494;&#22763;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
 ```
 
 
@@ -261,11 +261,11 @@ worldwide_vector <- rowSums(star_wars_matrix)
 
 *** =sct
 ```{r}
-msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `box_office_all` \u8207 `star_wars_marix`\u3002"
+msg <- "&#19981;&#38656;&#35201;&#26356;&#25913; `box_office_all` &#33287; `star_wars_marix`&#12290;"
 test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-test_object("worldwide_vector", incorrect_msg = "\u5c0d `star_wars_matrix` \u4f7f\u7528 `rowSums()` \u51fd\u6578\u4e26\u5c07\u7d50\u679c\u6307\u6d3e\u7d66 `worldwide_vector`\u3002")
-success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
+test_object("worldwide_vector", incorrect_msg = "&#23565; `star_wars_matrix` &#20351;&#29992; `rowSums()` &#20989;&#25976;&#20006;&#23559;&#32080;&#26524;&#25351;&#27966;&#32102; `worldwide_vector`&#12290;")
+success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
 ```
 
 
@@ -323,14 +323,14 @@ all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 
 *** =sct
 ```{r}
-msg <- "\u4e0d\u9700\u8981\u66f4\u6539 `box_office_all` \u8207 `star_wars_marix`\u3002"
+msg <- "&#19981;&#38656;&#35201;&#26356;&#25913; `box_office_all` &#33287; `star_wars_marix`&#12290;"
 test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("worldwide_vector",
-            incorrect_msg = "\u5c07 `rowSums(star_wars_matrix)` \u7684\u7d50\u679c\u5132\u5b58\u5728 `worldwide_vector` \u4e2d\u3002")
+            incorrect_msg = "&#23559; `rowSums(star_wars_matrix)` &#30340;&#32080;&#26524;&#20786;&#23384;&#22312; `worldwide_vector` &#20013;&#12290;")
 
 # TODO: Fix in testwhat
-msg <- "\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u4f7f\u7528 `cbind()` \u4f86\u5408\u4f75 `worldwide_vector` \u8207 `star_wars_matrix`\uff1f\u4f60\u61c9\u8a72\u4f9d\u5e8f\u5c07 `star_wars_matrix` \u8207 `world_wide_vector` \u505a\u70ba `cbind()` \u7684\u5169\u500b\u53c3\u6578\uff0c\u5982\u6b64\u4e00\u4f86 `all_wars_matrix` \u5c07\u6709\u4e09\u5217\u8207\u4e09\u6b04\u3002"
+msg <- "&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#20351;&#29992; `cbind()` &#20358;&#21512;&#20341; `worldwide_vector` &#33287; `star_wars_matrix`&#65311;&#20320;&#25033;&#35442;&#20381;&#24207;&#23559; `star_wars_matrix` &#33287; `world_wide_vector` &#20570;&#28858; `cbind()` &#30340;&#20841;&#20491;&#21443;&#25976;&#65292;&#22914;&#27492;&#19968;&#20358; `all_wars_matrix` &#23559;&#26377;&#19977;&#21015;&#33287;&#19977;&#27396;&#12290;"
 test_object("all_wars_matrix", eval = FALSE)
 test_what(
   expect_equal(
@@ -339,7 +339,7 @@ test_what(
   feedback = msg)
 
 test_object("all_wars_matrix", incorrect_msg = msg)
-success_msg("\u505a\u5f97\u597d\uff0c\u63a5\u4e0b\u4f86\u6211\u5011\u4f86\u8a66\u8457\u52a0\u5217\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01");
+success_msg("&#20570;&#24471;&#22909;&#65292;&#25509;&#19979;&#20358;&#25105;&#20497;&#20358;&#35430;&#33879;&#21152;&#21015;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;");
 ```
 
 
@@ -408,7 +408,7 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 
 *** =sct
 ```{r}
-msg = "\u4e0d\u9700\u8981\u66f4\u6539`star_wars_matrix` \u8207 `star_wars_matrix2`\u3002"
+msg = "&#19981;&#38656;&#35201;&#26356;&#25913;`star_wars_matrix` &#33287; `star_wars_matrix2`&#12290;"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
@@ -420,13 +420,13 @@ test_what(
     dim(get("all_wars_matrix", get_solution_env())), 
     dim(get("all_wars_matrix", .GlobalEnv))),
   feedback = 
-    paste("\u8acb\u78ba\u8a8d `rbind()` \u53c3\u6578\u4e2d\u76842\u500b\u53c3\u6578\uff1a `star_wars_matrix`",
-          "\u8207 `star_wars_matrix2`\uff0c\u7d50\u679c\u61c9\u8a72\u662f\u4e00\u500b\u5177\u6709",
-          "6\u5217\u82072\u6b04\u7684\u77e9\u9663\u3002"))
+    paste("&#35531;&#30906;&#35469; `rbind()` &#21443;&#25976;&#20013;&#30340;2&#20491;&#21443;&#25976;&#65306; `star_wars_matrix`",
+          "&#33287; `star_wars_matrix2`&#65292;&#32080;&#26524;&#25033;&#35442;&#26159;&#19968;&#20491;&#20855;&#26377;",
+          "6&#21015;&#33287;2&#27396;&#30340;&#30697;&#38499;&#12290;"))
 
-test_object("all_wars_matrix", incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u4f7f\u7528 `rbind()` \u5275\u9020 `all_wars_matrix()`\uff1f `rbind()` \u61c9\u8a72\u8981\u4f9d\u5e8f\u67092\u500b\u53c3\u6578\uff1a `star_wars_matrix` \u8207 `star_wars_matrix2`\u3002")
+test_object("all_wars_matrix", incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#20351;&#29992; `rbind()` &#21109;&#36896; `all_wars_matrix()`&#65311; `rbind()` &#25033;&#35442;&#35201;&#20381;&#24207;&#26377;2&#20491;&#21443;&#25976;&#65306; `star_wars_matrix` &#33287; `star_wars_matrix2`&#12290;")
 
-success_msg("\u592a\u5b8c\u7f8e\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u4e26\u52a0\u5165 `colSums()` \u51fd\u6578\uff01")
+success_msg("&#22826;&#23436;&#32654;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#20006;&#21152;&#20837; `colSums()` &#20989;&#25976;&#65281;")
 ```
 
 
@@ -472,13 +472,13 @@ total_revenue_vector
 
 *** =sct
 ```{r}
-msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
+msg = "&#19981;&#38656;&#35201;&#26356;&#25913;&#24037;&#20316;&#21312;&#24050;&#24314;&#31435;&#22909;&#30340; `all_wars_matrix`&#12290;"
 test_object("all_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-test_function("colSums", "x", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c0dall_wars_matrix\u4f7f\u7528 `colSums()` \u51fd\u6578\uff1f")
+test_function("colSums", "x", incorrect_msg = "&#30906;&#35469;&#26159;&#21542;&#23565;all_wars_matrix&#20351;&#29992; `colSums()` &#20989;&#25976;&#65311;")
 test_object("total_revenue_vector",
-            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07 `colSums(all_wars_matrix)` \u6307\u6d3e\u7d66 `total_revenue_vector`\uff1f")
-test_output_contains("total_revenue_vector", incorrect_msg = "\u5225\u5fd8\u8a18\u628a `total_revenue_vector` \u5370\u51fa\u4f86\uff01")
-success_msg("\u592a\u7f8e\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u77e9\u9663\u7684\u9078\u64c7\uff01")
+            incorrect_msg = "&#30906;&#35469;&#26159;&#21542;&#23559; `colSums(all_wars_matrix)` &#25351;&#27966;&#32102; `total_revenue_vector`&#65311;")
+test_output_contains("total_revenue_vector", incorrect_msg = "&#21029;&#24536;&#35352;&#25226; `total_revenue_vector` &#21360;&#20986;&#20358;&#65281;")
+success_msg("&#22826;&#32654;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#30697;&#38499;&#30340;&#36984;&#25799;&#65281;")
 ```
 
 
@@ -549,18 +549,18 @@ mean(non_us_some)
 
 *** =sct
 ```{r}
-msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
+msg = "&#19981;&#38656;&#35201;&#26356;&#25913;&#24037;&#20316;&#21312;&#24050;&#24314;&#31435;&#22909;&#30340; `all_wars_matrix`&#12290;"
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("non_us_all",
-            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u5c07 `all_wars_matrix` \u7684\u7b2c\u4e8c\u6b04\u6307\u6d3e\u7d66 `non_us_all` \uff1f\u4f60\u53ef\u4ee5\u4f7f\u7528 `[, 2]` \u8fa6\u5230\uff01")
+            incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#23559; `all_wars_matrix` &#30340;&#31532;&#20108;&#27396;&#25351;&#27966;&#32102; `non_us_all` &#65311;&#20320;&#21487;&#20197;&#20351;&#29992; `[, 2]` &#36774;&#21040;&#65281;")
 test_output_contains("mean(non_us_all)",
-                     incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u4f7f\u7528 `mean(non_us_all)` \u8a08\u7b97 `non_us_all` \u7684\u5e73\u5747\u503c\u4e26\u5370\u51fa\u7d50\u679c\uff1f")
+                     incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#20351;&#29992; `mean(non_us_all)` &#35336;&#31639; `non_us_all` &#30340;&#24179;&#22343;&#20540;&#20006;&#21360;&#20986;&#32080;&#26524;&#65311;")
 test_object("non_us_some",
-            incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u6307\u6d3e\u524d2\u90e8\u96fb\u5f71\u7684\u975e\u7f8e\u570b\u7968\u623f\u6536\u5165\u7d66 `non_us_some` \uff1f\u4f60\u53ef\u4ee5\u4f7f\u7528 `[1:2,2]` \u8fa6\u5230\uff01")
+            incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#25351;&#27966;&#21069;2&#37096;&#38651;&#24433;&#30340;&#38750;&#32654;&#22283;&#31080;&#25151;&#25910;&#20837;&#32102; `non_us_some` &#65311;&#20320;&#21487;&#20197;&#20351;&#29992; `[1:2,2]` &#36774;&#21040;&#65281;")
 test_output_contains("mean(non_us_some)",
-                     incorrect_msg = "\u8acb\u78ba\u8a8d\u662f\u5426\u4f7f\u7528 `mean(non_us_some)` \u8a08\u7b97 `non_us_some` \u7684\u5e73\u5747\u503c\u4e26\u5370\u51fa\u7d50\u679c\uff1f")
-success_msg("\u592a\u53b2\u5bb3\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
+                     incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#20351;&#29992; `mean(non_us_some)` &#35336;&#31639; `non_us_some` &#30340;&#24179;&#22343;&#20540;&#20006;&#21360;&#20986;&#32080;&#26524;&#65311;")
+success_msg("&#22826;&#21426;&#23475;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
 ```
 
 
@@ -611,13 +611,13 @@ visitors
 
 *** =sct
 ```{r}
-msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
+msg = "&#19981;&#38656;&#35201;&#26356;&#25913;&#24037;&#20316;&#21312;&#24050;&#24314;&#31435;&#22909;&#30340; `all_wars_matrix`&#12290;"
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("visitors",
-            incorrect_msg = "\u770b\u8d77\u4f86 `visitors` \u4e0d\u6b63\u78ba\uff0c\u5c07 `all_wars_matrix` \u9664\u4ee55\u4e26\u5c07\u7d50\u679c\u6307\u6d3e\u7d66 `visitors`\u3002")
-test_output_contains("visitors", incorrect_msg = "\u5225\u5fd8\u4e86\u5c07 `visitors` \u5370\u51fa\u4f86\u770b\u770b\u3002")
-success_msg("\u8a08\u7b97\u7d50\u679c\u544a\u8a34\u4f60\uff0c\u661f\u969b\u5927\u6230\u56db\u90e8\u66f2\uff1a\u66d9\u5149\u4e4d\u73fe\u5149\u662f\u5728\u7f8e\u570b\u5c31\u67099\u53432\u767e\u842c\u500b\u89c0\u770b\u4eba\u6578\uff0c\u5f88\u9a5a\u4eba\u5c0d\u55ce\uff1f\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
+            incorrect_msg = "&#30475;&#36215;&#20358; `visitors` &#19981;&#27491;&#30906;&#65292;&#23559; `all_wars_matrix` &#38500;&#20197;5&#20006;&#23559;&#32080;&#26524;&#25351;&#27966;&#32102; `visitors`&#12290;")
+test_output_contains("visitors", incorrect_msg = "&#21029;&#24536;&#20102;&#23559; `visitors` &#21360;&#20986;&#20358;&#30475;&#30475;&#12290;")
+success_msg("&#35336;&#31639;&#32080;&#26524;&#21578;&#35380;&#20320;&#65292;&#26143;&#38555;&#22823;&#25136;&#22235;&#37096;&#26354;&#65306;&#26329;&#20809;&#20045;&#29694;&#20809;&#26159;&#22312;&#32654;&#22283;&#23601;&#26377;9&#21315;2&#30334;&#33836;&#20491;&#35264;&#30475;&#20154;&#25976;&#65292;&#24456;&#39514;&#20154;&#23565;&#21966;&#65311;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
 ```
 
 
@@ -681,16 +681,16 @@ mean(us_visitors)
 
 *** =sct
 ```{r}
-msg <- "\u4e0d\u9700\u8981\u66f4\u6539\u5de5\u4f5c\u5340\u5df2\u5efa\u7acb\u597d\u7684 `all_wars_matrix`\u3002"
+msg <- "&#19981;&#38656;&#35201;&#26356;&#25913;&#24037;&#20316;&#21312;&#24050;&#24314;&#31435;&#22909;&#30340; `all_wars_matrix`&#12290;"
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("visitors",
-            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u5efa\u7acb\u77e9\u9663 `visitors`\uff1f \u5c07 `all_wars_matrix` \u9664\u4ee5 `ticket_prices_matrix` \u5c31\u53ef\u4ee5\u7b97\u51fa\u3002")
-test_object("us_visitors", incorrect_msg = "\u4f60\u53ef\u4ee5\u4f7f\u7528 `[,1]` \u4f86\u9078\u51fa `visitors` \u7684\u7b2c\u4e00\u6b04\u4e26\u6307\u6d3e\u7d66 `us_visitors`\uff01")
-test_output_contains("mean(us_visitors)", incorrect_msg = "\u4e00\u65e6\u4f60\u5efa\u7acb\u597d `us_visitors` \u5c31\u53ef\u4ee5\u4f7f\u7528 `mean()` \u4f86\u8a08\u7b97\u7f8e\u570b\u5e73\u5747\u89c0\u770b\u4eba\u6578\u4e26\u8a18\u5f97\u8981\u628a\u7d50\u679c\u5370\u51fa\u4f86\u3002")
+            incorrect_msg = "&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#24314;&#31435;&#30697;&#38499; `visitors`&#65311; &#23559; `all_wars_matrix` &#38500;&#20197; `ticket_prices_matrix` &#23601;&#21487;&#20197;&#31639;&#20986;&#12290;")
+test_object("us_visitors", incorrect_msg = "&#20320;&#21487;&#20197;&#20351;&#29992; `[,1]` &#20358;&#36984;&#20986; `visitors` &#30340;&#31532;&#19968;&#27396;&#20006;&#25351;&#27966;&#32102; `us_visitors`&#65281;")
+test_output_contains("mean(us_visitors)", incorrect_msg = "&#19968;&#26086;&#20320;&#24314;&#31435;&#22909; `us_visitors` &#23601;&#21487;&#20197;&#20351;&#29992; `mean()` &#20358;&#35336;&#31639;&#32654;&#22283;&#24179;&#22343;&#35264;&#30475;&#20154;&#25976;&#20006;&#35352;&#24471;&#35201;&#25226;&#32080;&#26524;&#21360;&#20986;&#20358;&#12290;")
 
-success_msg("R\u7684\u539f\u529b\u8207\u4f60\u540c\u5728\uff0c\u9019\u662f\u77e9\u9663\u55ae\u5143\u7684\u6700\u5f8c\u4e00\u500b\u7df4\u7fd2\uff0c\u4e0b\u4e00\u500b\u7ae0\u7bc0\u662f\u56e0\u7d20\u5411\u91cf\uff01")
+success_msg("R&#30340;&#21407;&#21147;&#33287;&#20320;&#21516;&#22312;&#65292;&#36889;&#26159;&#30697;&#38499;&#21934;&#20803;&#30340;&#26368;&#24460;&#19968;&#20491;&#32244;&#32722;&#65292;&#19979;&#19968;&#20491;&#31456;&#31680;&#26159;&#22240;&#32032;&#21521;&#37327;&#65281;")
 ```
 
 

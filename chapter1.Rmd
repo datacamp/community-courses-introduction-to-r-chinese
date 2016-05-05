@@ -182,7 +182,7 @@ x
 test_object("x", undefined_msg = "&#30906;&#35469;&#26159;&#21542;&#26377;&#23459;&#21578;&#35722;&#25976; `x`&#12290;",
             incorrect_msg = "&#30906;&#35469;&#26159;&#21542;&#26377;&#25351;&#27966;&#27491;&#30906;&#30340;&#25976;&#20540;&#32102; `x`&#12290;") 
 # success_msg("做得好！你是否有注意到在你宣告變數的時候，R並沒有將變數的值印出？ `x <- 42` 並沒有輸出，因為R認為你之後還會使用這個變數，否則你不需要先將這個值指派給變數對嗎？前進到下一個練習！")
-success_msg("Still 'unicode' the success message!")
+success_msg("Still 'HTML character escape' the commented out success message!")
 ```
 
 

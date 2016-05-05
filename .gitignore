@@ -8,3 +8,4 @@
 .Rproj.user
 !datasets/
 !datasets/*
+!convert.R

@@ -1,24 +1,24 @@
 --- 
-title_meta  : Chapter 4
-title       : Factors
-description : Very often, data falls into a limited number of categories. For example, humans are either male or female. In R, categorical data is stored in factors. Given the importance of these factors in data analysis, you should start learning how to create, subset and compare them now!
+title_meta  : 第四章
+title       : 因素向量
+description : 資料常會有特定幾個類別，例如性別是男或女。在R語言中，類別型的資料以因素向量的方式儲存，因素向量對資料分析是很重要的，讓我們好好學習如何建立、篩選與比較因素向量！
 
 --- type:NormalExercise xp:100 skills:1 key:226aa2797e77894b2083c4471f92b23aae435823
-## What's a factor and why would you use it?
+## 因素向量是什麼？你為什麼要使用它？
 
-In this chapter you dive into the wonderful world of **factors**. 
+在本章節中你會進入**因素向量**的美麗世界。 
 
-The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a **limited number of categories**. A continuous variable, on the other hand, can correspond to an infinite number of values. 
+因素向量是用來儲存類別變數的統計資料型態，連續變數與類別變數最大不同點就是類別變數會有**類別個數的上限**，連續變數則會有無窮盡的個數。
 
-It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)
+在未來你要處理的統計模型中，對連續變數與類別變數之間的差異非常地重要，所以必須讓R知道在處理哪一種類型的變數。
 
-A good example of a categorical variable is the variable 'Gender'. A human individual can either be "Male" or "Female", making abstraction of inter-sexes. So here "Male" and "Female" are, in a simplified sense, the two values of the categorical variable "Gender", and every observation can be assigned to either the value "Male" of "Female".
+性別是一個很好的因素向量範例，不是生理男性就是生理女性，因此每一個觀測值都可以被分類成生理男性或生理女性。
 
 *** =instructions
-Assign to variable `theory` the value `"factors for categorical variables"`.
+宣告變數 `theory` 並指派 `"factors for categorical variables"` 給它。
 
 *** =hint
-Simply assign a variable (`<-`); make sure to capitalize correctly.
+使用指派運算子 (`<-`) 並確認字母大小寫是否正確。
 
 *** =pre_exercise_code
 ```{r}
@@ -27,45 +27,45 @@ Simply assign a variable (`<-`); make sure to capitalize correctly.
 
 *** =sample_code
 ```{r}
-# Assign to the variable theory what this chapter is about!
+# 宣告變數theory
 ```
 
 *** =solution
 ```{r}
-# Assign to the variable theory what this chapter is about!
+# 宣告變數theory
 theory <- "factors for categorical variables"
 ```
 
 *** =sct
 ```{r}
-test_object("theory", incorrect_msg = "Make sure to assign the character string `\"factors for categorical variables\"` to `theory`. Remember that R is case sensitive.");
-success_msg("Good job! Ready to start? Continue to the next exercise!")
+test_object("theory", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07\u6587\u5b57 `\"factors for categorical variables\"` \u6307\u6d3e\u7d66 `theory`\uff0c\u6ce8\u610f\u5b57\u6bcd\u7684\u5927\u5c0f\u5beb\u5c0dR\u662f\u6709\u5dee\u5225\u7684\u3002");
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:86d03f14e0b95e7cdc8cc5163493a156313bf8c6
-## What's a factor and why would you use it? (2)
+## 因素向量是什麼？你為什麼要使用它？ (2)
 
-To create factors in R, you make use of the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, `gender_vector` contains the sex of 5 different individuals: 
+在R宣告因素向量要使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數，首先創造一個向量包含所有有限類別的觀測值，例如5個人的性別 `gender_vector`：
 
 ```
 gender_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-It is clear that there are two categories, or in R-terms **'factor levels'**, at work here: "Male" and "Female". 
+很明顯 `gender_vector` 有2種類別，或者用R術語**因素向量類別**： "Male" 與 "Female"。 
 
-The function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) will encode the vector as a factor: 
+[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數會將向量轉換成因素向量： 
 
 ```
 factor_gender_vector <- factor(gender_vector)
 ``` 
 
 *** =instructions
-- Convert the character vector `gender_vector` to a factor with `factor()` and assign the result to `factor_gender_vector`
-- Print out `factor_gender_vector` and assert that R prints out the factor levels below the actual values.
+- 利用 `factor()` 將 `gender_vector` 轉換成因素向量並將結果指派給 `factor_gender_vector`。
+- 印出 `factor_gender_vector` 並注意R會把因素向量的層級顯示在實際值下。
 
 *** =hint
-Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) on `gender_vector`. Have a look at the assignment, the answer is already there somewhere...
+對 `gender_vector` 使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數，再閱讀一下說明，答案已經呼之欲出了...
 
 *** =pre_exercise_code
 ```{r}
@@ -74,51 +74,51 @@ Simply use the function [`factor()`](http://www.rdocumentation.org/packages/base
 
 *** =sample_code
 ```{r}
-# Gender vector
+# 性別向量
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
+# 轉換gender_vector成為因素向量
 factor_gender_vector <-
   
-# Print out factor_gender_vector
+# 印出factor_gender_vector
 
 ```
 
 *** =solution
 ```{r}
-# Gender vector
+# 性別向量
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# Convert gender_vector to a factor
+# 轉換gender_vector成為因素向量
 factor_gender_vector <- factor(gender_vector)
 
-# Print out factor_gender_vector
+# 印出factor_gender_vector
 factor_gender_vector
 ```
 
 *** =sct
 ```{r}
 test_object("factor_gender_vector",
-            incorrect_msg = "Did you assign the factor of `gender_vector` to `factor_gender_vector`?")
-test_output_contains("factor_gender_vector", incorrect_msg = "Don't forget to print out `factor_gender_vector`!")
-success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+            incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u5c07 `gender_vector` \u8f49\u5316\u6210 `factor_gender_vector`\uff1f")
+test_output_contains("factor_gender_vector", incorrect_msg = "\u5225\u5fd8\u4e86\u628a `factor_gender_vector` \u5370\u51fa\uff01")
+success_msg("\u592a\u68d2\u4e86\uff0c\u53ea\u8981\u5728R Console\u8f38\u5165 `?factor` \u5c31\u53ef\u4ee5\u4e86\u89e3\u66f4\u591a\u95dc\u65bc `factor()`\u51fd\u6578\u7684\u5167\u5bb9\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:43072d1299a99d76130f1e45dedf09baac8c8481
-## What's a factor and why would you use it? (3)
+## 因素向量是什麼？你為什麼要使用它？ (3)
 
-There are two types of categorical variables: a **nominal categorical variable** and an **ordinal categorical variable**. 
+類別型變數有兩種，一種是There are two types of categorical variables: a **名目類別型變數**另外一種是**順序類別型變數**。
 
-A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable `animals_vector` with the categories `"Elephant"`, `"Giraffe"`, `"Donkey"` and `"Horse"`. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ). 
+名目類別型變數即是無法在類別之間比較好壞，例如一個變數 `animals_vector` 中有 `"Elephant"` 、 `"Giraffe"` 、 `"Donkey"` 與 `"Horse"`，你是無法比較動物之間的好壞優劣的！ 
 
-In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable `temperature_vector` with the categories: `"Low"`, `"Medium"` and `"High"`. Here it is obvious that `"Medium"` stands above `"Low"`, and `"High"` stands above `"Medium"`.
+相對來說，順序類別型變數具有天生的比較特性，例如一個變數 `temperature_vector` 中有 `"Low"` 、 `"Medium"` 與 `"High"`，很明顯 `"Medium"` 比 `"Low"` 高而 `"High"` 又比 `"Medium"` 來得要高.
 
 *** =instructions
-Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.
+按 'Submit Answer' 來檢查R如何建立並印出名目與順序變數，不需要擔心不了解這些程式，我們之後會學。
 
 *** =hint
-Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.
+按 'Submit Answer' 並觀察R Console，注意R如何為順序類別型變數編排因素類別。
 
 *** =pre_exercise_code
 ```{r}
@@ -127,12 +127,12 @@ Just click the 'Submit Answer' button and look at the console. Notice how R indi
 
 *** =sample_code
 ```{r}
-# Animals
+# 動物
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
 factor_animals_vector <- factor(animals_vector)
 factor_animals_vector
 
-# Temperature
+# 溫度
 temperature_vector <- c("High", "Low", "High","Low", "Medium")
 factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
 factor_temperature_vector
@@ -140,12 +140,12 @@ factor_temperature_vector
 
 *** =solution
 ```{r}
-# Animals
+# 動物
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
 factor_animals_vector <- factor(animals_vector)
 factor_animals_vector
 
-# Temperature
+# 溫度
 temperature_vector <- c("High", "Low", "High","Low", "Medium")
 factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
 factor_temperature_vector
@@ -153,42 +153,42 @@ factor_temperature_vector
 
 *** =sct
 ```{r}
-msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
+msg <- "\u4e0d\u9700\u8981\u66f4\u6539\u793a\u7bc4\u7a0b\u5f0f\u78bc\uff0c\u6309Submit Answer\u6309\u9215\u4e4b\u5f8c\u770b\u7d50\u679c\u3002"
 test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_animals_vector", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("factor_animals_vector", incorrect_msg = msg)
 test_object("factor_temperature_vector", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("factor_temperature_vector", incorrect_msg = msg)
-success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+success_msg("\u6709\u770b\u51fa\u9019\u500b\u7df4\u7fd2\u544a\u8a34\u4f60\u5011\u4ec0\u9ebc\u4e8b\u4e86\u55ce\uff1f\u592a\u68d2\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\u4e26\u770b\u51fa\u56e0\u7d20\u5411\u91cf\u7684\u7d30\u7bc0\u3002")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:d209a65b768975156e39f18fe6e982b30a8b99d9
-## Factor levels
+## 因素向量級別
 
-When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function [`levels()`](http://www.rdocumentation.org/packages/base/functions/levels):
+有時候你會想改變因素向量級別的名稱，可以使用[`levels()`](http://www.rdocumentation.org/packages/base/functions/levels)函數辦到：
 
 ```
 levels(factor_vector) <- c("name1", "name2",...)
 ```
     
-A good illustration is the raw data that is provided to you by a survey. A standard question for every questionnaire is the gender of the respondent. You remember from the previous question that this is a factor and when performing the questionnaire on the streets its levels are often coded as `"M"` and `"F"`. 
+一般問卷都會問受試者的性別，在前一個練習中我們知道性別是一種因素向量，在問卷資料中男性常被編為 `"M"` 以及女性被編為 `"F"`。 
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-Next, when you want to start your data analysis, your main concern is to keep a nice overview of all the variables and what they mean. At that point, you will often want to change the factor levels to `"Male"` and `"Female"` instead of `"M"` and `"F"` to make your life easier. 
+通常你為了讓自己對資料能夠更加一目瞭然，會想將男性編為 `"Male"` 與女性編為 `"Female"` 而不是原本的 `"M"` 與 `"F"`。 
 
-**Watch out:** the order with which you assign the levels is important. If you type `levels(factor_survey_vector)`, you'll see that it outputs `[1] "F" "M"`. If you don't specify the levels of the factor when creating the vector, `R` will automatically assign them alphabetically. To correctly map `"F"` to `"Female"` and `"M"` to `"Male"`, the levels should be set to `c("Female", "Male")`, in this order order.
+**注意：**在改變名稱的時候輸入順序非常重要，在R Console輸入 `levels(factor_survey_vector)` 會得到輸出為 `[1] "F" "M"` ，這代表R預設是以字母順序排列，因此當你要重新編名稱的時候，你應該要輸入 `levels(factor_survey_vector) <- c("Female", "Male")` 這樣才能正確地把 "F"對應到"Female"、把"M"對應到"Male"。
 
 *** =instructions
-- Check out the code that builds a factor vector from `survey_vector`. You should use `factor_survey_vector` in the next instruction.
-- Change the factor levels of `factor_survey_vector` to `c("Female", "Male")`. Mind the order of the vector elements here.
+- 檢視將 `survey_vector` 宣告為因素級別的程式，接下來你要使用 `factor_survey_vector`。
+- 將 `factor_survey_vector` 的級別改為 `c("Female", "Male")`，注意"Female"與"Male"的順序。
 
 *** =hint
-Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing `levels(factor_survey_vector)`.
+留意你輸入級別名稱的順序，提示：先在R Console輸入 `levels(factor_survey_vector)` 就會知道重新命名的正確順序。
 
 *** =pre_exercise_code
 ```{r}
@@ -199,11 +199,11 @@ factor_survey_vector <- factor(survey_vector)
 
 *** =sample_code
 ```{r}
-# Code to build factor_survey_vector
+# 建立factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 
-# Specify the levels of factor_survey_vector
+# 指定factor_survey_vector的名稱
 levels(factor_survey_vector) <- 
 
 factor_survey_vector
@@ -211,11 +211,11 @@ factor_survey_vector
 
 *** =solution
 ```{r}
-# Code to build factor_survey_vector
+# 建立factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 
-# Specify the levels of factor_survey_vector
+# 指定factor_survey_vector的名稱
 levels(factor_survey_vector) <- c("Female", "Male")
 
 factor_survey_vector
@@ -223,32 +223,32 @@ factor_survey_vector
 
 *** =sct
 ```{r}
-msg = "Do not change the definition of `survey_vector`!"
+msg = "\u4e0d\u9700\u8981\u66f4\u6539 `survey_vector` \u7684\u5ba3\u544a\u3002"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
-msg = "Do not change or remove the code to create the factor vector."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u6216\u79fb\u9664\u5efa\u7acb\u56e0\u7d20\u5411\u91cf\u7684\u7a0b\u5f0f\u3002"
 test_function("factor","x",allow_extra = FALSE, not_called_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal",
-            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
-success_msg("Wonderful! Proceed to the next exercise.")
+            incorrect_msg = paste("\u78ba\u8a8d\u662f\u5426\u6307\u6d3e\u6b63\u78ba\u7684\u540d\u7a31\u7d66\u4e86 `factor_survey_vector`\uff1f\u5229\u7528 `levels(factor_survey_vector) <- c(\"Female\", \"Male\")` \u4e26\u6ce8\u610f\u5927\u5c0f\u5beb\u5c0dR\u662f\u4e0d\u4e00\u6a23\u7684\uff01"))
+success_msg("\u5b8c\u7f8e\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:1a2235a13a67daf9c186b963a57c9a206a7f43ba
-## Summarizing a factor
+## 因素向量的摘要
 
-After finishing this course, one of your favorite functions in R will be [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary). This will give you a quick overview of the contents of a variable: 
+在這個練習之後，[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數會變成你最喜歡的函數之一， `summary()` 會讓你快速看到一個變數的摘要：
 
 ```
 summary(my_var)
 ``` 
 
-Going back to our survey, you would like to know how many `"Male"` responses you have in your study, and how many `"Female"` responses. The [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function gives you the answer to this question.
+讓我們繼續看問卷，你想知道分別有多少男性與女性的受試者填寫了問卷，[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數會給你答案。
 
 *** =instructions
-Ask a [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) of the `survey_vector` and `factor_survey_vector`. Interpret the results of both vectors. Are they both equally useful in this case?
+對 `survey_vector` 與 `factor_survey_vector` 使用[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數，看看這兩個結果是相同的嗎？
 
 *** =hint
-Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) function on both `survey_vector` and `factor_survey_vector`, it's as simple as that!
+對 `survey_vector` 與 `factor_survey_vector` 使用[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數，就這麼單純！
 
 *** =pre_exercise_code
 ```{r}
@@ -257,56 +257,56 @@ Call the [`summary()`](http://www.rdocumentation.org/packages/base/functions/sum
 
 *** =sample_code
 ```{r}
-# Build factor_survey_vector with clean levels
+# 建立有清楚級別的factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 
-# Generate summary for survey_vector
+# 產出survey_vector的摘要
 
 
-# Generate summary for factor_survey_vector
+# 產出factor_survey_vector的摘要
 
 ```
 
 *** =solution
 ```{r}
-# Build factor_survey_vector with clean levels
+# 建立有清楚級別的factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 
-# Generate summary for survey_vector
+# 產出survey_vector的摘要
 summary(survey_vector)
 
-# Generate summary for factor_survey_vector
+# 產出factor_survey_vector的摘要
 summary(factor_survey_vector)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5ba3\u544a `survey_vector` \u8207 `factor_survey_vector` \u7684\u7a0b\u5f0f\u3002"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
-msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
+msg <- "\u78ba\u8a8d\u662f\u5426\u6b63\u78ba\u4f7f\u7528 `summary()` \u4f86\u7522\u51fa `%s` \u7684\u6458\u8981\uff1f"
 test_function("summary", index = 1, args = "object", not_called_msg = sprintf(msg, "survey_vector"), incorrect_msg = sprintf(msg, "survey_vector"))
 test_function("summary", index = 2, args = "object", not_called_msg = sprintf(msg, "factor_survey_vector"), incorrect_msg = sprintf(msg, "factor_survey_vector"))
-success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+success_msg("\u592a\u68d2\u4e86\uff0c\u89c0\u5bdf\u4e00\u4e0bR Console\u7684\u8f38\u51fa\uff0c\u56e0\u70ba\u4f60\u5c07 `factor_survey_vector` \u6307\u6d3e\u70ba\u56e0\u7d20\u5411\u91cf\uff0c\u6240\u4ee5R\u6703\u986f\u793a\u51fa\u6bcf\u500b\u985e\u5225\u7684\u500b\u6578\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:9247612eea708b363b23b58a9fdff76ba50818e9
-## Battle of the sexes
+## 兩性戰爭
 
-In `factor_survey_vector` we have a factor with two levels: Male and Female. But how does R value these relatively to each other? In other words, who does R think is better, males or females?
+`factor_survey_vector` 是有兩個級別的因素向量：男性與女性。但R是否有比較這兩個級別的好壞優劣呢？
 
 *** =instructions
-Read the code in the editor and click 'Submit Answer' to see whether males are worth more than females.
+讀編輯區的程式然後按 'Submit Answer' 看看是否男性比女性來得差勁。
 
 *** =hint
-Just click 'Submit Answer' and have a look at output that gets printed to the console.
+按 'Submit Answer' 並看看R Console的輸出。
 
 *** =pre_exercise_code
 ```{r}
@@ -315,72 +315,72 @@ Just click 'Submit Answer' and have a look at output that gets printed to the co
 
 *** =sample_code
 ```{r}
-# Build factor_survey_vector with clean levels
+# 建立有清楚級別的factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 
-# Male
+# 男性
 male <- factor_survey_vector[1] 
 
-# Female
+# 女性
 female <- factor_survey_vector[2]
 
-# Battle of the sexes: Male 'larger' than female?
+# 兩性戰爭：男性'大於'女性？
 male > female
 ```
 
 *** =solution
 ```{r}
-# Build factor_survey_vector with clean levels
+# 建立有清楚級別的factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 
-# Male
+# 男性
 male <- factor_survey_vector[1] 
 
-# Female
+# 女性
 female <- factor_survey_vector[2]
 
-# Battle of the sexes: Male 'larger' than female?
+# 兩性戰爭：男性'大於'女性？
 male > female
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u7a0b\u5f0f\uff0c\u6309\u9001\u51fa\u7b54\u6848\u4e26\u6aa2\u8996\u7d50\u679c\u3002"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("male", undefined_msg = msg, incorrect_msg = msg)
 test_object("female", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("male > female", incorrect_msg = msg)
-success_msg("Phew, it seems that R is gender-neutral. Or maybe it just wants to stay out of these discussions ;-).")
+success_msg("\u547c...\u597d\u96aa\uff0c\u770b\u8d77\u4f86R\u662f\u6c92\u6709\u6027\u5225\u6b67\u8996\u7684\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:a25f8ec566840068e4065b4af557ffe8eefa0b53
-## Ordered factors
+## 順序型因素向量
 
-Since `"Male"` and `"Female"` are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors. 
+既然 `"Male"` 與 `"Female"` 是沒有順序的(或者說是名目)，所以R回傳了警告訊息，告訴你 `>` 運算子沒有意義，R把它們視為相等。 
 
-But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R... 
+但你有時還是得處理那些具有天生順序性的類別變數，這時我們得要特別把這個訊息告訴R才行...
 
-Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as `"slow"`, `"fast"` or `"insane"`, and save the results in `speed_vector`.
+假如你管理一個有5個資料分析師的研究團隊，你衡量他們的速度表現後將他們歸類為"slow"、"fast"與"insane"，然後把結果指派給一個向量 `speed_vector`。
 
 *** =instructions
-As a first step, assign `speed_vector` knowing that: 
+第一步我們要宣告 `speed_vector` ：
 
-- Analyst 1 is fast, 
-- Analyst 2 is slow, 
-- Analyst 3 is slow,
-- Analyst 4 is fast and
-- Analyst 5 is insane.
+- 分析師1是fast，
+- 分析師2是slow，
+- 分析師3是slow，
+- 分析師4是fast，
+- 分析師5是insane。
 
-No need to specify these are factors yet.
+還不需要指定為因素向量。
 
 *** =hint
-Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow"` ...
+宣告 `speed_vector` 並指派一個字串向量 `"fast"` 、 `"slow"` 給它。
 
 *** =pre_exercise_code
 ```{r}
@@ -389,28 +389,28 @@ Assign to `speed_vector` a vector containing character strings, `"fast"`, `"slow
 
 *** =sample_code
 ```{r}
-# Create speed_vector
+# 宣告speed_vector
 speed_vector <-
 ```
 
 *** =solution
 ```{r}
-# Create speed_vector
+# 宣告speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 ```
 
 *** =sct
 ```{r}
 test_object("speed_vector", 
-            incorrect_msg = "Make sure that you assigned the correct vector to speed_vector. Don't use capital letters; R is case sensitive!")
-success_msg("A job well done! Continue to the next exercise.")
+            incorrect_msg = "\u78ba\u8a8d\u4f60\u6709\u5c07\u6b63\u78ba\u7684\u503c\u6307\u6d3e\u7d66speed_vector\uff0c\u4e0d\u8981\u4f7f\u7528\u5927\u5beb\u82f1\u6587\u5b57\uff0c\u5927\u5c0f\u5beb\u5c0dR\u662f\u4e0d\u540c\u7684\uff01")
+success_msg("\u505a\u5f97\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:52c40d180e9661fd82e138f210eef258a81e51e1
-## Ordered factors (2)
+## 順序型因素向量 (2)
 
-`speed_vector` should be converted to an ordinal factor since its categories have a natural ordering. By default, the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) transforms `speed_vector` into an unordered factor. To create an ordered factor, you have to add two additional arguments: `ordered` and `levels`. 
+`speed_vector` 接下來會被轉換為順序型因素向量因為速度是有快慢之分的。直接使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數預設會將 `speed_vector` 轉換成非順序型的因素向量，為了建立一個順序型因素向量，你必須加入2個額外參數： `ordered` 與 `levels`。
 
 ```
 factor(some_vector, 
@@ -418,13 +418,13 @@ factor(some_vector,
        levels = c("lev1", "lev2" ...))
 ``` 
 
-By setting the argument `ordered` to `TRUE` in the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor), you indicate that the factor is ordered. With the argument `levels` you give the values of the factor in the correct order.
+在[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數中設定參數 `ordered` 為 `TRUE` 指定這個因素向量是順序型的，而參數 `levels` 則讓你給定正確的順序。
 
 *** =instructions
-From `speed_vector`, create an ordered factor vector: `factor_speed_vector`. Set `ordered` to `TRUE`, and set `levels` to `c("slow", "fast", "insane")`.
+將 `speed_vector` 轉換為 `factor_speed_vector` 並將 `ordered` 指定為 `TRUE` 並設定 `levels` 為 `c("slow", "fast", "insane")`。
 
 *** =hint
-Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor) to create `factor_speed_vector` based on `speed_character_vector`. The argument `ordered` should be set to `TRUE` since there is a natural ordering. Also, set `levels = c("slow", "fast", "insane")`.
+呼叫[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數將 `speed_character_vector` 轉換為 `factor_speed_vector`。參數 `ordered` 應該要被設定為 `TRUE` 因為速度是有快慢之分的，另外也要記得設定 `levels = c("slow", "fast", "insane")`.
 
 *** =pre_exercise_code
 ```{r}
@@ -433,58 +433,58 @@ Use the function [`factor()`](http://www.rdocumentation.org/packages/base/functi
 
 *** =sample_code
 ```{r}
-# Create speed_vector
+# 建立speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane") 
 
-# Convert speed_vector to ordered factor vector
+# 轉換speed_vector為順序型因素向量
 factor_speed_vector <-  
 
-# Print factor_speed_vector
+# 印出factor_speed_vector與其摘要
 factor_speed_vector
 summary(factor_speed_vector) 
 ```
 
 *** =solution
 ```{r}
-# Create speed_vector
+# 建立speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 
-# Add your code below
+# 轉換speed_vector為順序型因素向量
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
-# Print factor_speed_vector
+# 印出factor_speed_vector與其摘要
 factor_speed_vector
 summary(factor_speed_vector) 
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u5ba3\u544a `speed_vector` \u7684\u7a0b\u5f0f\u3002"
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_function("factor", "x", incorrect_msg = "The first argument you pass to `factor()` should be `speed_vector`.")
-test_function("factor", "ordered", incorrect_msg = "Make sure to set `ordered = TRUE` inside your call of `factor()`.")
-test_function("factor", "levels", incorrect_msg = "Make sure to set `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
+test_function("factor", "x", incorrect_msg = "\u50b3\u5165 `factor()` \u7684\u7b2c\u4e00\u500b\u53c3\u6578\u61c9\u8a72\u70ba `speed_vector`\u3002")
+test_function("factor", "ordered", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u5c07\u53c3\u6578 `ordered = TRUE` \u52a0\u5165 `factor()` \u4e2d\u3002")
+test_function("factor", "levels", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u5c07\u53c3\u6578 `levels = c(\"slow\", \"fast\", \"insane\")` \u52a0\u5165 `factor()`\u4e2d\u3002")
 test_object("factor_speed_vector", eq_condition = "equal",
-            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"fast\", \"insane\")` inside your call of `factor()`.")
-success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+            incorrect_msg = "`factor_speed_vector` \u770b\u8d77\u4f86\u9084\u662f\u6709\u9ede\u554f\u984c\uff0c\u8acb\u78ba\u8a8d\u4f60\u6709\u5c07\u53c3\u6578 `speed_vector` \u3001 `ordered = TRUE` \u8207 `levels = c(\"slow\", \"fast\", \"insane\")` \u653e\u5165 `factor()`\u4e2d\u3002")
+success_msg("\u592a\u68d2\u4e86\uff0c\u5f9eR Console\u4e2d\u53ef\u4ee5\u770b\u5230R\u7528 `<` \u7b26\u865f\u6a19\u793a\u4e86\u5feb\u6162\u9806\u5e8f\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:6195cdd81bcd1b66d8dde93500dc2e4df63c58d0
-## Comparing ordered factors
+## 比較順序型因素向量
 
-Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true. 
+經過一天辛苦的工作，'資料分析師2'進來你的辦公室並開始抱怨'資料分析師5'拖垮了整個專案。由於你知道'資料分析師2'向來以聰明著稱，你想先檢查一下他說的是否屬實。
 
-The fact that `factor_speed_vector` is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.
+既然 `factor_speed_vector` 已經排好順序，你可以用 `>` 這個運算子來比較快慢。
 
 *** =instructions
-- Use `[2]` to select from `factor_speed_vector` the factor value for the second data analyst. Store it as `da2`.
-- Use `[5]` to select the `factor_speed_vector` factor value for the fifth data analyst. Store it as `da5`.
-- Check if `da2` is greater than `da5`; simply print out the result. Remember that you can use the `>` operator to check whether one element is larger than the other.
+- 用 `[2]` 把 `factor_speed_vector` 中的第二個資料分析師選出來，指派給 `da2`。
+- 用 `[5]` 把 `factor_speed_vector` 中的第五個資料分析師選出來，指派給 `da5`。
+- 確認 `da2` 是否比 `da5` 快並印出結果，記得使用 `>` 運算子來檢查哪個元素較大。
 
 *** =hint
-- To select the factor value for the third data analyst, you'd need `factor_speed_vector[3]`.
-- To compare two values, you can use `>`. For example: `da3 > da4`.
+- 你需要輸入 `factor_speed_vector[3]` 來將第三個資料分析師選出來。
+- 為了比較2個數值可以使用 `>` 例如： `da3 > da4`。
 
 *** =pre_exercise_code
 ```{r}
@@ -493,48 +493,48 @@ The fact that `factor_speed_vector` is now ordered enables us to compare differe
 
 *** =sample_code
 ```{r}
-# Create factor_speed_vector
+# 建立factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
-# Factor value for second data analyst
+# 選出資料分析師2
 da2 <- 
 
-# Factor value for fifth data analyst
+# 選出資料分析師5
 da5 <-
 
-# Is data analyst 2 faster than data analyst 5?
+# 資料分析師2是否比資料分析師5快？
 
 ```
 
 *** =solution
 ```{r}
-# Create factor_speed_vector
+# 建立factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
-# Factor value for second data analyst
+# 選出資料分析師2
 da2 <- factor_speed_vector[2]
 
-# Factor value for fifth data analyst
+# 選出資料分析師5
 da5 <- factor_speed_vector[5] 
 
-# Is data analyst 2 faster data analyst 5?
+# 資料分析師2是否比資料分析師5快？
 da2 > da5
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
+msg = "\u4e0d\u9700\u8981\u66f4\u6539\u4efb\u4f55\u5ba3\u544a `speed_vector` \u8207 `factor_speed_vector` \u7684\u7a0b\u5f0f\u3002"
 test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("factor_speed_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
-test_object("da2", eq_condition = "equal", incorrect_msg = sprintf(msg, "second", "2"))
-test_object("da5", eq_condition = "equal", incorrect_msg = sprintf(msg, "fifth", "5"))
-test_output_contains("da2 > da5", incorrect_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
+msg <- "\u78ba\u8a8d\u662f\u5426\u6709\u6b63\u78ba\u9078\u64c7\u51fa%s\u8cc7\u6599\u5206\u6790\u5e2b\uff0c\u4f60\u53ef\u4ee5\u4f7f\u7528 `factor_speed_vector[%s]` \u4f86\u505a\u9078\u64c7\u3002"
+test_object("da2", eq_condition = "equal", incorrect_msg = sprintf(msg, "第二位", "2"))
+test_object("da5", eq_condition = "equal", incorrect_msg = sprintf(msg, "第五位", "5"))
+test_output_contains("da2 > da5", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u6bd4\u8f03 `da2` \u8207 `da5`\uff1f\u4f7f\u7528 `>` \u4e26\u5370\u51fa\u7d50\u679c\u3002")
 
-success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact he or she is the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
+success_msg("\u592a\u7f8e\u597d\u4e86\uff0c\u7d50\u679c\u544a\u8a34\u4e86\u4f60\uff0c\u5176\u5be6\u90a3\u500b\u4f86\u62b1\u6028\u8cc7\u6599\u5206\u6790\u5e2b5\u7684\u8cc7\u6599\u5206\u6790\u5e2b2\u624d\u662f\u90a3\u500b\u62d6\u6162\u5c08\u6848\u7684\u4eba\uff0c\u9019\u662f\u56e0\u7d20\u5411\u91cf\u7ae0\u7bc0\u7684\u6700\u5f8c\u4e00\u500b\u7df4\u7fd2\uff0c\u73fe\u5728\u4f60\u6709\u4e86\u5c0d\u5411\u91cf\u3001\u77e9\u9663\u8207\u56e0\u7d20\u5411\u91cf\u7684\u5177\u9ad4\u60f3\u6cd5\uff0c\u4f60\u5df2\u7d93\u6e96\u5099\u597d\u8981\u9081\u5165\u975e\u5e38\u91cd\u8981\u7684\u8cc7\u6599\u6846\uff01")
 ```
 
 

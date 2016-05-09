@@ -104,10 +104,10 @@ success_msg("太棒了，讓我們看看資料集中有什麼資料，例如 `hp
 當你拿到一個新資料集或資料框，在你開始做分析之前通常會使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數了解資料的樣態。
 
 *** =instructions
-Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). Make sure that you see the same numbers, variables and data types as mentioned above.
+觀察[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)的結構，並確定你有觀察到跟前述相同的觀測值個數、變數總計與資料類別。
 
 *** =hint
-Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function on [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars).
+對[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數。
 
 *** =pre_exercise_code
 ```{r}
@@ -116,47 +116,47 @@ Use the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) fu
 
 *** =sample_code
 ```{r}
-# Investigate the structure of mtcars
+# 查看mtcars的結構
 ```
 
 *** =solution
 ```{r}
-# Investigate the structure of mtcars
+# 查看mtcars的結構
 str(mtcars)
 ```
 
 *** =sct
 ```{r}
-test_output_contains("str(mtcars)", incorrect_msg = "Have you correctly called `str()` on `mtcars`?")
-success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
+test_output_contains("str(mtcars)", incorrect_msg = "確認是否有對 `mtcars` 使用 `str()`？")
+success_msg("做得好，你看到了說明中的資訊嗎？前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:1599e175505f5980064369d4fea9b77ce1574b4e
-## Creating a data frame 
+## 建立一個資料框 
 
-Since using built-in data sets is not even half the fun of creating your own data sets, the rest of this chapter is based on your personally developed data set. Put your jet pack on because it is time for some space exploration! 
+用內建的資料集一點都不有趣對吧！接下來的練習我們要使用你自己建立的資料框，讓我們穿上太空衣，做一點星際探索吧！
 
-As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:
+首先我們來建立一個描述太陽系八個行星特性的資料框，根據你的好友Buzz的說法，星球的主要特性有：
 
-- The type of planet (Terrestrial or Gas Giant).
-- The planet's diameter relative to the diameter of the Earth.
-- The planet's rotation across the sun relative to that of the Earth.
-- If the planet has rings or not (TRUE or FALSE).
+- 星球種類(陸地或氣體)。
+- 星球相對於地球的直徑。
+- 星球相對於地球的自轉頻率。
+- 星球是否有環(TRUE或FALSE)。
 
-After doing some high-quality research on [Wikipedia](http://en.wikipedia.org/wiki/Planet), you feel confident enough to create the necessary vectors: `name`, `type`, `diameter`, `rotation` and `rings`; these vectors have already been coded up on the right. The first element in each of these vectors correspond to the first observation.
+經過在維基百科[Wikipedia](http://en.wikipedia.org/wiki/Planet)上的精密研究以後，你很有自信地建立了這些向量： `name` 、 `type` 、 `diameter` 、 `rotation` 與 `rings`，建立這些向量的程式碼已經寫好在編輯區中。
 
-You construct a data frame with the [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
+使用[`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame)函數建立資料框，這些向量都會成為資料框中的欄位，它們的長度都相同，但是資料格式有所不同。
 
 *** =instructions
-Use the function [`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame) to construct a data frame. Pass the vectors `name`, `type`, `diameter`, `rotation` and `rings` as arguments to `data.frame()`, in this order. Call the resulting data frame `planets_df`.
+使用[`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame)函數建立資料框，將`name` 、 `type` 、 `diameter` 、 `rotation` 與 `rings` 做為參數放入 `data.frame()`並將建立的資料框命名為 `planets_df`。
 
 *** =hint
-Your `data.frame()` call starts as follows:
+你的`data.frame()`函數會長得類似像這樣：
 ```
 data.frame(planets, type, diameter)
 ```
-Can you finish it?
+你可以完成它嗎？
 
 *** =pre_exercise_code
 ```{r}
@@ -165,7 +165,7 @@ Can you finish it?
 
 *** =sample_code
 ```{r}
-# Definition of vectors
+# 宣告向量
 name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
           "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
@@ -173,14 +173,14 @@ diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# 由這些向量建立資料框
 planets_df <-
 
 ```
 
 *** =solution
 ```{r}
-# Definition of vectors
+# 宣告向量
 name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
           "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
@@ -188,13 +188,13 @@ diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
 rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
-# Create a data frame from the vectors
+# 由這些向量建立資料框
 planets_df <- data.frame(name, type, diameter, rotation, rings)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+msg = "不需要更改向量的宣告，加入 `data.frame()` 建立 `planets_df`。"
 test_object("name", undefined_msg = msg, incorrect_msg = msg)
 test_object("type", undefined_msg = msg, incorrect_msg = msg)
 test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
@@ -202,22 +202,22 @@ test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("planets_df",
-            incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+            incorrect_msg = "確認是否有使用 `data.frame()` 建立 `planets_df`，並確認在 `data.frame()` 函數中用正確的順序將所有的向量當作參數寫入： `name` 、 `type` 、 `diameter` 、 `rotation` 與 `rings`。")
 
-success_msg("Great job! Continue to the next exercise. The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+success_msg("做得好，前進下一個練習，階下來我們要檢視你剛建立好的資料框！");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:72d24b916b842527b40bd19ff3093b823980c234
-## Creating a data frame (2)
+## 建立一個資料框 (2)
 
-The `planets_df` data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.
+`planets_df` 資料框已經載入至工作區，它有8個觀測值與5個欄位，你可以直接使用它。
 
 *** =instructions
-Use [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) to investigate the structure of the new `planets_df` variable.
+使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數來檢視 `planets_df` 的結構與變數。
 
 *** =hint
-`planets_df` is already available in your workspace, so `str(planets_df)` will do the trick.
+`planets_df` 已經載入至工作區，直接於編輯區輸入 `str(planets_df)` 即可。
 
 *** =pre_exercise_code
 ```{r}
@@ -226,33 +226,33 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# Check the structure of planets_df
+# 檢查planets_df的結構
 ```
 
 *** =solution
 ```{r}
-# Check the structure of planets_df
+# 檢查planets_df的結構
 str(planets_df)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+msg = "不需要移除或覆寫已經載入至工作區的 `planets_df` 資料框！"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("str(planets_df)", incorrect_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
-success_msg("Awesome! Now that you have a clear understanding of the `planets_df` data set, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+test_output_contains("str(planets_df)", incorrect_msg = "確認是否有使用 `str()` 來顯示 `planets_df` 的結構？")
+success_msg("太棒了，你現在對 `planets_df` 有清楚的了解，接下來的練習將讓你學會如何從資料框中選擇元素！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:a6eeec0beaa5b270c1e9fd1fd4bf285ac5363e1a
-## Selection of data frame elements
+## 從資料框中選擇元素
 
-Similar to vectors and matrices, you select elements from a data frame with the help of square brackets `[ ]`. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+與向量及矩陣相似，你可以使用中括號 `[ ]` 從資料框中選擇，並用逗號分別指定要選擇的列與欄，例如：
 
-- `my_df[1,2]` selects the value at the first row and select element in `my_df`.
-- `my_df[1:3,2:4]` selects rows 1, 2, 3 and columns 2, 3, 4 in `my_df`.
+- `my_df[1,2]` 將 `my_df` 第一列第二欄的元素選出。
+- `my_df[1:3,2:4]` 將 `my_df` 第一到三列與第二至四欄選出。
 
-Sometimes you want to select all elements of a row or column. For example, `my_df[1, ]` selects all elements of the first row. Let us now apply this technique on `planets_df`!
+有時候你想要選擇整列或整欄的所有元素，例如使用 `my_df[1, ]` 可以將第一列所有的元素選出，接下來我們對 `planets_df` 練習這些技巧！
 
 *** =instructions
 - From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.

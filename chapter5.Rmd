@@ -527,11 +527,11 @@ success_msg("太棒了， `subset()` 不僅很簡潔，它也能夠讓讀者更�
 --- type:NormalExercise xp:100 skills:1 key:2397d0f7cdf728961c9f5b8208c3b2694e20e2df
 ## 排序
 
-Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+人們總是很喜歡排名，像是世界上最好的大學、最有影響力的電影明星或者最像007情報員的人。
 
-In data analysis you can sort your data according to a certain variable in the data set. In R, this is done with the help of the function [`order()`](http://www.rdocumentation.org/packages/base/functions/order). 
+你可以根據某個變數排序你的資料，在R中你需要使用[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數。
 
-[`order()`](http://www.rdocumentation.org/packages/base/functions/order) is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數會回傳投入變數的排序順位，例如：
 
 ```
 > a <- c(100, 10, 1000)
@@ -539,9 +539,9 @@ In data analysis you can sort your data according to a certain variable in the d
 [1] 2 1 3
 ```
 
-10, which is the second element in `a`, is the smallest elements, so 2 comes first in the output of `order(a)`. 100, which is the first element in `a` is the second smallest element, so 1 comes second in the output of `order(a)`.
+10是最小的元素，所以回傳結果的第二個元素為1，而100是第二小的元素，故回傳結果的第一個元素為2。
 
-This means we can use the output of `order(a)` to reshuffle `a`:
+這表示我們可以利用 `order(a)` 的輸出重洗 `a` 的順序：
     
 ```
 > a[order(a)]
@@ -549,10 +549,10 @@ This means we can use the output of `order(a)` to reshuffle `a`:
 ``` 
 
 *** =instructions
-Experiment with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console. Click 'Submit Answer' when you are ready to continue.
+在R Console體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數，準備好後按下'Submit Answer'。
 
 *** =hint
-Just play with the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function in the console!
+在R Console中體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數！
 
 *** =pre_exercise_code
 ```{r}
@@ -561,32 +561,32 @@ Just play with the [`order()`](http://www.rdocumentation.org/packages/base/funct
 
 *** =sample_code
 ```{r}
-# Play around with the order function in the console
+# 在R Console中玩玩order函數
 ```
 
 *** =solution
 ```{r}
-# Play around with the order function in the console
+# 在R Console中玩玩order函數
 ```
 
 *** =sct
 ```{r}
-success_msg("Great! Now let's use the `order()` function to sort your data frame!")
+success_msg("太棒了，讓我們來使用 `order()` 函數來排序你的資料框！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:81baabbbb256ac67de6d584ee37cfa218566f54a
-## Sorting your data frame
+## 排序你的資料框
 
-Alright, now that you understand the [`order()`](http://www.rdocumentation.org/packages/base/functions/order) function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the `diameter` column.
+現在你了解[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數，接下來你可以依據 `diameter` 欄位排序資料框，從最小的星球排到最大的星球。
 
 *** =instructions
-- Call `order()` on `planets_df$diameter` (the `diameter` column of `planets_df`). Store the result as `positions`.
-- Now reshuffle `planets_df` with the `positions` vector as row indexes inside square brackets. Keep all columns. Simply print out the result.
+- 對 `planets_df$diameter` (`planets_df` 的 `diameter`欄位) 使用 `order()` 並將結果存為 `positions`。
+- 利用 `positions` 向量作為中括號裡的列數索引重洗 `planets_df` ，保留所有的欄位並將結果印出。
 
 *** =hint
-- Use `order(planets_df$diameter)` to create `positions`.
-- Now, you can use `positions` inside square brackets: `planets_df[...]`; can you fill in the `...`?
+- 利用 `order(planets_df$diameter)` 建立 `positions`。
+- 在中括號中使用 `positions` 例如 `planets_df[...]` ，你知道在 `...` 中該填什麼？
 
 *** =pre_exercise_code
 ```{r}
@@ -595,35 +595,35 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df is pre-loaded in your workspace
+# planets_df已經預先載入
 
-# Use order() to create positions
+# 使用order()建立positions
 positions <-  
 
-# Use positions to sort planets_df
+# 使用positions排序planets_df
 
 ```
 
 *** =solution
 ```{r}
-# planets_df is pre-loaded in your workspace
+# planets_df已經預先載入
 
-# Use order() to create positions
+# 使用order()建立positions
 positions <- order(planets_df$diameter)
 
-# Use positions to sort planets_df
+# 使用positions排序planets_df
 planets_df[positions, ]
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "不需要移除或覆寫 `planets_df` 資料框！"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("positions",
-            incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `sort(planets_df$diameter)`.")
+            incorrect_msg = "確認是否使用 `sort(planets_df$diameter)` 正確計算 `positions`？")
 test_output_contains("planets_df[positions,]",
-                     incorrect_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
-success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+                     incorrect_msg = "使用 `planets_df[positions, ]` 來排序 `planets_df` ，中括號裡的逗號很重要！")
+success_msg("太完美了，這是資料框的最後一個練習，記得資料框在R中是非常重要的，未來你將很常碰到它，另外一個常見的資料格式是清單，是我們下一章要學習的主題！")
 ```
 
 

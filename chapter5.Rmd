@@ -1,28 +1,28 @@
 --- 
-title_meta  : Chapter 5
-title       : Data frames
-description : Most data sets you will be working with will be stored as data frames. By the end of this chapter focused on R basics, you will be able to create a data frame, select interesting parts of a data frame and order a data frame according to certain variables.
+title_meta  : 第五章
+title       : 資料框
+description : 實務上你面對的多數資料集都是儲存為資料框的格式，學完本章節之後，你將可以建立資料框、選擇資料框中有興趣的部分以及根據某一個變數排序資料框。
 
 --- type:NormalExercise xp:100 skills:1 key:697536131763a67337978935d895a05e2ed6bfee
-## What's a data frame?
+## 資料框是什麼？
 
-You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. 
+矩陣中所有的元素都應該是相同類型的，記得你在前一個章節中建立的星際大戰票房矩陣嗎？矩陣裡面的元素全部都是數值。
 
-When doing a market research survey, however, you often have questions such as:
-- 'Are your married?' or 'yes/no' questions (`logical`)
-- 'How old are you?' (`numeric`)
-- 'What is your opinion on this product?' or other 'open-ended' questions (`character`)
+當你做市場調查時，問卷中常常有問題像是：
+- 請問你結婚了嗎？回答為是/否的問題(`邏輯`)
+- 請問你的年紀為？(`數值`)
+- 對於本產品的意見？或其他開放式問題(`字元`)
 - ...
 
-The output, namely the respondents' answers to the questions formulated above, is a data set of different data types. You will often find yourself working with data sets that contain different data types instead of only one. 
+因此問卷的調查結果通常包含了不同類型的資料。 
 
-A data frame has the variables of a data set as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.
+資料框中將觀測值儲存為列，將變數儲存為欄，這與其他統計軟體像是SAS或SPSS的概念是相似的。
 
 *** =instructions
-Click 'Submit Answer'. The data from the built-in example data frame [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) will be printed to the console.
+按下'Submit Answer'。將內建的範例資料框[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)印出在R Console中。
 
 *** =hint
-Just click 'Submit Answer' and witness the magic!
+按下'Submit Answer'並觀察結果！
 
 *** =pre_exercise_code
 ```{r}
@@ -31,39 +31,39 @@ Just click 'Submit Answer' and witness the magic!
 
 *** =sample_code
 ```{r}
-# Print out built-in R data frame
+# 印出內建的R資料框
 mtcars 
 ```
 
 *** =solution
 ```{r}
-# Print out built-in R data frame
+# 印出內建的R資料框
 mtcars 
 ```
 
 *** =sct
 ```{r}
-test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
-success_msg("Great! Continue to the next exercise.")
+test_output_contains("mtcars", incorrect_msg = "不需要更改任何程式，確定你有將 `mtcars` 印出。")
+success_msg("太棒了，前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:c3f245836ce0b7473355c0278265f0b16f18a4b7
-## Quick, have a look at your data set
+## 很快地看看資料集
 
-Wow, that is a lot of cars! 
+哇，真的有很多車！ 
 
-Working with large data sets is not uncommon in data analysis. When you work with (extremely) large data sets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire data set. 
+你常常需要分析龐大的資料集，這時候你的第一件事應該是對資料結構與主要元素有清晰的認知，先觀察小部份的資料集是很有用的。
 
-So how to do this in R? Well, the function [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) enables you to show the first observations of a data frame. Similarly, the function [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) prints out the last observations in your data set.
+在R中可以使用[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)函數幫助你呈現資料框的前幾個觀測值，相同地，[`tail()`](http://www.rdocumentation.org/packages/utils/functions/head)函數可以印出資料框的最後幾個觀測值。
 
-Both [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) and [`tail()`](http://www.rdocumentation.org/packages/utils/functions/head) print a top line called the 'header', which contains the names of the different variables in your data set.
+[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)與[`tail()`](http://www.rdocumentation.org/packages/utils/functions/head)函數都會將欄位的名稱印出。
 
 *** =instructions
-Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on the [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars) data set to have a look at the header and the first observations.
+對[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)資料框使用[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)函數來看看它的欄位名稱與前幾列觀測值。
 
 *** =hint
-`head(mtcars)` will show the first observations of the `mtcars` data frame.
+`head(mtcars)` 會將 `mtcars` 的前幾列印出。
 
 *** =pre_exercise_code
 ```{r}
@@ -72,36 +72,36 @@ Call [`head()`](http://www.rdocumentation.org/packages/utils/functions/head) on 
 
 *** =sample_code
 ```{r}
-# Call head() on mtcars
+# 對mtcars呼叫head()
 
 ```
 
 *** =solution
 ```{r}
-# Call head() on mtcars
+# 對mtcars呼叫head()
 head(mtcars)
 ```
 
 *** =sct
 ```{r}
-test_function("head", "x", incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
-test_output_contains("head(mtcars)", incorrect_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
-success_msg("Wonderful! So, what do we have in this data set? For example, `hp` for example represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+test_function("head", "x", incorrect_msg = "確認是否有對 `mtcars` 使用 `head()` 函數？")
+test_output_contains("head(mtcars)", incorrect_msg = "只需要將呼叫 `head()` 的結果印出即可，不需要指派新變數。")
+success_msg("太棒了，讓我們看看資料集中有什麼資料，例如 `hp` 代表車子的馬力，Datsun在呈現出來的6輛車子中是馬力最低的那輛，在R Console輸入 `?mtcars` 可以閱讀詳細的變數定義與類型，前進下一個練習！");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:44c05f378266cbc25079ec804787fdc09e111aa0
-## Have a look at the structure
+## 觀察一下結構
 
-Another method that is often used to get a rapid overview of your data is the function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str). The function [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) shows you the structure of your data set. For a data frame it tells you:
+還有另外一種常用的方式可以幫助你快速地瞭解資料概觀，那就是使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數，[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數顯示資料集的結構，告訴你資料框的資訊有：
 
-- The total number of observations (e.g. 32 car types)
-- The total number of variables (e.g. 11 car features)
-- A full list of the variables names (e.g. `mpg`, `cyl` ... )
-- The data type of each variable (e.g. `num`)
-- The first observations
+- 觀測值總計(32種車型)
+- 變數總計(11種車輛資訊)
+- 變數名稱清單(`mpg`, `cyl` ... )
+- 變數的資料類型(`數值`)
+- 前幾個觀測值
 
-Applying the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function will often be the first thing that you do when receiving a new data set or data frame. It is a great way to get more insight in your data set before diving into the real analysis.
+當你拿到一個新資料集或資料框，在你開始做分析之前通常會使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數了解資料的樣態。
 
 *** =instructions
 Investigate the structure of [`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars). Make sure that you see the same numbers, variables and data types as mentioned above.

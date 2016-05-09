@@ -252,14 +252,14 @@ success_msg("太棒了，你現在對 `planets_df` 有清楚的了解，接下�
 - `my_df[1,2]` 將 `my_df` 第一列第二欄的元素選出。
 - `my_df[1:3,2:4]` 將 `my_df` 第一到三列與第二至四欄選出。
 
-有時候你想要選擇整列或整欄的所有元素，例如使用 `my_df[1, ]` 可以將第一列所有的元素選出，接下來我們對 `planets_df` 練習這些技巧！
+有時候你想要選擇整列或整欄的所有元素，例如使用 `my_df[1, ]` 可以將第一列所有的元素選出，接下來我們將對 `planets_df` 練習這些技巧！
 
 *** =instructions
-- From `planets_df`, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.
-- From `planets_df`, select all data on Mars (the fourth row). Simply print out the result.
+- 從 `planets_df` 的第一列第三欄將水星的直徑選出，並印出結果。
+- 從 `planets_df` 的第四列將火星所有的資訊選出，並印出結果。
 
 *** =hint
-To select the diameter for Venus (the second row), you would need: `planets_df[2,3]`. What do you need for Mercury then?
+利用 `planets_df[2,3]` 可以將金星的直徑選出，如果是水星呢？
 
 *** =pre_exercise_code
 ```{r}
@@ -268,58 +268,57 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# The planets_df data frame from the previous exercise is pre-loaded
+# planets_df資料框已經預先載入
 
-# Print out diameter of of Mercury (row 1, column 3)
+# 印出水星的直徑(第一列第三欄)
 
 
-# Print out data for Mars (entire fourth row)
+# 印出火星的資訊(第四列)
 
 ```
 
 *** =solution
 ```{r}
-# The planets_df data frame from the previous exercise is pre-loaded
+# planets_df資料框已經預先載入
 
-# Print out diameter of of Mercury (row 1, column 3)
-planets_df[1,3]
+# 印出水星的直徑(第一列第三欄)
 
-# Print out data for Mars (entire fourth row)
+# 印出火星的資訊(第四列)
 planets_df[4, ]
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "不需要更改或覆寫 `planets_df` 資料框。"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("planets_df[1,3]", incorrect_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
-test_output_contains("planets_df[4, ]", incorrect_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
-success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+test_output_contains("planets_df[1,3]", incorrect_msg = "確認你是否有利用 `[1,3]` 選擇並印出水星的直徑？")
+test_output_contains("planets_df[4, ]", incorrect_msg = "確認你是否有利用 `[4,]` 選擇並印出火星的所有資訊？")
+success_msg("太棒了，除了用索引值以外，你也可以用欄位名稱從資料框中選出元素，前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:1b1be7e1473994d9d6762816f15ea282787be250
-## Selection of data frame elements (2)
+## 從資料框中選擇元素 (2)
 
-Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. 
+除了使用索引值從資料框中選擇元素，你也可以使用變數名稱進行選擇。 
 
-Suppose you want to select the first three elements of the `type` column. One way to do this is
+如果你想選擇 `type` 欄位的前三個元素，你可以這樣做
 
 ```
 planets_df[1:3,1]
 ```
 
-A possible disadvantage of this approach is that you have to know (or look up) the column number of `type`, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:
+這個做法有一個缺點就是你必須要去查詢 `type` 在第幾欄，當你的變數變多時，這個做法就會變得很困難，因此用變數名稱就會顯得比較輕鬆：
 
 ```
 planets_df[1:3,"type"]
 ```
 
 *** =instructions
-Select and print out the first 5 values in the `"diameter"` column of `planets_df`.
+從 `planets_df` 中選擇並印出 `"diameter"` 的前5個值。
 
 *** =hint
-You can select the first five values with `planets_df[1:5, ...]`. Can you fill in the `...` bit to only select the `"diameter"` column?
+你可以使用 `planets_df[1:5, ...]` 選出前5個值，將 `...` 替換成 `"diameter"` 這個欄位。
 
 *** =pre_exercise_code
 ```{r}
@@ -328,51 +327,51 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# The planets_df data frame from the previous exercise is pre-loaded
+# planets_df資料框已經預先載入
 
-# Select first 5 values of diameter column
+# 選出diameter欄位的前5個值
 
 ```
 
 *** =solution
 ```{r}
-# The planets_df data frame from the previous exercise is pre-loaded
+# planets_df資料框已經預先載入
 
-# Select first 5 values of diameter column
+# 選出diameter欄位的前5個值
 planets_df[1:5, "diameter"]
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "不需要移除或覆寫 `planets_df` 資料框。"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("planets_df[1:5, \"diameter\"]", incorrect_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
-success_msg("Nice! Continue to the next exercise!")
+test_output_contains("planets_df[1:5, \"diameter\"]", incorrect_msg = "確認是否有利用 `[1:5, \"diameter\"]` 選出直徑欄位的前5個數值並印出來？")
+success_msg("太好了，前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:c332cd7e7e46daa391edea8aea961414c8c8d0ce
-## Only planets with rings
+## 有環的星球
 
-You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable `diameter`, for example, both of these will do the trick:
+你常常需要選出資料框中的某個特定欄位，假如要選出 `diameter` 變數，用以下兩列指令都可以：
 
 ```
 planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-However, there is a short-cut. If your columns have names, you can use the `$` sign:
+其實還有使用 `$` 符號的簡便方法：
 
 ```
 planets_df$diameter
 ```
 
 *** =instructions
-- Use the `$` sign to select the `rings` variable from `planets_df`. Store the vector that results as `rings_vector`.
-- Print out `rings_vector` to see if you got it right.
+- 使用 `$` 符號把變數 `rings` 從 `planets_df` 選擇出來並指派給 `rings_vector`。
+- 印出 `rings_vector` 看看有沒有做對。
 
 *** =hint
-`planets_df$diameter` selects the `diameter` column from `planets_df`; what do you need to select the `rings` column then?
+使用 `planets_df$diameter` 可以將 `diameter` 欄位從 `planets_df` 中選出，那麼應該如何將 `rings` 欄位選出呢？
 
 *** =pre_exercise_code
 ```{r}
@@ -381,56 +380,56 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df is pre-loaded in your workspace
+# planets_df資料框已經預先載入
 
-# Select the rings variable from planets_df
+# 從planets_df選出變數rings 
 rings_vector <- 
   
-# Print out rings_vector
+# 印出rings_vector
 ```
 
 *** =solution
 ```{r}
-# planets_df is pre-loaded in your workspace
+# planets_df資料框已經預先載入
 
-# Select the rings variable from planets_df
+# 從planets_df選出變數rings
 rings_vector <- planets_df$rings
 
-# Print out rings_vector
+# 印出rings_vector
 rings_vector
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "不需要更改或覆寫 `planets_df` 資料框。"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector",
-            incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
-test_output_contains("rings_vector", incorrect_msg = "Don't forget to print out `rings_vector` after you've created it!")
-success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+            incorrect_msg = "確認是否利用 `$rings` 將變數 `rings` 從 `planets_df` 中選出並指派給 `rings_vector`。")
+test_output_contains("rings_vector", incorrect_msg = "別忘了在建立向量後將 `rings_vector` 印出！")
+success_msg("太好了，前進下一個練習並學習另外一個選擇元素的方式！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:0aa1fd7d080afe1bb1031562e8004121943632c6
-## Only planets with rings (2)
+## 有環的星球 (2)
 
-You probably remember from high school that some planets in our solar system have rings and others do not. But due to other priorities at that time (read: puberty) you can not recall their names, let alone their rotation speed, etc. 
+回憶一下高中教材你可能想起太陽系中有些行星有環而有些沒有，但你大概記不起他們的名稱，更別說他們的自轉頻率...等。
 
-Could R help you out?
+R可以幫助你辦到嗎？
 
-If you type `rings_vector` in the console, you get:
+在R Console輸入 `rings_vector` 你可以得到：
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-This means that the first four observations (or planets) do not have a ring (`FALSE`), but the other four do (`TRUE`). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use `rings_vector` to select the data for the four planets with rings. 
+這個結果表示前四個觀測值(或星球)沒有環(`FALSE`)，但另外四個有環(`TRUE`)，讓我們利用 `rings_vector` 將有環的四個星球選出來。 
 
 *** =instructions
-The code on the right selects the `name` column of all planets that have rings. Adapt the code so that instead of only the `name` column, _all_ columns for planets that have rings are selected.
+右方編輯區的程式將有環的星球名稱選出，修改程式改為將有環的星球_所有_欄位都選出。
 
 *** =hint
-Remember that to select _all_ columns, you simply have to leave the columns part inside the `[ ]` empty! This means you'll need `[rings_vector, ]`.
+記得利用 `[rings_vector, ]` 選出_所有_欄位，將欄位的部分留白就可以。
 
 *** =pre_exercise_code
 ```{r}
@@ -440,54 +439,54 @@ rings_vector <- planets_df$rings
 
 *** =sample_code
 ```{r}
-# planets_df and rings_vector are pre-loaded in your workspace
+# planets_df與rings_vector已經預先載入
 
-# Adapt the code to select all columns for planets with rings
+# 修改程式選擇有環星球的所有欄位
 planets_df[rings_vector, "name"]
 ```
 
 *** =solution
 ```{r}
-# planets_df and rings_vector are pre-loaded in your workspace
+# planets_df與rings_vector已經預先載入
 
-# Adapt the code to select all columns for planets with rings
+# 修改程式選擇有環星球的所有欄位
 planets_df[rings_vector, ]
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not remove or overwrite `planets_df` or `rings_vector`!"
+msg <- "不需要移除或覆寫 `planets_df` 或 `rings_vector`。"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("rings_vector", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "Have you correctly adapted the code to select _all_ columns for the planets that have rings? You can use `planets_df[rings_vector, ]`. Make sure to include the comma here, it's crucial!")
-success_msg("Wonderful! This is a rather tedious solution. The next exercise will teach you how to do it in a more concise way.")
+test_output_contains('planets_df[rings_vector, ]', incorrect_msg = "確認是否有使用 `planets_df[rings_vector, ]` 選出有環星球的_所有_欄位？逗號很重要，不要忘記了！")
+success_msg("太棒了，這個解法有點麻煩，下一個練習會教你一個更簡潔的方式！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:9b873ed27e9df18a217699041950ecd20691eaf1
-## Only planets with rings but shorter
+## 有環的星球但簡單些
 
-So what exactly did you learn in the previous exercises? You selected a subset from a data frame (`planets_df`) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). 
+想想在前一個練習中學會了什麼？你根據有環或者沒有環從 `planets_df` 中選出了資料框子集，這真的超強的，也許美國太空總署已經在偷偷討論要招募你了喔！
 
-Now, let us move up one level and use the function [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset). You should see the [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) function as a short-cut to do exactly the same as what you did in the previous exercises. 
+讓我們來認識一個更高明的[`subset()`](http://www.rdocumentation.org/packages/base/functions/subset)函數，[`subset()`](http://www.rdocumentation.org/packages/base/functions/subset)函數可以更快速地做到前面練習所做到的事情。
 
 ```
 subset(my_df, subset = some_condition)
 ``` 
 
-The first argument of [`subset()`](http://www.rdocumentation.org/packages/base/functions/subset) specifies the data set for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. 
+[`subset()`](http://www.rdocumentation.org/packages/base/functions/subset)函數中的第一個參數指定了要被篩選的資料，第二個參數則要告訴R篩選的邏輯為何。 
 
-The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the `rings_vector`!
+以下的程式會得到跟前一個練習一樣的結果，但這次你不需要另外宣告 `rings_vector`。
 
 ```
 subset(planets_df, subset = rings)
 ``` 
 
 *** =instructions
-Use `subset()` on `planets_df` to select planets that have a diameter smaller than Earth. Because the `diameter` variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is `diameter < 1`.
+對 `planets_df` 使用 `subset()` 將直徑比地球小的星球選出來，由於直徑其實是個相對量值，你的條件應該要下 `diameter < 1`。
 
 *** =hint
-`subset(planets_df, subset = ...)` almost solves it; can you fill in the `...`?
+稍微修改一下 `subset(planets_df, subset = ...)` 將 `...` 改為？
 
 *** =pre_exercise_code
 ```{r}
@@ -496,37 +495,37 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df is pre-loaded in your workspace
+# planets_df資料框已經預先載入
 
-# Select planets with diameter < 1
+# 選出直徑<1的星球
 
 ```
 
 *** =solution
 ```{r}
-# planets_df is pre-loaded in your workspace
+# planets_df資料框已經預先載入
 
-# Select planets with diameter < 1
+# 選出直徑<1的星球
 subset(planets_df, subset = diameter < 1)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or overwrite the `planets_df` data frame!"
+msg = "不需要移除或覆寫 `planets_df` 資料框。"
 test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
 test_correct({
-  test_output_contains("subset(planets_df, subset = diameter < 1)", incorrect_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+  test_output_contains("subset(planets_df, subset = diameter < 1)", incorrect_msg = "確認是否有在 `subset()` 函數中正確指派參數 `subset = ...`。條件應該要下 `diameter < 1` 並將結果印出。")  
 }, {
   test_function("subset", args = "x", 
-                not_called_msg = "Make sure to use the `subset()` function to perform the selection!",
-                incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+                not_called_msg = "確認是否有使用 `subset()` 函數？",
+                incorrect_msg = " `subset()` 函數中的第一個參數應該為 `planets_df`。")
 })
-success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+success_msg("太棒了， `subset()` 不僅很簡潔，它也能夠讓讀者更了解你的程式，前進下一個練習！");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:2397d0f7cdf728961c9f5b8208c3b2694e20e2df
-## Sorting
+## 排序
 
 Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
 

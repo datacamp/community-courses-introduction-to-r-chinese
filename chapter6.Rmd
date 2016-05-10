@@ -305,15 +305,15 @@ shining_list[["reviews"]]
 shining_list$reviews
 ``` 
 
-Besides selecting components, you often need to select specific elements out of these components. For example, with `shining_list[[2]][1]` you select from the second component, `actors` (`shining_list[[2]]`), the first element (`[1]`). When you type this in the console, you will see the answer is Jack Nicholson.
+除了選出清單中的項目以外，你也常需要選出特定元素，例如 `shining_list[[2]][1]` 可以選出第二個項目 `actors` (`shining_list[[2]]`)中的第一個元素(`[1]`)，R Console將會回傳Jack Nicholson。
 
 *** =instructions
-- Select from `shining_list` the vector representing the actors. Simply print out this vector.
-- Select from `shining_list` the second element in the vector representing the actors. Do a printout like before.
+- 從 `shining_list` 中選出演員向量，並將該向量印出。
+- 從前述的向量中選出第二個元素，並將該向量印出。
 
 *** =hint
-- To select the vector representing the actors, you can use `$actors`.
-- To select the third element in the vector representing the actors, you use `shining_list$actors[3]`. What needs to change to select the second element?
+- 使用 `$actors` 可以從清單中選出演員的向量。
+- 利用 `shining_list$actors[3]` 可以從前述向量中選出第三個元素，如果你想改選擇第二個元素應該要修改哪個部分？
 
 *** =pre_exercise_code
 ```{r}
@@ -322,64 +322,63 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 
 *** =sample_code
 ```{r}
-# shining_list is already pre-loaded in the workspace
+# shining_list已經預先載入
 
-# Print out the vector representing the actors
+# 將儲存演員資訊的向量印出
 
 
-# Print the second element of the vector representing the actors
+# 印出演員資訊的向量
 
 ```
 
 *** =solution
 ```{r}
-# shining_list is already pre-loaded in the workspace
+# shining_list已經預先載入
 
-# Print out the vector representing the actors
+# 將儲存演員資訊的向量印出
 shining_list$actors
 
-# Print the second element of the vector representing the actors
+# 印出演員資訊的向量
 shining_list$actors[2]
 ```
 
 *** =sct
 ```{r}
-msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg <- "不需要移除或更改已預先載入的 `shining_list` 的宣告。"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("shining_list$actors", incorrect_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
-test_output_contains("shining_list$actors[2]", incorrect_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
-success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+test_output_contains("shining_list$actors", incorrect_msg = "確認是否有使用 `shining_list$actors` 將清單中的演員向量印出？")
+test_output_contains("shining_list$actors[2]", incorrect_msg = "在 `shining_list$actors` 後面加上 `[2]` 可以選出第二個元素。")
+success_msg("太棒了，從清單中選擇元素是否相當容易？繼續前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:4cec127e7811993251c89ede9a6e976958f66be5
-## Adding more movie information to the list
+## 在清單中增加更多電影資訊
 
-Being proud of your first list, you shared it with the members of your movie hobby club. However, one of the senior members, a guy named M. McDowell, noted that you forgot to add the release year. Given your ambitions to become next year's president of the club, you decide to add this information to the list. 
+你跟幾個電影愛好者分享了你建立的清單，其中一個叫M. McDowell的資深成員跟你說你忘了把上映年份這個重要資訊放入，基於對自我的高標準要求，你決定要把遺漏的資訊加入清單中。 
 
-To conveniently add elements to lists you can use the [`c()`](http://www.rdocumentation.org/packages/base/functions/c) function, that you also used to build vectors:
+使用[`c()`](http://www.rdocumentation.org/packages/base/functions/c)函數可以為清單增加資訊：
 
 ```
 ext_list <- c(my_list , my_val)
 ``` 
 
-This will simply extend the original list, `my_list`, with the component `my_val`. This component gets appended to the end of the list.
-If you want to give the new list item a name, you just add the name as you did before: 
+這段程式會為原本的清單 `my_list` 加入 `my_val`。如果你希望為新的項目命名，也可以用與先前類似的方法做到： 
 
 ```
 ext_list <- c(my_list, my_name = my_val)
 ```
 
 *** =instructions
-- Complete the code below such that an item named `year` is added to the `shining_list` with the value 1980. Assign the result to `shining_list_full`.
-- Finally, have a look at the structure of `shining_list_full` with the [`str()`](http://www.rdocumentation.org/packages/utils/functions/str) function.
+- 完成以下的程式把 `year` 1980加入 `shining_list` 中並將結果指派給 `shining_list_full`。
+- 最後，利用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數觀察 `shining_list_full` 的結構。
 
 *** =hint
-Have a look at the example code in the exercise assignment. Maybe this can help you start:
+看一下範例程式碼：
 ```
 shining_list <- c(shining_list, ...)
 ```
-You still have to add some code where the three dots are.
+你要在...的部分加入一些程式。
 
 *** =pre_exercise_code
 ```{r, eval = FALSE}
@@ -389,36 +388,36 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 *** =sample_code
 
 ```{r}
-# shining_list, the list containing movie name, actors and reviews, is pre-loaded in the workspace
+# 包含電影名稱、演員與評論的shining_list已經預先載入
 
-# We forgot something; add the year to shining_list
+# 利用c()把上映年份加入shining_list
 shining_list_full <- 
 
-# Have a look at shining_list_full
+# 看看shining_list_full的結構
 
 ```
 
 *** =solution
 
 ```{r}
-# shining_list, the list containing movie name, actors and reviews, is pre-loaded in the workspace
+# 包含電影名稱、演員與評論的shining_list已經預先載入
 
-# Use c() to add a year to shining_list
+# 利用c()把上映年份加入shining_list
 shining_list_full <- c(shining_list, year = 1980)
 
-# Have a look at shining_list_full
+# 看看shining_list_full的結構
 str(shining_list_full)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+msg = "不需要移除或更改已預先載入的 `shining_list` 。"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list_full", eq_condition = "equal",
-            incorrect_msg = paste("Have you correctly extended `shining_list` with an element named `year`,",
-                                  "whose value is 1980? You can use `c(shining_list, year = 1980)`"))
-test_function("str", "object", incorrect_msg = "Don't forget to display the structure of `shining_list_full` with `str()`.")
-success_msg("Great! This was the last exercise on R lists! You now have a solid basis in the R programming language, but there's so much more to learn. Check out all the other DataCamp courses and become a true data science expert!")
+            incorrect_msg = paste("確認是否有為 `shining_list` 增加一個元素 `year` =1980，",
+                                  "利用 `c(shining_list, year = 1980)`"))
+test_function("str", "object", incorrect_msg = "不要忘了利用 `str()` 將 `shining_list_full` 的結構印出。")
+success_msg("太棒了，你已經完成清單章節的最後一個練習，你現在對R程式語言有了清楚的認知，但還有很多值得繼續學習，修習其他的DataCamp課程並成為一個資料科學家！")
 ```
 
 

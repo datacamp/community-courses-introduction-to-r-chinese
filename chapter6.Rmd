@@ -37,7 +37,7 @@ description : 清單與向量最大的不同點是清單可以儲存不同類型
 
 *** =sct
 ```{r}
-success_msg("準備好，前進下一個練習！")
+success_msg("\u6e96\u5099\u597d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
@@ -73,7 +73,7 @@ success_msg("準備好，前進下一個練習！")
 
 *** =sct
 ```{r}
-success_msg("酷斃了，把袖子捲起來幹活吧！")
+success_msg("\u9177\u6583\u4e86\uff0c\u628a\u8896\u5b50\u6372\u8d77\u4f86\u5e79\u6d3b\u5427\uff01")
 ```
 
 
@@ -131,13 +131,13 @@ my_list <- list(my_vector, my_matrix, my_df)
 
 *** =sct
 ```{r}
-msg = "不需要移除或更改變數 `my_vector` 、 `my_matrix` 或 `my_df` 的內容。"
+msg = "\u4e0d\u9700\u8981\u79fb\u9664\u6216\u66f4\u6539\u8b8a\u6578 `my_vector` \u3001 `my_matrix` \u6216 `my_df` \u7684\u5167\u5bb9\u3002"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
-            incorrect_msg = "看起來 `my_list` 沒有包含正確的元素，確認是否有將 `my_vector` 、 `my_matrix` 與 `my_df` 依序作為 `list()` 函數的引數並以逗號分隔。")
-success_msg("太棒了，前進下一個練習！")
+            incorrect_msg = "\u770b\u8d77\u4f86 `my_list` \u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u5143\u7d20\uff0c\u78ba\u8a8d\u662f\u5426\u6709\u5c07 `my_vector` \u3001 `my_matrix` \u8207 `my_df` \u4f9d\u5e8f\u4f5c\u70ba `list()` \u51fd\u6578\u7684\u5f15\u6578\u4e26\u4ee5\u9017\u865f\u5206\u9694\u3002")
+success_msg("\u592a\u68d2\u4e86\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
@@ -214,16 +214,16 @@ my_list
 
 *** =sct
 ```{r}
-msg = "不需要移除或更改變數 `my_vector` 、 `my_matrix` 或 `my_df` 的內容。"
+msg = "\u4e0d\u9700\u8981\u79fb\u9664\u6216\u66f4\u6539\u8b8a\u6578 `my_vector` \u3001 `my_matrix` \u6216 `my_df` \u7684\u5167\u5bb9\u3002"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
-            incorrect_msg = "看起來 `my_list` 並沒有包含正確的元素。")
+            incorrect_msg = "\u770b\u8d77\u4f86 `my_list` \u4e26\u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u5143\u7d20\u3002")
 test_object("my_list", eq_condition = "equal",
-            incorrect_msg = "看起來 `my_list` 並沒有包含正確的元素。確認是否分別使用了 `vec` 、 `mat` 與 `df` 作命名，如果還是不清楚的話可以看看提示。");
-test_output_contains("my_list", incorrect_msg = "別忘記了將 `my_list` 印出，在編輯區多加一行程式 `my_list` 就可以做到。")
-success_msg("太棒了，你現在不只知道了如何建立清單，你還學會了實用技巧為清單的元素命名，前進下一個練習！")
+            incorrect_msg = "\u770b\u8d77\u4f86 `my_list` \u4e26\u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u5143\u7d20\u3002\u78ba\u8a8d\u662f\u5426\u5206\u5225\u4f7f\u7528\u4e86 `vec` \u3001 `mat` \u8207 `df` \u4f5c\u547d\u540d\uff0c\u5982\u679c\u9084\u662f\u4e0d\u6e05\u695a\u7684\u8a71\u53ef\u4ee5\u770b\u770b\u63d0\u793a\u3002");
+test_output_contains("my_list", incorrect_msg = "\u5225\u5fd8\u8a18\u4e86\u5c07 `my_list` \u5370\u51fa\uff0c\u5728\u7de8\u8f2f\u5340\u591a\u52a0\u4e00\u884c\u7a0b\u5f0f `my_list` \u5c31\u53ef\u4ee5\u505a\u5230\u3002")
+success_msg("\u592a\u68d2\u4e86\uff0c\u4f60\u73fe\u5728\u4e0d\u53ea\u77e5\u9053\u4e86\u5982\u4f55\u5efa\u7acb\u6e05\u55ae\uff0c\u4f60\u9084\u5b78\u6703\u4e86\u5be6\u7528\u6280\u5de7\u70ba\u6e05\u55ae\u7684\u5143\u7d20\u547d\u540d\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
@@ -275,13 +275,13 @@ shining_list <- list(moviename = mov, actors = act, reviews = rev)
 
 *** =sct
 ```{r}
-msg = "不需要移除或更改預先建立好的這些變數。"
+msg = "\u4e0d\u9700\u8981\u79fb\u9664\u6216\u66f4\u6539\u9810\u5148\u5efa\u7acb\u597d\u7684\u9019\u4e9b\u8b8a\u6578\u3002"
 lapply(c("mov", "rev", "act"), test_object, undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list",
-            incorrect_msg = "看起來 `shining_list` 並沒有包含正確的元素，第一個元素應為 `mov` 、 第二個元素應為 `act` 而第三個為 `rev`。")
+            incorrect_msg = "\u770b\u8d77\u4f86 `shining_list` \u4e26\u6c92\u6709\u5305\u542b\u6b63\u78ba\u7684\u5143\u7d20\uff0c\u7b2c\u4e00\u500b\u5143\u7d20\u61c9\u70ba `mov` \u3001 \u7b2c\u4e8c\u500b\u5143\u7d20\u61c9\u70ba `act` \u800c\u7b2c\u4e09\u500b\u70ba `rev`\u3002")
 test_object("shining_list", eq_condition = "equal",
-            incorrect_msg = "看起來 `shining_list` 並沒有為元素作正確的命名，第一個元素應命名為 `moviename` ，第二個元素命名為 `actors` 而第三個元素命名為 `reviews`。");
-success_msg("太棒了，你現在知道如何建立並為清單命名，如同前面的章節，我們來看看如何從清單中選擇元素，前進下一個練習！")
+            incorrect_msg = "\u770b\u8d77\u4f86 `shining_list` \u4e26\u6c92\u6709\u70ba\u5143\u7d20\u4f5c\u6b63\u78ba\u7684\u547d\u540d\uff0c\u7b2c\u4e00\u500b\u5143\u7d20\u61c9\u547d\u540d\u70ba `moviename` \uff0c\u7b2c\u4e8c\u500b\u5143\u7d20\u547d\u540d\u70ba `actors` \u800c\u7b2c\u4e09\u500b\u5143\u7d20\u547d\u540d\u70ba `reviews`\u3002");
+success_msg("\u592a\u68d2\u4e86\uff0c\u4f60\u73fe\u5728\u77e5\u9053\u5982\u4f55\u5efa\u7acb\u4e26\u70ba\u6e05\u55ae\u547d\u540d\uff0c\u5982\u540c\u524d\u9762\u7684\u7ae0\u7bc0\uff0c\u6211\u5011\u4f86\u770b\u770b\u5982\u4f55\u5f9e\u6e05\u55ae\u4e2d\u9078\u64c7\u5143\u7d20\uff0c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
@@ -344,11 +344,11 @@ shining_list$actors[2]
 
 *** =sct
 ```{r}
-msg <- "不需要移除或更改已預先載入的 `shining_list` 的宣告。"
+msg <- "\u4e0d\u9700\u8981\u79fb\u9664\u6216\u66f4\u6539\u5df2\u9810\u5148\u8f09\u5165\u7684 `shining_list` \u7684\u5ba3\u544a\u3002"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
-test_output_contains("shining_list$actors", incorrect_msg = "確認是否有使用 `shining_list$actors` 將清單中的演員向量印出？")
-test_output_contains("shining_list$actors[2]", incorrect_msg = "在 `shining_list$actors` 後面加上 `[2]` 可以選出第二個元素。")
-success_msg("太棒了，從清單中選擇元素是否相當容易？繼續前進下一個練習！")
+test_output_contains("shining_list$actors", incorrect_msg = "\u78ba\u8a8d\u662f\u5426\u6709\u4f7f\u7528 `shining_list$actors` \u5c07\u6e05\u55ae\u4e2d\u7684\u6f14\u54e1\u5411\u91cf\u5370\u51fa\uff1f")
+test_output_contains("shining_list$actors[2]", incorrect_msg = "\u5728 `shining_list$actors` \u5f8c\u9762\u52a0\u4e0a `[2]` \u53ef\u4ee5\u9078\u51fa\u7b2c\u4e8c\u500b\u5143\u7d20\u3002")
+success_msg("\u592a\u68d2\u4e86\uff0c\u5f9e\u6e05\u55ae\u4e2d\u9078\u64c7\u5143\u7d20\u662f\u5426\u76f8\u7576\u5bb9\u6613\uff1f\u7e7c\u7e8c\u524d\u9032\u4e0b\u4e00\u500b\u7df4\u7fd2\uff01")
 ```
 
 
@@ -411,13 +411,13 @@ str(shining_list_full)
 
 *** =sct
 ```{r}
-msg = "不需要移除或更改已預先載入的 `shining_list` 。"
+msg = "\u4e0d\u9700\u8981\u79fb\u9664\u6216\u66f4\u6539\u5df2\u9810\u5148\u8f09\u5165\u7684 `shining_list`\u3002"
 test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list_full", eq_condition = "equal",
-            incorrect_msg = paste("確認是否有為 `shining_list` 增加一個元素 `year` =1980，",
-                                  "利用 `c(shining_list, year = 1980)`"))
-test_function("str", "object", incorrect_msg = "不要忘了利用 `str()` 將 `shining_list_full` 的結構印出。")
-success_msg("太棒了，你已經完成清單章節的最後一個練習，你現在對R程式語言有了清楚的認知，但還有很多值得繼續學習，修習其他的DataCamp課程並成為一個資料科學家！")
+            incorrect_msg = paste("\u78ba\u8a8d\u662f\u5426\u6709\u70ba `shining_list` \u589e\u52a0\u4e00\u500b\u5143\u7d20 `year` =1980\uff0c",
+                                  "\u8a18\u5f97\u4f7f\u7528 `c(shining_list, year = 1980)`"))
+test_function("str", "object", incorrect_msg = "\u4e0d\u8981\u5fd8\u4e86\u5229\u7528 `str()` \u5c07 `shining_list_full` \u7684\u7d50\u69cb\u5370\u51fa\u3002")
+success_msg("\u592a\u68d2\u4e86\uff0c\u4f60\u5df2\u7d93\u5b8c\u6210\u6e05\u55ae\u7ae0\u7bc0\u7684\u6700\u5f8c\u4e00\u500b\u7df4\u7fd2\uff0c\u4f60\u73fe\u5728\u5c0dR\u7a0b\u5f0f\u8a9e\u8a00\u6709\u4e86\u6e05\u695a\u7684\u8a8d\u77e5\uff0c\u4f46\u9084\u6709\u5f88\u591a\u503c\u5f97\u5b78\u7fd2\uff0c\u8acb\u7e7c\u7e8c\u4fee\u7fd2\u5176\u4ed6\u7684DataCamp\u8ab2\u7a0b\u4e26\u6210\u70ba\u4e00\u500b\u8cc7\u6599\u79d1\u5b78\u5bb6\uff01")
 ```
 
 

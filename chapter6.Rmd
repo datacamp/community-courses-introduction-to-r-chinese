@@ -1,24 +1,24 @@
 --- 
-title_meta  : Chapter 6
-title       : Lists
-description : Lists, as opposed to vectors, can hold components of different types, just like your to-do list at home or at work. This intro to R chapter will teach you how to create, name and subset these lists.
+title_meta  : 第六章
+title       : 清單
+description : 清單與向量最大的不同點是清單可以儲存不同類型的資料格式，就像你工作項目清單一樣，本章節會教你如何建立、命名以及選擇清單中的元素。
 
 --- type:NormalExercise xp:100 skills:1 key:b02020c3b8ccf1d6ea63f5801cc80ae49bf49b15
-## Lists, why would you need them?
+## 為什麼會需要清單？
 
-Congratulations! At this point in the course you are already familiar with:
+恭喜你，課程進行到這裡你已經對以下的資料類別非常熟悉：
 
-- **Vectors** (one dimensional array): can hold numeric, character or logical values. The elements in a vector all have the same data type.
-- **Matrices** (two dimensional array): can hold numeric, character or logical values. The elements in a matrix all have the same data type.
-- **Data frames** (two-dimensional objects): can hold numeric, character or logical values. Within a column all elements have the same data type, but different columns can be of different data type.
+- **向量**(單一維度的陣列)：可以包含數值、字串或邏輯值，向量中的元素均屬於同一種資料類型。
+- **矩陣**(兩個維度的陣列)：可以包含數值、字串或邏輯值，矩陣中的元素均屬於同一種資料類型。
+- **資料框**(兩個維度的物件)：可以包含數值、字串或邏輯值，在同一個欄位中所有的元素均屬於同一種資料類型，但不同的欄位可以各自屬於不同的資料類型。
 
-Pretty sweet for an R newbie, right? ;-)
+這樣的整理對R的新手很貼心對吧？ ;-)
 
 *** =instructions
-Click 'Submit Answer' to start learning everything about lists!
+按下'Submit Answer'開始學習清單吧！
 
 *** =hint
-Just click the 'Submit Answer' button.
+按下'Submit Answer'按鈕。
 
 *** =pre_exercise_code
 ```{r}
@@ -27,34 +27,34 @@ Just click the 'Submit Answer' button.
 
 *** =sample_code
 ```{r}
-# Just click the 'Submit Answer' button.
+# 按下'Submit Answer'按鈕
 ```
 
 *** =solution
 ```{r}
-# Just click the 'Submit Answer' button.
+# 按下'Submit Answer'按鈕
 ```
 
 *** =sct
 ```{r}
-success_msg("Ready, set, go! Continue to the next exercise.")
+success_msg("準備好，前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:d6f368841ef8395b0cf19fbaa2e23c7ce2c8672d
-## Lists, why would you need them? (2)
+## 為什麼會需要清單？ (2)
 
-A **list** in R is similar to your to-do list at work or school: the different items on that list most likely differ in length, characteristic, type of activity that has to do be done, ... 
+**清單**在R中跟你的工作項目或學習項目很像，這些要完成的項目長度、特性或者活動類型都不一樣。
 
-A list in R allows you to gather a variety of objects under one name (that is, the name of the list) in an ordered way. These objects can be matrices, vectors, data frames, even other lists, etc. It is not even required that these objects are related to each other in any way.
+清單可以蒐集多樣性的物件，包含矩陣、向量、資料框甚至清單，這些物件甚至不需要跟彼此相關。
 
-You could say that a list is some kind super data type: you can store practically any piece of information in it!
+你可以將清單視為一種超級資料類型，基本上你可以將任何資訊都儲存在清單中！
 
 *** =instructions
-Click 'Submit Answer' to start the first exercise on lists.
+按下'Submit Answer'開始第一個清單的練習。
 
 *** =hint
-Click 'Submit Answer' to start the first exercise on lists.
+按下'Submit Answer'開始第一個清單的練習。
 
 *** =pre_exercise_code
 ```{r}
@@ -63,36 +63,36 @@ Click 'Submit Answer' to start the first exercise on lists.
 
 *** =sample_code
 ```{r}
-# Click 'Submit Answer' to start the first exercise on lists.
+# 按下'Submit Answer'開始第一個清單的練習
 ```
 
 *** =solution
 ```{r}
-# Click 'Submit Answer' to start the first exercise on lists.
+# 按下'Submit Answer'開始第一個清單的練習
 ```
 
 *** =sct
 ```{r}
-success_msg("Cool. Let's get our hands dirty!")
+success_msg("酷斃了，把袖子捲起來幹活吧！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:3c886887d481e450e4d55fdc6504f4b9cd99083e
-## Creating a list
+## 建立一個清單
 
-Let us create our first list! To construct a list you use the function [`list()`](http://www.rdocumentation.org/packages/base/functions/list): 
+你需要使用[`list()`](http://www.rdocumentation.org/packages/base/functions/list)函數建立一個清單： 
 
 ```
 my_list <- list(comp1, comp2 ...)
 ```
 
-The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...
+list函數的參數即為清單中的物件，這些物件可以是矩陣、向量或者其他清單。
 
 *** =instructions
-Construct a list, named `my_list`, that contains the variables `my_vector`, `my_matrix` and `my_df` as list components.
+宣告一個清單，指派為 `my_list` 包含變數 `my_vector` 、 `my_matrix` 與 `my_df` 。
 
 *** =hint
-Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) function with `my_vector`, `my_matrix` and `my_df` as arguments separated by a comma.
+使用[`list()`](http://www.rdocumentation.org/packages/base/functions/list)函數並將 `my_vector` 、 `my_matrix` 與 `my_df` 作為以逗號相隔的不同參數。
 
 *** =pre_exercise_code
 ```{r}
@@ -101,59 +101,59 @@ Use the [`list()`](http://www.rdocumentation.org/packages/base/functions/list) f
 
 *** =sample_code
 ```{r}
-# Vector with numerics from 1 up to 10
+# 數值1到10的向量
 my_vector <- 1:10 
 
-# Matrix with numerics from 1 up to 9
+# 數值1到9的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# First 10 elements of the built-in data frame mtcars
+# 内建資料框mtcars的前10列
 my_df <- mtcars[1:10,]
 
-# Construct list with these different elements:
+# 宣告清單
 my_list <- 
 ```
 
 *** =solution
 ```{r}
-# Vector with numerics from 1 up to 10
+# 數值1到10的向量
 my_vector <- 1:10 
 
-# Matrix with numerics from 1 up to 9
+# 數值1到9的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# First 10 elements of the built-in data frame mtcars
+# 内建資料框mtcars的前10列
 my_df <- mtcars[1:10,]
 
-# Construct list with these different elements:
+# 宣告清單
 my_list <- list(my_vector, my_matrix, my_df)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "不需要移除或更改變數 `my_vector` 、 `my_matrix` 或 `my_df` 的內容。"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
-            incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
-success_msg("Wonderful! Head over to the next exercise.")
+            incorrect_msg = "看起來 `my_list` 沒有包含正確的元素，確認是否有將 `my_vector` 、 `my_matrix` 與 `my_df` 依序作為 `list()` 函數的引數並以逗號分隔。")
+success_msg("太棒了，前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:60372e4e466c431316ece6222f3385ef239dce7e
-## Creating a named list
+## 建立一個有項目名稱的清單
 
-Well done, you're on a roll!
+太棒了，你學得正順呢！
 
-Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: 
+為了防止你忘記清單中的項目，你應該要幫這些項目命名：
 
 ```
 my_list <- list(name1 = your_comp1, 
                 name2 = your_comp2)
 ``` 
 
-This creates a list with components that are named `name1`, `name2`, and so on. If you want to name your lists after you've created them, you can use the `names()` function as you did with vectors. The following commands are fully equivalent to the assignment above:
+這段程式會宣告一個將項目命名的清單 `name1` 、 `name2` 以此類推，如果你希望在建立清單後才命名，你可以之後再使用 `names()` 函數，例如以下這段程式跟前面是完全相同的：
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -161,15 +161,15 @@ names(my_list) <- c("name1", "name2")
 ```
 
 *** =instructions
-- Change the code of the previous exercise (see editor) by adding names to the components. Use for `my_vector` the name `vec`, for `my_matrix` the name `mat` and for `my_df` the name `df`. 
-- Print out `my_list` so you can inspect the output.
+- 更改編輯區前一個練習的程式，將 `my_vector` 命名為 `vec`、將 `my_matrix` 命名為 `mat` 並將 `my_df` 命名為 `df`。 
+- 將 `my_list` 印出檢視。
 
 *** =hint
-The first method of assigning names to your list components is the easiest. It starts like this: 
+第一個指派清單項目名稱的方法是最簡單的：
 ```
 my_list <- list(vec = my_vector)
 ```
-Add the other two components in a similar fashion.
+依樣畫葫蘆加入另外兩個元素。
 
 *** =pre_exercise_code
 ```{r}
@@ -178,73 +178,73 @@ Add the other two components in a similar fashion.
 
 *** =sample_code
 ```{r}
-# Vector with numerics from 1 up to 10
+# 數值1到10的向量
 my_vector <- 1:10 
 
-# Matrix with numerics from 1 up to 9
+# 數值1到9的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# First 10 elements of the built-in data frame mtcars
+# 内建資料框mtcars的前10列
 my_df <- mtcars[1:10,]
 
-# Adapt list() call to give the components names
+# 使用list()為這些元素命名
 my_list <- list(my_vector, my_matrix, my_df)
 
-# Print out my_list
+# 印出my_list
 
 ```
 
 *** =solution
 ```{r}
-# Vector with numerics from 1 up to 10
+# 數值1到10的向量
 my_vector <- 1:10 
 
-# Matrix with numerics from 1 up to 9
+# 數值1到9的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# First 10 elements of the built-in data frame mtcars
+# 内建資料框mtcars的前10列
 my_df <- mtcars[1:10,]
 
-# Adapt list() call to give the components names
+# 使用list()為這些元素命名
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 
-# Print out my_list
+# 印出my_list
 my_list
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+msg = "不需要移除或更改變數 `my_vector` 、 `my_matrix` 或 `my_df` 的內容。"
 test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
 test_object("my_list",
-            incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+            incorrect_msg = "看起來 `my_list` 並沒有包含正確的元素。")
 test_object("my_list", eq_condition = "equal",
-            incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.");
-test_output_contains("my_list", incorrect_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
-success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+            incorrect_msg = "看起來 `my_list` 並沒有包含正確的元素。確認是否分別使用了 `vec` 、 `mat` 與 `df` 作命名，如果還是不清楚的話可以看看提示。");
+test_output_contains("my_list", incorrect_msg = "別忘記了將 `my_list` 印出，在編輯區多加一行程式 `my_list` 就可以做到。")
+success_msg("太棒了，你現在不只知道了如何建立清單，你還學會了實用技巧為清單的元素命名，前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:cf2bc8104cc549cdd4eab9773bfe0d234effa9d5
-## Creating a named list (2)
+## 建立一個有項目名稱的清單 (2)
 
-Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. 
+別忘了你是盧卡斯影業的員工，身為一個超級電影迷，你決定把好看的電影資訊儲存在清單中。
 
-Start by creating a list for the movie "The Shining". We have already created the variables `mov`, `act` and `rev` in your R workspace. Feel free to check them out in the console.
+讓我們建立一個電影清單"The Shining"，變數 `mov` 、 `act` 與 `rev` 已經預先建立在工作空間，你可以在R Console中檢視這些變數。
 
 *** =instructions
-Complete the code on the right to create `shining_list`; it contains three elements:
+完成編輯區的程式建立 `shining_list` ，這個清單包含了3個元素：
 
-- moviename: a character string with the movie title (stored in `mov`)
-- actors: a vector with the main actors' names (stored in `act`)
-- reviews: a data frame that contains some reviews (stored in `rev`)
+- 電影名稱：電影名稱是一個字串(儲存於 `mov` 中)
+- 演員：主要演員姓名向量(儲存於 `act` 中)
+- 評論：電影評論資訊的資料框(儲存於 `rev` 中)
 
-Do not forget to name the list components accordingly (names are moviename, actors and reviews).
+不要忘了為清單中的項目命名(依序為moviename、actors與reviews)。
 
 *** =hint
-`shining_list <- list(moviename = mov)` is only part of the solution; it's your job to also add `act` and `rev` to the list, with the appropriate names.
+`shining_list <- list(moviename = mov)` 只包含了部份的解答，你還需要在清單中加入 `act` 與 `rev` 並給予適當命名。
 
 *** =pre_exercise_code
 ```{r}
@@ -259,46 +259,46 @@ rm(scores, sources, comments)
 
 *** =sample_code
 ```{r}
-# The variables mov, act and rev are available
+# 變數mov、act與rev已經預先載入
 
-# Finish the code to build shining_list
+# 完成這段程式建立shining_list
 shining_list <- list(moviename = mov)
 ```
 
 *** =solution
 ```{r}
-# The variables mov, act and rev are available
+# 變數mov、act與rev已經預先載入
 
-# Finish the code to build shining_list
+# 完成這段程式建立shining_list
 shining_list <- list(moviename = mov, actors = act, reviews = rev)
 ```
 
 *** =sct
 ```{r}
-msg = "Do not remove or change the definition of the pre-set variables!"
+msg = "不需要移除或更改預先建立好的這些變數。"
 lapply(c("mov", "rev", "act"), test_object, undefined_msg = msg, incorrect_msg = msg)
 test_object("shining_list",
-            incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+            incorrect_msg = "看起來 `shining_list` 並沒有包含正確的元素，第一個元素應為 `mov` 、 第二個元素應為 `act` 而第三個為 `rev`。")
 test_object("shining_list", eq_condition = "equal",
-            incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.");
-success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise")
+            incorrect_msg = "看起來 `shining_list` 並沒有為元素作正確的命名，第一個元素應命名為 `moviename` ，第二個元素命名為 `actors` 而第三個元素命名為 `reviews`。");
+success_msg("太棒了，你現在知道如何建立並為清單命名，如同前面的章節，我們來看看如何從清單中選擇元素，前進下一個練習！")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:5bbf2c7bd99765106af3ccb1ee48649d763161ef
-## Selecting elements from a list
+## 從清單中選擇元素
 
-Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. 
+清單常包含多種的元素與項目，因此從清單中選取單一元素、多個元素或某部分並不是非常地直觀。
 
-One way to select a component is using the numbered position of that component. For example, to "grab" the first component of `shining_list` you type 
+利用索引值選取是一種方式，例如將 `shining_list` 的第一個項目抓出來你可以輸入
 
 ```
 shining_list[[1]]
 ```
 
-A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: `[ ]`. Don't mix them up!
+可別跟用單一中括號 `[ ]` 從向量中選擇元素 搞混了，你可以在R Console中快速輸入並檢視結果！
 
-You can also refer to the names of the components, with `[[ ]]` or with the `$` sign. Both will select the data frame representing the reviews: 
+你也可以使用項目的名稱選擇，使用 `[[ ]]` 或 `$` 都可以達成同樣目的：
 
 ```
 shining_list[["reviews"]]

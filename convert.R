@@ -1,5 +1,5 @@
 # This little script converts \u____ encodings to &#____; encodings
-file <- "chapter5.Rmd"
+file <- "chapter6.Rmd"
 
 library(stringr)
 file_string <- paste(readLines(file), collapse = "\n")

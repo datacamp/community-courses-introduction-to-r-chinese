@@ -1,7 +1,7 @@
 --- 
 title_meta  : 第五章
 title       : 資料框
-description : 實務上你面對的多數資料集都是儲存為資料框的格式，學完本章節之後，你將可以建立資料框、選擇資料框中有興趣的部分以及根據某一個變數排序資料框。
+description : 實務上你面對的多數資料都是儲存為資料框的格式，學完本章節之後，你將可以建立資料框、選擇資料框中有興趣的部分以及根據某一個變數排序資料框。
 
 --- type:NormalExercise xp:100 skills:1 key:697536131763a67337978935d895a05e2ed6bfee
 ## 資料框是什麼？
@@ -9,7 +9,7 @@ description : 實務上你面對的多數資料集都是儲存為資料框的格
 矩陣中所有的元素都應該是相同類型的，記得你在前一個章節中建立的星際大戰票房矩陣嗎？矩陣裡面的元素全部都是數值。
 
 當你做市場調查時，問卷中常常有問題像是：
-- 請問你結婚了嗎？回答為是/否的問題(`邏輯`)
+- 請問你結婚了嗎？回答為是/否的問題(`邏輯值`)
 - 請問你的年紀為？(`數值`)
 - 對於本產品的意見？或其他開放式問題(`字元`)
 - ...
@@ -19,10 +19,10 @@ description : 實務上你面對的多數資料集都是儲存為資料框的格
 資料框中將觀測值儲存為列，將變數儲存為欄，這與其他統計軟體像是SAS或SPSS的概念是相似的。
 
 *** =instructions
-按下'Submit Answer'。將內建的範例資料框[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)印出在R Console中。
+按下Submit Answer。將內建的範例資料框[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)印出在R Console中。
 
 *** =hint
-按下'Submit Answer'並觀察結果！
+按下Submit Answer並觀察結果！
 
 *** =pre_exercise_code
 ```{r}
@@ -49,11 +49,11 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:c3f245836ce0b7473355c0278265f0b16f18a4b7
-## 很快地看看資料集
+## 很快地看看資料框
 
 哇，真的有很多車！ 
 
-你常常需要分析龐大的資料集，這時候你的第一件事應該是對資料結構與主要元素有清晰的認知，先觀察小部份的資料集是很有用的。
+你常常需要分析龐大的資料，你的第一件事應該是對資料結構與主要元素有清晰的認知，先觀察小部份的資料是很有用的。
 
 在R中可以使用[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)函數幫助你呈現資料框的前幾個觀測值，相同地，[`tail()`](http://www.rdocumentation.org/packages/utils/functions/head)函數可以印出資料框的最後幾個觀測值。
 
@@ -93,7 +93,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#35731;&#25105;&#20497;&#30475;&#3
 --- type:NormalExercise xp:100 skills:1 key:44c05f378266cbc25079ec804787fdc09e111aa0
 ## 觀察一下結構
 
-還有另外一種常用的方式可以幫助你快速地瞭解資料概觀，那就是使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數，[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數顯示資料集的結構，告訴你資料框的資訊有：
+還有另外一種常用的方式可以幫助你快速地瞭解資料概觀，那就是使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數，[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數顯示資料的結構，告訴你資料框的資訊有：
 
 - 觀測值總計(32種車型)
 - 變數總計(11種車輛資訊)
@@ -101,7 +101,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#35731;&#25105;&#20497;&#30475;&#3
 - 變數的資料類型(`數值`)
 - 前幾個觀測值
 
-當你拿到一個新資料集或資料框，在你開始做分析之前通常會使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數了解資料的樣態。
+當你拿到一個新資料框，在你開始做分析之前通常會使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數了解資料的樣態。
 
 *** =instructions
 觀察[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)的結構，並確定你有觀察到跟前述相同的觀測值個數、變數總計與資料類別。
@@ -135,9 +135,9 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#20320;&#30475;&#21040;&#20102;&#3
 --- type:NormalExercise xp:100 skills:1 key:1599e175505f5980064369d4fea9b77ce1574b4e
 ## 建立一個資料框 
 
-用內建的資料集一點都不有趣對吧！接下來的練習我們要使用你自己建立的資料框，讓我們穿上太空衣，做一點星際探索吧！
+用內建的資料框一點都不有趣對吧！接下來的練習我們要使用你自己建立的資料框，讓我們穿上太空衣，做一點星際探索吧！
 
-首先我們來建立一個描述太陽系八個行星特性的資料框，根據你的好友Buzz的說法，星球的主要特性有：
+首先我們來建立一個描述太陽系八個行星特性的資料框，根據好友巴斯光年的說法，星球的主要特性有：
 
 - 星球種類(陸地或氣體)。
 - 星球相對於地球的直徑。
@@ -308,7 +308,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#38500;&#20102;&#29992;&#32034;&#2
 planets_df[1:3,1]
 ```
 
-這個做法有一個缺點就是你必須要去查詢 `type` 在第幾欄，當你的變數變多時，這個做法就會變得很困難，因此用變數名稱就會顯得比較輕鬆：
+這個做法有一個缺點就是你必須要去查詢 `type` 在第幾欄，當你的變數變多時，這個做法就會變得很困難，這時用變數名稱就會顯得比較輕鬆：
 
 ```
 planets_df[1:3,"type"]
@@ -360,7 +360,7 @@ planets_df[,3]
 planets_df[,"diameter"]
 ```
 
-其實還有使用 `$` 符號的簡便方法：
+其實資料框還有使用 `$` 符號的簡便方法：
 
 ```
 planets_df$diameter
@@ -423,7 +423,7 @@ R可以幫助你辦到嗎？
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-這個結果表示前四個觀測值(或星球)沒有環(`FALSE`)，但另外四個有環(`TRUE`)，讓我們利用 `rings_vector` 將有環的四個星球選出來。 
+這個結果表示前四個觀測值(即前四個星球)沒有環(`FALSE`)，但另外四個有環(`TRUE`)，讓我們利用 `rings_vector` 將有環的四個星球選出來。 
 
 *** =instructions
 右方編輯區的程式將有環的星球名稱選出，修改程式改為將有環的星球_所有_欄位都選出。
@@ -483,7 +483,7 @@ subset(planets_df, subset = rings)
 ``` 
 
 *** =instructions
-對 `planets_df` 使用 `subset()` 將直徑比地球小的星球選出來，由於直徑其實是個相對量值，你的條件應該要下 `diameter < 1`。
+對 `planets_df` 使用 `subset()` 將直徑比地球小的星球選出來，由於直徑是個相對量值，你的條件應該要下 `diameter < 1`。
 
 *** =hint
 稍微修改一下 `subset(planets_df, subset = ...)` 將 `...` 改為？
@@ -549,7 +549,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 ``` 
 
 *** =instructions
-在R Console體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數，準備好後按下'Submit Answer'。
+在R Console體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數，準備好後按下Submit Answer。
 
 *** =hint
 在R Console中體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數！

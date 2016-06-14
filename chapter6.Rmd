@@ -1,7 +1,7 @@
 --- 
 title_meta  : 第六章
 title       : 清單
-description : 清單與向量最大的不同點是清單可以儲存不同類型的資料格式，就像你工作項目清單一樣，本章節會教你如何建立、命名以及選擇清單中的元素。
+description : 清單與向量最大的不同是清單可以儲存不同類型的資料格式，就像你的工作項目清單一樣，本章節會教你如何建立、命名以及選擇清單中的元素。
 
 --- type:NormalExercise xp:100 skills:1 key:b02020c3b8ccf1d6ea63f5801cc80ae49bf49b15
 ## 為什麼會需要清單？
@@ -15,10 +15,10 @@ description : 清單與向量最大的不同點是清單可以儲存不同類型
 這樣的整理對R的新手很貼心對吧？ ;-)
 
 *** =instructions
-按下'Submit Answer'開始學習清單吧！
+按下Submit Answer開始學習清單吧！
 
 *** =hint
-按下'Submit Answer'按鈕。
+按下Submit Answer按鈕。
 
 *** =pre_exercise_code
 ```{r}
@@ -27,12 +27,12 @@ description : 清單與向量最大的不同點是清單可以儲存不同類型
 
 *** =sample_code
 ```{r}
-# 按下'Submit Answer'按鈕
+# 按下Submit Answer按鈕
 ```
 
 *** =solution
 ```{r}
-# 按下'Submit Answer'按鈕
+# 按下Submit Answer按鈕
 ```
 
 *** =sct
@@ -51,10 +51,10 @@ success_msg("&#28310;&#20633;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 你可以將清單視為一種超級資料類型，基本上你可以將任何資訊都儲存在清單中！
 
 *** =instructions
-按下'Submit Answer'開始第一個清單的練習。
+按下Submit Answer開始第一個清單的練習。
 
 *** =hint
-按下'Submit Answer'開始第一個清單的練習。
+按下Submit Answer開始第一個清單的練習。
 
 *** =pre_exercise_code
 ```{r}
@@ -63,12 +63,12 @@ success_msg("&#28310;&#20633;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 *** =sample_code
 ```{r}
-# 按下'Submit Answer'開始第一個清單的練習
+# 按下Submit Answer開始第一個清單的練習
 ```
 
 *** =solution
 ```{r}
-# 按下'Submit Answer'開始第一個清單的練習
+# 按下Submit Answer開始第一個清單的練習
 ```
 
 *** =sct
@@ -92,7 +92,7 @@ list函數的參數即為清單中的物件，這些物件可以是矩陣、向�
 宣告一個清單，指派為 `my_list` 包含變數 `my_vector` 、 `my_matrix` 與 `my_df` 。
 
 *** =hint
-使用[`list()`](http://www.rdocumentation.org/packages/base/functions/list)函數並將 `my_vector` 、 `my_matrix` 與 `my_df` 作為以逗號相隔的不同參數。
+使用[`list()`](http://www.rdocumentation.org/packages/base/functions/list)函數並以逗號區隔 `my_vector` 、 `my_matrix` 與 `my_df` 作為不同參數。
 
 *** =pre_exercise_code
 ```{r}
@@ -235,7 +235,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#29694;&#22312;&#19981;&#2
 讓我們建立一個電影清單"The Shining"，變數 `mov` 、 `act` 與 `rev` 已經預先建立在工作空間，你可以在R Console中檢視這些變數。
 
 *** =instructions
-完成編輯區的程式建立 `shining_list` ，這個清單包含了3個元素：
+完成編輯區的程式建立 `shining_list`，這個清單包含了3個元素：
 
 - 電影名稱：電影名稱是一個字串(儲存於 `mov` 中)
 - 演員：主要演員姓名向量(儲存於 `act` 中)
@@ -296,7 +296,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#29694;&#22312;&#30693;&#3
 shining_list[[1]]
 ```
 
-可別跟用單一中括號 `[ ]` 從向量中選擇元素 搞混了，你可以在R Console中快速輸入並檢視結果！
+可別跟用單一個中括號 `[ ]` 從向量中選擇元素搞混了，你可以在R Console中快速輸入並檢視結果！
 
 你也可以使用項目的名稱選擇，使用 `[[ ]]` 或 `$` 都可以達成同樣目的：
 
@@ -355,7 +355,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#24478;&#28165;&#21934;&#20013;&#3
 --- type:NormalExercise xp:100 skills:1 key:4cec127e7811993251c89ede9a6e976958f66be5
 ## 在清單中增加更多電影資訊
 
-你跟幾個電影愛好者分享了你建立的清單，其中一個叫M. McDowell的資深成員跟你說你忘了把上映年份這個重要資訊放入，基於對自我的高標準要求，你決定要把遺漏的資訊加入清單中。 
+你跟幾個電影愛好者分享了你建立的清單，其中一個叫M. McDowell的資深成員跟你說你忘了把上映年份這個重要資訊放入，基於對自我的高標準要求，你決定要把這個遺漏的資訊加入清單中。 
 
 使用[`c()`](http://www.rdocumentation.org/packages/base/functions/c)函數可以為清單增加資訊：
 

@@ -108,17 +108,17 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21482;&#35201;&#22312;R Console&#
 --- type:NormalExercise xp:100 skills:1 key:43072d1299a99d76130f1e45dedf09baac8c8481
 ## 因素向量是什麼？你為什麼要使用它？ (3)
 
-類別型變數有兩種，一種是There are two types of categorical variables: a **名目類別型變數**另外一種是**順序類別型變數**。
+類別型變數有兩種，一種是**名目類別型變數**另外一種是**順序類別型變數**。
 
-名目類別型變數即是無法在類別之間比較好壞，例如一個變數 `animals_vector` 中有 `"Elephant"` 、 `"Giraffe"` 、 `"Donkey"` 與 `"Horse"`，你是無法比較動物之間的好壞優劣的！ 
+名目類別型變數即是無法在類別之間比較好壞，例如一個變數 `animals_vector` 中有 `"Elephant"` 、 `"Giraffe"` 、 `"Donkey"` 與 `"Horse"`，要知道你可無法比較動物之間的好壞優劣！ 
 
 相對來說，順序類別型變數具有天生的比較特性，例如一個變數 `temperature_vector` 中有 `"Low"` 、 `"Medium"` 與 `"High"`，很明顯 `"Medium"` 比 `"Low"` 高而 `"High"` 又比 `"Medium"` 來得要高.
 
 *** =instructions
-按 'Submit Answer' 來檢查R如何建立並印出名目與順序變數，不需要擔心不了解這些程式，我們之後會學。
+點選 Submit Answer 來檢查R如何建立並印出名目與順序變數，不需要擔心不了解這些程式，我們之後會學。
 
 *** =hint
-按 'Submit Answer' 並觀察R Console，注意R如何為順序類別型變數編排因素類別。
+點選 Submit Answer 並觀察R Console，注意R如何為順序類別型變數編排因素類別。
 
 *** =pre_exercise_code
 ```{r}
@@ -303,10 +303,10 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#35264;&#23519;&#19968;&#19979;R C
 `factor_survey_vector` 是有兩個級別的因素向量：男性與女性。但R是否有比較這兩個級別的好壞優劣呢？
 
 *** =instructions
-讀編輯區的程式然後按 'Submit Answer' 看看是否男性比女性來得差勁。
+讀編輯區的程式然後按 Submit Answer 看看是否男性比女性來得差勁。
 
 *** =hint
-按 'Submit Answer' 並看看R Console的輸出。
+按 Submit Answer 並看看R Console的輸出。
 
 *** =pre_exercise_code
 ```{r}
@@ -366,7 +366,7 @@ success_msg("&#21628;...&#22909;&#38570;&#65292;&#30475;&#36215;&#20358;R&#26159
 
 但你有時還是得處理那些具有天生順序性的類別變數，這時我們得要特別把這個訊息告訴R才行...
 
-假如你管理一個有5個資料分析師的研究團隊，你衡量他們的速度表現後將他們歸類為"slow"、"fast"與"insane"，然後把結果指派給一個向量 `speed_vector`。
+假如你管理一個有5個資料分析師的研究團隊，你衡量他們做事的效率表現後將他們歸類為"slow"、"fast"與"insane"，然後把結果指派給一個向量 `speed_vector`。
 
 *** =instructions
 第一步我們要宣告 `speed_vector` ：
@@ -473,7 +473,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#24478;R Console&#20013;&#21487;&#
 --- type:NormalExercise xp:100 skills:1 key:6195cdd81bcd1b66d8dde93500dc2e4df63c58d0
 ## 比較順序型因素向量
 
-經過一天辛苦的工作，'資料分析師2'進來你的辦公室並開始抱怨'資料分析師5'拖垮了整個專案。由於你知道'資料分析師2'向來以聰明著稱，你想先檢查一下他說的是否屬實。
+經過一天辛苦的工作，'資料分析師2'進來你的辦公室並開始抱怨'資料分析師5'拖垮了整個專案。由於你知道'資料分析師2'是很精明的，你想先檢查一下他說的是否屬實。
 
 既然 `factor_speed_vector` 已經排好順序，你可以用 `>` 這個運算子來比較快慢。
 

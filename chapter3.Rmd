@@ -6,7 +6,7 @@ description : 在本章節你將學會如何在R使用矩陣，包括宣告以�
 --- type:NormalExercise xp:100 skills:1 key:61a40bda779e572e5cc17be23357c98bceb73943
 ## 矩陣是什麼？
 
-矩陣是一種相同資料類別的集合(數值、文字或邏輯)排序在固定數量的列與欄，因為有列與欄故矩陣具有二個維度。
+矩陣是一種將相同資料類別(數值、文字或邏輯值)排序在列與欄的資料型態，因為有列與欄，所以矩陣具有二個維度。
 
 你可以使用[`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix)函數創造一個矩陣，例如：
 
@@ -124,7 +124,7 @@ success_msg("&#21407;&#21147;&#30495;&#30340;&#33287;&#20320;&#21516;&#22312;&#6
 --- type:NormalExercise xp:100 skills:1 key:37aed0b157460a60af201e3dc57142bbbf187c71
 ## 為矩陣命名
 
-為了記住 `star_wars_matrix` 中儲存的資料，你打算在列與欄都加上命名。
+為了記住 `star_wars_matrix` 中儲存的資料，你打算為列與欄命名。
 
 ```
 rownames(my_matrix) <- row_names_vector
@@ -214,7 +214,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#27491;&#22312;&#25104;&#2
 --- type:NormalExercise xp:100 skills:1 key:99052c568114e85002519d338103ed0c8521ce61
 ## 計算全球票房
 
-全球票房收入是在好萊塢要成為傳奇的首要條件。
+全球票房收入是在好萊塢成為傳奇電影的首要條件。
 
 你必須知道如何把美國票房收入與非美國票房收入相加才能計算這三部星際大戰電影的全球票房收入。
 
@@ -272,7 +272,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 --- type:NormalExercise xp:100 skills:1 key:b3920821c2964147c5db451c4d66c8e6172dfda4
 ## 再多加一欄 
 
-前一個練習中你記算了3部星際大戰訂影的全球票房收入，但是這個向量沒有合併至 `star_wars_matrix` 。
+前一個練習中你計算了3部星際大戰電影的全球票房收入，但是這個向量沒有合併至 `star_wars_matrix` 。
 
 使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數將一個或更多的欄加入矩陣，例如：
 
@@ -346,13 +346,14 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#25509;&#19979;&#20358;&#25105;&#2
 --- type:NormalExercise xp:100 skills:1 key:31368f587442b9db1b8836534e6998b0d024835e
 ## 新增一列
 
-就如同作用力與反作用力，有[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)自然也會有[`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)。(我們實在不太會用譬喻法。) 
+就如同作用力與反作用力，有[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)自然也會有[`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)(我們實在不太會用譬喻法。) 
 
 在R工作區已經宣告好兩個矩陣([工作區是什麼](http://www.statmethods.net/interface/workspace.html))：
-- 我們一直在使用的第一個三部曲電影矩陣 `star_wars_matrix`。
-- 第二個三部曲點影矩陣`star_wars_matrix2`。 
 
-在R Console輸入 `ls()` 可以檢視工作區的內容，輸入已經宣告好的2個矩陣可以看到他們的內容。
+- 我們一直在使用的第一個三部曲電影矩陣 `star_wars_matrix`。
+- 第二個三部曲電影矩陣`star_wars_matrix2`。 
+
+在R Console輸入 `ls()` 可以檢視工作區的內容，輸入已經宣告好的2個矩陣可以看到內容。
 
 *** =instructions
 用 `rbind()` 把 `star_wars_matrix` 和 `star_wars_matrix2` 合併並將結果指派給 `all_wars_matrix`。
@@ -624,11 +625,11 @@ success_msg("&#35336;&#31639;&#32080;&#26524;&#21578;&#35380;&#20320;&#65292;&#2
 --- type:NormalExercise xp:100 skills:1 key:6c34c3c66d9f2d2996cb8288112f2e604feac8ab
 ## 一點點矩陣數學運算 (2) 
 
-如同 `2 * my_matrix` 會將 `my_matrix` 中得每個元素都乘以2， `my_matrix1 * my_matrix2` 會產生一個對應元素相乘的矩陣。 
+如同 `2 * my_matrix` 會將 `my_matrix` 中的每個元素都乘以2， `my_matrix1 * my_matrix2` 會產生一個對應元素相乘的矩陣。 
 
 老闆盧卡斯看了前一個練習的結果後指出電影票價其實是有隨著時間調漲，要求你利用 `ticket_prices_matrix` 中的票價資料(資料來源：imagination) 重做一次分析。
 
-_對於矩陣熟悉的使用者注意這不是標準的矩陣運算，標準矩陣運算子要使用 `%*%`。_
+_對於矩陣熟悉的使用者要注意這裡不是使用標準矩陣運算子，標準矩陣運算子要使用 `%*%`。_
 
 *** =instructions
 - `all_wars_matrix` 除以 `ticket_prices_matrix` 可以得到美國與非美國的六部曲觀看人數，將結果指派給 `visitors`。

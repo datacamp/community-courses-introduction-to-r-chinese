@@ -1,17 +1,17 @@
 --- 
 title_meta  : 第二章
 title       : 向量
-description : "在第二章的課程中，我們要去拉斯維加斯一趟學習如何在R使用向量分析博弈的結果！完成本章節後，你將學會如何宣告向量、命名向量、從向量選取元素以及比較不同的向量。"
+description : "在第二章的課程中，我們要去拉斯維加斯一趟學習如何在 R 使用向量分析博弈的結果！完成本章節後，你將學會如何宣告向量、命名向量、從向量選取元素以及比較不同的向量。"
 
 --- type:NormalExercise xp:100 skills:1 key:44ae1c0203a5a327a8b7670514bc5c5d07f05a5c
 ## 宣告向量
 
 覺得自己運氣好嗎？你最好很有自信，因為本章節將帶你到傳說中的*統計學家天堂*、罪惡都市拉斯維加斯！
 
-你將利用R與資料分析的技巧來提升賭桌上的表現，並展開你的專業賭徒職涯。本章節會告訴你如何輕鬆地記錄下注過程以及如何針對這些記錄做簡單的分析，拉斯維加斯我們來囉！
+你將利用 R 與資料分析的技巧來提升賭桌上的表現，並展開你的專業賭徒職涯。本章節會告訴你如何輕鬆地記錄下注過程以及如何針對這些記錄做簡單的分析，拉斯維加斯我們來囉！
 
 *** =instructions
-- 還記得在第一章學的嗎？宣告一個變數 `vegas` 並且將字串 `"Go!"` 指派給它，要注意大小寫在R是有差別的喔！
+- 還記得在第一章學的嗎？宣告一個變數 `vegas` 並且將字串 `"Go!"` 指派給它，要注意大小寫在 R 是有差別的喔！
 
 *** =hint
 在編輯區輸入以下的程式：
@@ -26,13 +26,13 @@ vegas <- "Go!"
 
 *** =sample_code
 ```{r}
-# 宣告變數vegas
+# 宣告變數 vegas
 vegas <- 
 ```
 
 *** =solution
 ```{r}
-# 宣告變數vegas
+# 宣告變數 vegas
 vegas <- "Go!"
 ```
 
@@ -44,13 +44,13 @@ success_msg("&#22826;&#26834;&#20102;&#65281;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:bbc502a52a960a4d3d17fc01945551cb822cdffa
-## 宣告向量 (2)
+## 宣告向量（2）
 
 保持專注！ 
 
 成為富翁的路上你會需要使用非常多的向量。向量是單一維度的陣列，可以包含數值、文字或者邏輯值。換句話說，向量是一種可以儲存資料的方法，例如你可以將在賭場中每天贏得的錢與每天損失的錢儲存在向量中。
 
-R使用[`c()`](http://www.rdocumentation.org/packages/base/functions/c)來創造向量，並使用逗號分隔向量中的元素，像是：
+R 使用[`c()`](http://www.rdocumentation.org/packages/base/functions/c)來創造向量，並使用逗號分隔向量中的元素，像是：
 
 ```
 numeric_vector <- c(1, 2, 3)
@@ -60,7 +60,7 @@ character_vector <- c("a", "b", "c")
 一旦你成功宣告了這些向量，就可以開始進行向量的計算。
 
 *** =instructions 
-宣告一個向量 `boolean_vector` 依序包含3個元素：`TRUE` 、 `FALSE` 與 `TRUE`，注意邏輯值不需要加引號。
+宣告一個向量 `boolean_vector` 依序包含 3 個元素：`TRUE` 、 `FALSE` 與 `TRUE`，注意邏輯值不需要加引號。
 
 *** =hint 
 利用 `<-` 指派 `c(TRUE, FALSE, TRUE)` 給變數 `boolean_vector`。
@@ -75,7 +75,7 @@ character_vector <- c("a", "b", "c")
 numeric_vector <- c(1, 10, 49)
 character_vector <- c("a", "b", "c")
 
-# 宣告boolean_vector
+# 宣告 boolean_vector
 boolean_vector <-
 ```
 
@@ -100,7 +100,7 @@ success_msg("&#23436;&#32654;&#65281;&#27880;&#24847;&#25105;&#20497;&#22312; `c
 
 
 --- type:NormalExercise xp:100 skills:1 key:25b255d971d82b1adb868a9bd8a1b583b6c071de
-## 宣告向量 (3)
+## 宣告向量（3）
 
 經過一週的賭桌奮戰，你還沒有為自己贏到一台法拉利跑車，於是你打算運用資料分析超能力來分析過去這週的輸贏記錄：
 
@@ -168,7 +168,7 @@ some_vector <- c("John Doe", "poker player")
 names(some_vector) <- c("Name", "Profession")
 ```
 
-這段程式首先宣告一個向量 `some_vector` 接著為裡面這兩個元素命名，第一個元素被命名為姓名 `Name` ，第二個元素被命名為職業 `Profession`。在R Console中印出 `some_vector`：
+這段程式首先宣告一個向量 `some_vector` 接著為裡面這兩個元素命名，第一個元素被命名為姓名 `Name` ，第二個元素被命名為職業 `Profession`。在 R Console 中印出 `some_vector`：
 
 ```
           Name     Profession 
@@ -176,10 +176,10 @@ names(some_vector) <- c("Name", "Profession")
 ```
 
 *** =instructions
-- 編輯區已經完成 `poker_vector` 的贏錢記錄命名，接者請你對 `roulette_vector` 做一樣的事情。
+- 編輯區已經完成 `poker_vector` 的贏錢記錄命名，接著請你對 `roulette_vector` 做一樣的事情。
 
 *** =hint
-使用 `names(roulette_vector)` 為 `roulette_vector` 命名，確認使用相同的向量來命名，記得英文字母的大小寫在R中是有差別的！
+使用 `names(roulette_vector)` 為 `roulette_vector` 命名，確認使用相同的向量來命名，記得英文字母的大小寫在 R 中是有差別的！
 
 *** =sample_code
 ```{r}
@@ -189,10 +189,10 @@ poker_vector <- c(140, -50, 20, -120, 240)
 # 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# 用星期一至五命名poker_vector
+# 用星期一至五命名 poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# 用星期一至五命名roulette_vectors
+# 用星期一至五命名 roulette_vectors
 ```
 
 *** =solution
@@ -203,10 +203,10 @@ poker_vector <- c(140, -50, 20, -120, 240)
 # 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# 用星期一至五命名poker_vector
+# 用星期一至五命名 poker_vector
 names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# 用星期一至五命名roulette_vectors
+# 用星期一至五命名 roulette_vectors
 names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 ```
 
@@ -227,9 +227,9 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:cfa4561b5f565645ab272a96838ae690d6ecf621
-## 為向量命名 (2)
+## 為向量命名（2）
 
-懶惰的人可以成為一個優秀的統計學家(假如你真的非常懶惰，你有很高的機率是個天生統計學天才。)
+懶惰的人可以成為一個優秀的統計學家（假如你真的非常懶惰，你有很高的機率是個天生統計學天才。）
 
 在前一個練習你可能對於不停輸入週間日感到無聊，其實有一個更有效率的方法，那就是把週間日指派給一個**變數**！
 
@@ -255,10 +255,10 @@ poker_vector <- c(140, -50, 20, -120, 240)
 # 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# 變數days_vector
+# 變數 days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
  
-# 指派變數days_vector給roulette_vector與poker_vector
+# 指派變數 days_vector 給 roulette_vector 與 poker_vector
 names(poker_vector) <-   
 names(roulette_vector) <-
 ```
@@ -271,10 +271,10 @@ poker_vector <- c(140, -50, 20, -120, 240)
 # 星期一至五的俄羅斯輪盤贏錢金額
 roulette_vector <- c(-24, -50, 100, -350, 10)
 
-# 變數days_vector
+# 變數 days_vector
 days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 
-# 指派變數days_vector給roulette_vector與poker_vector
+# 指派變數 days_vector 給 roulette_vector 與 poker_vector
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 ```
@@ -342,10 +342,10 @@ c <- a + b
 A_vector <- c(1, 2, 3)
 B_vector <- c(4, 5, 6)
 
-# 將A_vector與B_vector相加
+# 將 A_vector與 B_vector相加
 total_vector <- 
   
-# 印出total_vector
+# 印出 total_vector
 
 ```
 
@@ -354,10 +354,10 @@ total_vector <-
 A_vector <- c(1, 2, 3)
 B_vector <- c(4, 5, 6)
 
-# 將A_vector與B_vector相加
+# 將 A_vector 與 B_vector 相加
 total_vector <- A_vector + B_vector
 
-# 印出total_vector
+# 印出 total_vector
 total_vector
 ```
 
@@ -373,7 +373,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:647ae33cb77824ceb0b881a42da73a51dca46c95
-## 計算加總贏錢金額 (2)
+## 計算加總贏錢金額（2）
 
 現在瞭解R如何做向量的數學運算，該是把法拉利買回來的時候了！首先你需要了解這一週每日的總獲利，每日的總獲利就是將每日在撲克牌與俄羅斯輪盤的輸贏錢金額加總。
 
@@ -399,7 +399,7 @@ days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# 宣告total_daily為每日的總獲利或總損失
+# 宣告 total_daily 為每日的總獲利或總損失
 total_daily <- 
 ```
 
@@ -412,7 +412,7 @@ days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
 names(poker_vector) <- days_vector
 names(roulette_vector) <- days_vector
 
-# 宣告total_daily為每日的總獲利或總損失
+# 宣告 total_daily 為每日的總獲利或總損失
 total_daily <- poker_vector + roulette_vector
 ```
 
@@ -430,7 +430,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:ab4e6dfbddc58056dbc98092c89bf568302eecae
-## 計算加總贏錢金額 (3)
+## 計算加總贏錢金額 （3）
 
 根據前一個練習，看起來是個輸贏參半的一週，你懷疑是否有可能其實整體結算下來上週是輸錢的呢？
 
@@ -443,7 +443,7 @@ total_poker <- sum(poker_vector)
 *** =instructions
 - 計算在俄羅斯輪盤的總獲利或總損失並將結果指派給 `total_roulette`。
 - 有了撲克牌與俄羅斯輪盤的總獲利或總損失後，就可以簡單計算 `total_week` (即這一週的總獲利或總損失)。
-- 印出`total_week`。
+- 印出 `total_week`。
 
 *** =hint
 使用[`sum()`](http://www.rdocumentation.org/packages/base/functions/sum)函數得到　`roulette_vector`　的總合， `total_week` 就是 `roulette_vector` 加 `poker_vector`。
@@ -471,7 +471,7 @@ total_roulette <-
 # 總贏錢金額
 total_week <- 
 
-# 印出total_week
+# 印出 total_week
   
 ```
 
@@ -493,7 +493,7 @@ total_roulette <-  sum(roulette_vector)
 # 總贏錢金額
 total_week <- total_roulette + total_poker
 
-# 印出total_week
+# 印出 total_week
 total_week
 ```
 
@@ -523,12 +523,12 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#20294;&#36889;&#20491;&#32080;&#2
 經過一番思考，你認為問題是出在自己玩俄羅斯輪盤的技巧比玩撲克牌來得差，也許在撲克牌的總贏錢金額比( `>` )俄羅斯輪盤來得高。
 
 *** =instructions
-- 如同前一個練習計算 `total_poker` 與 `total_roulette` ，要使用 `sum()` 函數2次。
+- 如同前一個練習計算 `total_poker` 與 `total_roulette` ，要使用 `sum()` 函數 2 次。
 - 使用 `>` 來比較你在撲克牌的總贏錢金額是否比俄羅斯輪盤還要高，並把比較結果印出來。你會如何判讀這個結果，你應該要花更多精力在撲克牌或俄羅斯輪盤呢？
 
 *** =hint
 - 其實在前一個練習你已經算好一部份了！
-- 只要輸入 `6 > 5` 就可以檢查6是否比5大，這會回傳一個邏輯值(`TRUE` 或 `FALSE`)。
+- 只要輸入 `6 > 5` 就可以檢查 6 是否比 5 大，這會回傳一個邏輯值(`TRUE` 或 `FALSE`)。
 
 *** =pre_exercise_code
 ```{r}
@@ -591,9 +591,9 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 你的猜測是對的，過去一週在賭桌上的奮鬥顯示你的撲克牌技巧似乎比俄羅斯輪盤好。 
 
-另外一個可能是你在上一週前幾天的表現比後幾天要好，看來你最後幾天喝了太多瑪格麗特酒(Margarita)囉...。
+另外一個可能是你在上一週前幾天的表現比後幾天要好，看來你最後幾天喝了太多瑪格麗特酒（Margarita）囉...。
 
-要回答這個問題，你只需要檢視部分 `total_vector` ，換句話說，就是在向量中選擇特定的元素。在R利用中括號就可以選擇向量(之後是矩陣、資料框...)中的元素。例如，要選擇第一個元素就輸入 `poker_vector[1]` ，要選擇第二個元素就輸入 `poker_vector[2]` ...等。注意第一個元素的索引值是1，不像其他程式語言第一個元素的索引值是0。
+要回答這個問題，你只需要檢視部分 `total_vector` ，換句話說，就是在向量中選擇特定的元素。在R利用中括號就可以選擇向量（之後是矩陣、資料框...）中的元素。例如，要選擇第一個元素就輸入 `poker_vector[1]` ，要選擇第二個元素就輸入 `poker_vector[2]` ...等。注意第一個元素的索引值是1，不像其他程式語言第一個元素的索引值是0。
 
 *** =instructions
 將星期三的撲克牌贏錢金額指定給變數 `poker_wednesday`。
@@ -646,7 +646,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;R&#36996;&#21487;&#20197;&#24478;&#
 
 
 --- type:NormalExercise xp:100 skills:1 key:961b3b1c8a4721c71a6f099daacf17156b59b6a1
-## 選擇向量中的元素：美好時光 (2)
+## 選擇向量中的元素：美好時光（2）
 
 何不分析一下中間幾天的表現呢？
 
@@ -706,7 +706,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:30b0e8c9fe371d8f3f1391c1088fce05c195c52a
-## 選擇向量中的元素：美好時光 (3)
+## 選擇向量中的元素：美好時光（3）
 
 利用 `c(2, 3, 4)` 從 `poker_vector`中選擇元素不是非常方便，許多統計學家都是懶人，所以他們創造了一個更簡單的方法 `c(2, 3, 4)` 可以簡化為 `2:4`。
 
@@ -759,7 +759,7 @@ success_msg("&#22826;&#26834;&#20102;&#65281;&#20882;&#34399;&#38750;&#24120;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:479dfd0f8bc1f275c5cfd65b9f801be9f6498855
-## 選擇向量中的元素：美好時光 (4)
+## 選擇向量中的元素：美好時光（4）
 
 另外一個完成前一個練習的方式為指定元素的命名（Monday, Tuesday, ...）而不是用索引值，例如：
 
@@ -800,7 +800,7 @@ names(roulette_vector) <- days_vector
 # 選擇星期一至三的撲克牌贏錢金額
 poker_start <- 
   
-# 計算poker_start元素的平均值
+# 計算 poker_start 元素的平均值
 
 ```
 
@@ -816,7 +816,7 @@ names(roulette_vector) <- days_vector
 # 選擇星期一至三的撲克牌贏錢金額
 poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
   
-# 計算poker_start元素的平均值
+# 計算 poker_start 元素的平均值
 mean(poker_start)
 ```
 
@@ -847,7 +847,7 @@ R使用的比較運算子有：
 - `==` 等於
 - `!=` 不等於
 
-在R Console輸入 `6 > 5` 會回傳 `TRUE`。R的好處是可以對向量使用比較運算子，例如：
+在 R Console 輸入 `6 > 5` 會回傳 `TRUE`。R 的好處是可以對向量使用比較運算子，例如：
 
 ```
 > c(4, 5, 6) > 5
@@ -861,7 +861,7 @@ R使用的比較運算子有：
 - 印出 `selection_vector` 讓你知道每天是贏錢(`TRUE`)或者輸錢(`FALSE`)。
 
 *** =hint
-為了檢驗哪些天你的撲克牌在贏錢，R會利用 `some_vector > 0` 檢查 `poker_vector` 中的每個元素是否大於零。
+為了檢驗哪些天你的撲克牌在贏錢，R 會利用 `some_vector > 0` 檢查 `poker_vector` 中的每個元素是否大於零。
 
 *** =pre_exercise_code
 ```{r}
@@ -880,7 +880,7 @@ names(roulette_vector) <- days_vector
 # 哪幾天你玩撲克牌是贏錢的
 selection_vector <- 
   
-# 印出selection_vector
+# 印出 selection_vector
 
 ```
 
@@ -896,7 +896,7 @@ names(roulette_vector) <- days_vector
 # 哪幾天你玩撲克牌是贏錢的
 selection_vector <- poker_vector > 0
   
-# 印出selection_vector
+# 印出 selection_vector
 selection_vector
 ```
 
@@ -926,7 +926,7 @@ success_msg("&#22826;&#26834;&#20102;&#65281;")
 poker_vector[selection_vector]
 ```
 
-R就會把 `selection_vector` 之中符合 `TRUE` 的元素選擇出來。
+R 就會把 `selection_vector` 之中符合 `TRUE` 的元素選擇出來。
 
 *** =instructions
 在中括號裡使用 `selection_vector` 來將撲克牌贏錢的那幾天指派給 `poker_winning_days`。
@@ -951,7 +951,7 @@ names(roulette_vector) <- days_vector
 # 哪幾天你玩撲克牌是贏錢的
 selection_vector <- poker_vector > 0
 
-# 從poker_vector中選出這些天
+# 從 poker_vector 中選出這些天
 poker_winning_days <- 
 ```
 
@@ -967,7 +967,7 @@ names(roulette_vector) <- days_vector
 # 哪幾天你玩撲克牌是贏錢的
 selection_vector <- poker_vector > 0
 
-# 從poker_vector中選出這些天
+# 從 poker_vector 中選出這些天
 poker_winning_days <- poker_vector[selection_vector]
 ```
 
@@ -1013,7 +1013,7 @@ names(roulette_vector) <- days_vector
 # 哪幾天你玩俄羅斯輪盤是贏錢的
 selection_vector <-
 
-# 從roulette_vector中選出這些天
+# 從 roulette_vector 中選出這些天
 roulette_winning_days <- 
 ```
 
@@ -1029,7 +1029,7 @@ names(roulette_vector) <- days_vector
 # 哪幾天你玩俄羅斯輪盤是贏錢的
 selection_vector <- roulette_vector > 0
 
-# 從roulette_vector中選出這些天
+# 從 roulette_vector 中選出這些天
 roulette_winning_days <- roulette_vector[selection_vector]
 ```
 

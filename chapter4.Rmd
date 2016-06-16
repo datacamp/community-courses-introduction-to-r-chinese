@@ -1,18 +1,18 @@
 --- 
 title_meta  : 第四章
 title       : 因素向量
-description : 資料常會有特定幾個類別，例如性別是男或女。在R語言中，類別型的資料以因素向量的方式儲存，因素向量對資料分析是很重要的，讓我們好好學習如何建立、篩選與比較因素向量！
+description : 資料常會有特定幾個類別，例如性別是男或女。在 R 語言，類別型的資料以因素向量的方式儲存，因素向量對資料分析是很重要的，讓我們好好學習如何建立、篩選與比較因素向量！
 
 --- type:NormalExercise xp:100 skills:1 key:226aa2797e77894b2083c4471f92b23aae435823
 ## 因素向量是什麼？你為什麼要使用它？
 
 在本章節中你會進入**因素向量**的美麗世界。 
 
-因素向量是用來儲存類別變數的統計資料型態，連續變數與類別變數最大不同點就是類別變數會有**類別個數的上限**，連續變數則會有無窮盡的個數。
+因素向量是用來儲存類別型變數的統計資料，類別型變數與連續型變數最主要的差異在於類別型變數有**類別個數的上限**，而連續型變數則會有無窮多的個數。
 
 在未來你要處理的統計模型中，對連續變數與類別變數之間的差異非常地重要，所以必須讓R知道在處理哪一種類型的變數。
 
-性別是一個很好的因素向量範例，不是生理男性就是生理女性，因此每一個觀測值都可以被分類成生理男性或生理女性。
+一個很好的因素向量範例是性別，生理上的區分可分成男性與女性，因此每一個觀測值都可以被分類成生理男性或生理女性。
 
 *** =instructions
 宣告變數 `theory` 並指派 `"factors for categorical variables"` 給它。
@@ -27,12 +27,12 @@ description : 資料常會有特定幾個類別，例如性別是男或女。在
 
 *** =sample_code
 ```{r}
-# 宣告變數theory
+# 宣告變數 theory
 ```
 
 *** =solution
 ```{r}
-# 宣告變數theory
+# 宣告變數 theory
 theory <- "factors for categorical variables"
 ```
 
@@ -46,13 +46,13 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 --- type:NormalExercise xp:100 skills:1 key:86d03f14e0b95e7cdc8cc5163493a156313bf8c6
 ## 因素向量是什麼？你為什麼要使用它？ (2)
 
-在R宣告因素向量要使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數，首先創造一個向量包含所有有限類別的觀測值，例如5個人的性別 `gender_vector`：
+R 使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數來宣告因素向量，首先，建立一個具有類別型觀測值的向量，例如 5 個人的性別 `gender_vector`：
 
 ```
 gender_vector <- c("Male","Female","Female","Male","Male")
 ```
 
-很明顯 `gender_vector` 有2種類別，或者用R術語**因素向量類別**： "Male" 與 "Female"。 
+`gender_vector` 明顯地只有 2 種類別，或用 R 術語來解釋：**因素向量的類別為** "Male" 與 "Female"。 
 
 [`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數會將向量轉換成因素向量： 
 
@@ -62,7 +62,7 @@ factor_gender_vector <- factor(gender_vector)
 
 *** =instructions
 - 利用 `factor()` 將 `gender_vector` 轉換成因素向量並將結果指派給 `factor_gender_vector`。
-- 印出 `factor_gender_vector` 並注意R會把因素向量的層級顯示在實際值下。
+- 印出 `factor_gender_vector` 並注意 R 會把因素向量的層級顯示在實際值下。
 
 *** =hint
 對 `gender_vector` 使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數，再閱讀一下說明，答案已經呼之欲出了...
@@ -77,10 +77,10 @@ factor_gender_vector <- factor(gender_vector)
 # 性別向量
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# 轉換gender_vector成為因素向量
+# 轉換 gender_vector 成為因素向量
 factor_gender_vector <-
   
-# 印出factor_gender_vector
+# 印出 factor_gender_vector
 
 ```
 
@@ -89,10 +89,10 @@ factor_gender_vector <-
 # 性別向量
 gender_vector <- c("Male", "Female", "Female", "Male", "Male")
 
-# 轉換gender_vector成為因素向量
+# 轉換 gender_vector 成為因素向量
 factor_gender_vector <- factor(gender_vector)
 
-# 印出factor_gender_vector
+# 印出 factor_gender_vector
 factor_gender_vector
 ```
 
@@ -108,17 +108,17 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21482;&#35201;&#22312;R Console&#
 --- type:NormalExercise xp:100 skills:1 key:43072d1299a99d76130f1e45dedf09baac8c8481
 ## 因素向量是什麼？你為什麼要使用它？ (3)
 
-類別型變數有兩種，一種是**名目類別型變數**另外一種是**順序類別型變數**。
+類別型變數可分為**名目類別型變數**與**順序類別型變數**兩種。
 
 名目類別型變數即是無法在類別之間比較好壞，例如一個變數 `animals_vector` 中有 `"Elephant"` 、 `"Giraffe"` 、 `"Donkey"` 與 `"Horse"`，要知道你可無法比較動物之間的好壞優劣！ 
 
 相對來說，順序類別型變數具有天生的比較特性，例如一個變數 `temperature_vector` 中有 `"Low"` 、 `"Medium"` 與 `"High"`，很明顯 `"Medium"` 比 `"Low"` 高而 `"High"` 又比 `"Medium"` 來得要高.
 
 *** =instructions
-點選 Submit Answer 來檢查R如何建立並印出名目與順序變數，不需要擔心不了解這些程式，我們之後會學。
+按下 Submit Answer 來檢查 R 如何建立並印出名目與順序變數，不需要擔心不了解這些程式，我們之後會學。
 
 *** =hint
-點選 Submit Answer 並觀察R Console，注意R如何為順序類別型變數編排因素類別。
+按下 Submit Answer 並觀察 R Console，注意R如何為順序類別型變數編排因素類別。
 
 *** =pre_exercise_code
 ```{r}
@@ -173,22 +173,22 @@ success_msg("&#26377;&#30475;&#20986;&#36889;&#20491;&#32244;&#32722;&#21578;&#3
 levels(factor_vector) <- c("name1", "name2",...)
 ```
     
-一般問卷都會問受試者的性別，在前一個練習中我們知道性別是一種因素向量，在問卷資料中男性常被編為 `"M"` 以及女性被編為 `"F"`。 
+一般問卷都會記錄受訪者的性別，在前一個練習中我們知道性別是一種因素向量，在問卷資料中 `"M"` 與 `"F"` 分別代表著男性與女性。 
 
 ```
 survey_vector <- c("M", "F", "F", "M", "M")
 ```
 
-通常你為了讓自己對資料能夠更加一目瞭然，會想將男性編為 `"Male"` 與女性編為 `"Female"` 而不是原本的 `"M"` 與 `"F"`。 
+為了對資料能夠一目瞭然，我們想將男性與女性分別用 `"Male"` 與 `"Female"` 來表示，取代原本的 `"M"` 與 `"F"`。 
 
-**注意：**在改變名稱的時候輸入順序非常重要，在R Console輸入 `levels(factor_survey_vector)` 會得到輸出為 `[1] "F" "M"` ，這代表R預設是以字母順序排列，因此當你要重新編名稱的時候，你應該要輸入 `levels(factor_survey_vector) <- c("Female", "Male")` 這樣才能正確地把 "F"對應到"Female"、把"M"對應到"Male"。
+**注意：**在改變名稱的時候輸入順序非常重要，在 R Console 輸入 `levels(factor_survey_vector)` 會得到輸出為 `[1] "F" "M"` ，這代表 R 預設是以字母順序排列，因此當你要重新編名稱的時候，你應該要輸入 `levels(factor_survey_vector) <- c("Female", "Male")` 這樣才能正確地把  "F" 對應到 "Female"、把 "M" 對應到"Male"。
 
 *** =instructions
 - 檢視將 `survey_vector` 宣告為因素級別的程式，接下來你要使用 `factor_survey_vector`。
-- 將 `factor_survey_vector` 的級別改為 `c("Female", "Male")`，注意"Female"與"Male"的順序。
+- 將 `factor_survey_vector` 的級別改為 `c("Female", "Male")`，注意 "Female" 與 "Male" 的順序。
 
 *** =hint
-留意你輸入級別名稱的順序，提示：先在R Console輸入 `levels(factor_survey_vector)` 就會知道重新命名的正確順序。
+留意你輸入級別名稱的順序，提示：先在 R Console 輸入 `levels(factor_survey_vector)` 就會知道重新命名的正確順序。
 
 *** =pre_exercise_code
 ```{r}
@@ -199,11 +199,11 @@ factor_survey_vector <- factor(survey_vector)
 
 *** =sample_code
 ```{r}
-# 建立factor_survey_vector
+# 建立 factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 
-# 指定factor_survey_vector的名稱
+# 指定 factor_survey_vector 的名稱
 levels(factor_survey_vector) <- 
 
 factor_survey_vector
@@ -211,11 +211,11 @@ factor_survey_vector
 
 *** =solution
 ```{r}
-# 建立factor_survey_vector
+# 建立 factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 
-# 指定factor_survey_vector的名稱
+# 指定 factor_survey_vector 的名稱
 levels(factor_survey_vector) <- c("Female", "Male")
 
 factor_survey_vector
@@ -257,31 +257,31 @@ summary(my_var)
 
 *** =sample_code
 ```{r}
-# 建立有清楚級別的factor_survey_vector
+# 建立有清楚級別的 factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 
-# 產出survey_vector的摘要
+# 產出 survey_vector 的摘要
 
 
-# 產出factor_survey_vector的摘要
+# 產出 factor_survey_vector 的摘要
 
 ```
 
 *** =solution
 ```{r}
-# 建立有清楚級別的factor_survey_vector
+# 建立有清楚級別的 factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 
-# 產出survey_vector的摘要
+# 產出 survey_vector 的摘要
 summary(survey_vector)
 
-# 產出factor_survey_vector的摘要
+# 產出 factor_survey_vector 的摘要
 summary(factor_survey_vector)
 ```
 
@@ -300,13 +300,13 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#35264;&#23519;&#19968;&#19979;R C
 --- type:NormalExercise xp:100 skills:1 key:9247612eea708b363b23b58a9fdff76ba50818e9
 ## 兩性戰爭
 
-`factor_survey_vector` 是有兩個級別的因素向量：男性與女性。但R是否有比較這兩個級別的好壞優劣呢？
+`factor_survey_vector` 是有兩個級別的因素向量：男性與女性。但 R 是否有比較這兩個級別的好壞優劣呢？
 
 *** =instructions
-讀編輯區的程式然後按 Submit Answer 看看是否男性比女性來得差勁。
+讀編輯區的程式然後按下 Submit Answer 看看是否男性比女性來得差勁。
 
 *** =hint
-按 Submit Answer 並看看R Console的輸出。
+按 Submit Answer 並看看 R Console 的輸出。
 
 *** =pre_exercise_code
 ```{r}
@@ -315,7 +315,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#35264;&#23519;&#19968;&#19979;R C
 
 *** =sample_code
 ```{r}
-# 建立有清楚級別的factor_survey_vector
+# 建立有清楚級別的 factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
@@ -332,7 +332,7 @@ male > female
 
 *** =solution
 ```{r}
-# 建立有清楚級別的factor_survey_vector
+# 建立有清楚級別的 factor_survey_vector
 survey_vector <- c("M", "F", "F", "M", "M")
 factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female", "Male")
@@ -362,20 +362,20 @@ success_msg("&#21628;...&#22909;&#38570;&#65292;&#30475;&#36215;&#20358;R&#26159
 --- type:NormalExercise xp:100 skills:1 key:a25f8ec566840068e4065b4af557ffe8eefa0b53
 ## 順序型因素向量
 
-既然 `"Male"` 與 `"Female"` 是沒有順序的(或者說是名目)，所以R回傳了警告訊息，告訴你 `>` 運算子沒有意義，R把它們視為相等。 
+既然 `"Male"` 與 `"Female"` 是沒有順序的(或者說是名目)，所以 R 回傳了警告訊息，告訴你 `>` 運算子沒有意義，R 把它們視為相等。 
 
-但你有時還是得處理那些具有天生順序性的類別變數，這時我們得要特別把這個訊息告訴R才行...
+但你有時還是得處理那些具有天生順序性的類別變數，這時我們得要特別把這個訊息告訴 R 才行...
 
-假如你管理一個有5個資料分析師的研究團隊，你衡量他們做事的效率表現後將他們歸類為"slow"、"fast"與"insane"，然後把結果指派給一個向量 `speed_vector`。
+假如你管理一個有 5 個資料分析師的研究團隊，你衡量他們做事的效率表現後將他們歸類為 "slow"、"fast" 與 "insane"，然後把結果指派給一個向量 `speed_vector`。
 
 *** =instructions
 第一步我們要宣告 `speed_vector` ：
 
-- 分析師1是fast，
-- 分析師2是slow，
-- 分析師3是slow，
-- 分析師4是fast，
-- 分析師5是insane。
+- 分析師 1 是 fast，
+- 分析師 2 是 slow，
+- 分析師 3 是 slow，
+- 分析師 4 是 fast，
+- 分析師 5 是 insane。
 
 還不需要指定為因素向量。
 
@@ -389,13 +389,13 @@ success_msg("&#21628;...&#22909;&#38570;&#65292;&#30475;&#36215;&#20358;R&#26159
 
 *** =sample_code
 ```{r}
-# 宣告speed_vector
+# 宣告 speed_vector
 speed_vector <-
 ```
 
 *** =solution
 ```{r}
-# 宣告speed_vector
+# 宣告 speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 ```
 
@@ -410,7 +410,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 --- type:NormalExercise xp:100 skills:1 key:52c40d180e9661fd82e138f210eef258a81e51e1
 ## 順序型因素向量 (2)
 
-`speed_vector` 接下來會被轉換為順序型因素向量因為速度是有快慢之分的。直接使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數預設會將 `speed_vector` 轉換成非順序型的因素向量，為了建立一個順序型因素向量，你必須加入2個額外參數： `ordered` 與 `levels`。
+`speed_vector` 接下來會被轉換為順序型因素向量因為速度是有快慢之分的。直接使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數預設會將 `speed_vector` 轉換成非順序型的因素向量，為了建立一個順序型因素向量，你必須加入 2 個額外參數： `ordered` 與 `levels`。
 
 ```
 factor(some_vector, 
@@ -433,26 +433,26 @@ factor(some_vector,
 
 *** =sample_code
 ```{r}
-# 建立speed_vector
+# 建立 speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane") 
 
-# 轉換speed_vector為順序型因素向量
+# 轉換 speed_vector 為順序型因素向量
 factor_speed_vector <-  
 
-# 印出factor_speed_vector與其摘要
+# 印出 factor_speed_vector 與其摘要
 factor_speed_vector
 summary(factor_speed_vector) 
 ```
 
 *** =solution
 ```{r}
-# 建立speed_vector
+# 建立s peed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 
-# 轉換speed_vector為順序型因素向量
+# 轉換 speed_vector 為順序型因素向量
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
-# 印出factor_speed_vector與其摘要
+# 印出 factor_speed_vector 與其摘要
 factor_speed_vector
 summary(factor_speed_vector) 
 ```
@@ -473,7 +473,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#24478;R Console&#20013;&#21487;&#
 --- type:NormalExercise xp:100 skills:1 key:6195cdd81bcd1b66d8dde93500dc2e4df63c58d0
 ## 比較順序型因素向量
 
-經過一天辛苦的工作，'資料分析師2'進來你的辦公室並開始抱怨'資料分析師5'拖垮了整個專案。由於你知道'資料分析師2'是很精明的，你想先檢查一下他說的是否屬實。
+經過一天辛苦的工作，'資料分析師 2'進來你的辦公室並開始抱怨'資料分析師 5'拖垮了整個專案。由於你知道 '資料分析師 2'是很精明的，你想先檢查一下他說的是否屬實。
 
 既然 `factor_speed_vector` 已經排好順序，你可以用 `>` 這個運算子來比較快慢。
 
@@ -484,7 +484,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#24478;R Console&#20013;&#21487;&#
 
 *** =hint
 - 你需要輸入 `factor_speed_vector[3]` 來將第三個資料分析師選出來。
-- 為了比較2個數值可以使用 `>` 例如： `da3 > da4`。
+- 比較 2 個數值可以使用 `>` 例如： `da3 > da4`。
 
 *** =pre_exercise_code
 ```{r}
@@ -493,17 +493,17 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#24478;R Console&#20013;&#21487;&#
 
 *** =sample_code
 ```{r}
-# 建立factor_speed_vector
+# 建立 factor_speed_vector
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
-# 選出資料分析師2
+# 選出資料分析師 2
 da2 <- 
 
-# 選出資料分析師5
+# 選出資料分析師 5
 da5 <-
 
-# 資料分析師2是否比資料分析師5快？
+# 資料分析師 2是否比資料分析師 5快？
 
 ```
 
@@ -513,13 +513,13 @@ da5 <-
 speed_vector <- c("fast", "slow", "slow", "fast", "insane")
 factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "fast", "insane"))
 
-# 選出資料分析師2
+# 選出資料分析師 2
 da2 <- factor_speed_vector[2]
 
-# 選出資料分析師5
+# 選出資料分析師 5
 da5 <- factor_speed_vector[5] 
 
-# 資料分析師2是否比資料分析師5快？
+# 資料分析師 2是否比資料分析師 5快？
 da2 > da5
 ```
 

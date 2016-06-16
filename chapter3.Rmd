@@ -1,7 +1,7 @@
 --- 
 title_meta  : 第三章
 title       : 矩陣
-description : 在本章節你將學會如何在R使用矩陣，包括宣告以及運算，你會用矩陣來分析星際大戰的票房記錄，願原力與你同在！
+description : 在本章節你將學會如何在 R 使用矩陣，包括宣告以及運算，你會用矩陣來分析星際大戰的票房記錄，願原力與你同在！
 
 --- type:NormalExercise xp:100 skills:1 key:61a40bda779e572e5cc17be23357c98bceb73943
 ## 矩陣是什麼？
@@ -16,12 +16,12 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 
 在[`matrix()`](http://www.rdocumentation.org/packages/base/functions/matrix)函數中：
 
-- 第一個參數是R會放進列與欄的元素，這裡我們使用 `1:9` 即 `c(1, 2, 3, 4, 5, 6, 7, 8, 9)` 的簡單寫法。
-- 參數 `byrow` 表示矩陣在填滿的時候是以列的方向，如果你希望以欄的方向填滿，要調整為 `byrow = FALSE`。 
+- 第一個參數為要放進矩陣的元素，`1:9` 為 `c(1, 2, 3, 4, 5, 6, 7, 8, 9)` 的簡單寫法。
+- 第二個參數 `byrow` 表示在填滿矩陣時是以列的方向放入元素；如果希望以欄的方向填滿，需調整為 `byrow = FALSE`。 
 - 第三個參數 `nrow` 表示矩陣有3列。
 
 *** =instructions
-宣告一個具有3列的矩陣並以列的方向將1到9填入。
+宣告一個具有 3 列的矩陣並以**列**的方向將 1 到 9 填入，記得要指定 `byrow = FALSE` 。
 
 *** =hint
 再詳讀一次說明，答案其實已經很明顯了！
@@ -33,12 +33,12 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 
 *** =sample_code
 ```{r}
-# 宣告一個具有3列的矩陣並將1到9填入
+# 宣告一個具有 3 列的矩陣，且將數值 1:9 依序以列的方向填入此矩陣
 ```
 
 *** =solution
 ```{r}
-# 宣告一個具有3列的矩陣並將1到9填入
+# 宣告一個具有 3 列的矩陣，且將數值 1:9 依序以列的方向填入此矩陣
 matrix(1:9, byrow = TRUE, nrow = 3)
 ```
 
@@ -57,16 +57,16 @@ success_msg("&#22909;&#26834;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#3
 
 該是捲起袖子來寫程式的時候了，在接下來的練習中你要分析星際大戰首映票房記錄，願原力與你同在！
 
-有3個向量已經在編輯區被宣告好了，每個向量分別代表著前三部推出的星際大戰電影(曙光乍現、帝國大反擊與絕地大反攻)票房收入，向量中的第一個元素代表美國票房收入，第二個元素代表非美國票房收入(資料來源：維基百科)。
+編輯區已經宣告好 3 個向量，分別代表著前三部星際大戰電影（曙光乍現、帝國大反擊與絕地大反攻）的票房收入，其中每個向量的第一個元素代表美國票房收入，第二個元素代表非美國票房收入（資料來源：維基百科）。
 
 在這個練習中你要合併這三個向量然後建立一個矩陣。
 
 *** =instructions
 - 利用 `c(new_hope, empire_strikes, return_jedi)` 合併這三個向量並指派給一個新向量 `box_office`。
-- 使用 `matrix()` 函數建立一個擁有3列的矩陣，每一列都代表一部電影，第一個參數為 `box_office` 它包含所有票房收入記錄，第二個與第三個參數你要指定 `nrow = 3` 以及 `byrow = TRUE`。命名這個新建立的矩陣為 `star_wars_matrix`。
+- 使用 `matrix()` 函數建立一個擁有 3 列的矩陣，每一列都代表一部電影，第一個參數為 `box_office` 它包含所有票房收入記錄，第二個與第三個參數你要指定 `nrow = 3` 以及 `byrow = TRUE`。命名這個新建立的矩陣為 `star_wars_matrix`。
 
 *** =hint
-- `box_office <- c(new_hope, empire_strikes, return_jedi)` 可以合併成一個有6個元素的向量。
+- `box_office <- c(new_hope, empire_strikes, return_jedi)` 可以合併成一個有 6 個元素的向量。
 - `matrix(box_office, nrow = ..., by_row ...)` 是建立矩陣的函數架構。
 
 *** =pre_exercise_code
@@ -76,29 +76,29 @@ success_msg("&#22909;&#26834;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#3
 
 *** =sample_code
 ```{r}
-# 星際大戰票房(百萬元美金！)
+# 星際大戰票房（百萬元美金！）
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# 宣告box_office
+# 宣告 box_office
 box_office <- 
 
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 star_wars_matrix <- 
 ```
 
 *** =solution
 ```{r}
-# 星際大戰票房(百萬元美金！)
+# 星際大戰票房（百萬元美金！）
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# 宣告box_office
+# 宣告 box_office
 box_office <- c(new_hope, empire_strikes, return_jedi)
 
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE) 
 ```
 
@@ -131,7 +131,7 @@ rownames(my_matrix) <- row_names_vector
 colnames(my_matrix) <- col_names_vector
 ```
 
-我們準備了2個向量 `region` 與 `titles` 。你會需要用這兩個向量來分別為 `star_wars_matrix` 的列與欄命名。
+我們準備了 2 個向量 `region` 與 `titles` 。你會需要用這兩個向量來分別為 `star_wars_matrix` 的列與欄命名。
 
 *** =instructions
 - 使用 `colnames()` 將 `region` 指派給 `star_wars_matrix` 的欄名稱。
@@ -148,48 +148,48 @@ colnames(my_matrix) <- col_names_vector
 
 *** =sample_code
 ```{r}
-# 星際大戰票房(百萬元美金！)
+# 星際大戰票房（百萬元美金！）
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
 
-# 用來命名的向量region與titles
+# 用來命名的向量 region 與 titles
 region <- c("US", "non-US")
 titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 
-# 用region為欄命名 
+# 用 region 為欄命名 
 
 
-# 用titles為列命名
+# 用 titles 為列命名
 
 
-# 印出star_wars_matrix
+# 印出 star_wars_matrix
 ```
 
 *** =solution
 ```{r}
-# 星際大戰票房(百萬元美金！)
+# 星際大戰票房（百萬元美金！）
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
 
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
 
-# 用來命名的向量region與titles
+# 用來命名的向量 region 與 titles
 region <- c("US", "non-US")
 titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
 
-# 用region為欄命名
+# 用 region 為欄命名
 colnames(star_wars_matrix) <- region
 
-# 用titles為列命名
+# 用 titles 為列命名
 rownames(star_wars_matrix) <- titles
 
-# 印出star_wars_matrix
+# 印出 star_wars_matrix
 star_wars_matrix
 ```
 
@@ -237,7 +237,7 @@ rowSums(my_matrix)
 
 *** =sample_code
 ```{r}
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
@@ -249,7 +249,7 @@ worldwide_vector <-
 
 *** =solution
 ```{r}
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
@@ -272,9 +272,9 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 --- type:NormalExercise xp:100 skills:1 key:b3920821c2964147c5db451c4d66c8e6172dfda4
 ## 再多加一欄 
 
-前一個練習中你計算了3部星際大戰電影的全球票房收入，但是這個向量沒有合併至 `star_wars_matrix` 。
+前一個練習中，我們已計算出 3 部星際大戰電影的全球票房收入，但是結果並未合併至 `star_wars_matrix` 中。
 
-使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數將一個或更多的欄加入矩陣，例如：
+使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數來增加矩陣的欄位，例如：
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
@@ -284,7 +284,7 @@ big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數加入 `worldwide_vector` 做為 `star_wars_matrix` 中新的一欄，並將結果指派給 `all_wars_matrix`。
 
 *** =hint
-將2個變數 `star_wars_matrix` 與 `worldwide_vector` 做為 `cbind()` 的參數然後指派給 `all_wars_matrix`。
+將 2 個變數 `star_wars_matrix` 與 `worldwide_vector` 做為 `cbind()` 的參數然後指派給 `all_wars_matrix`。
 
 *** =pre_exercise_code
 ```{r}
@@ -293,7 +293,7 @@ big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 
 *** =sample_code
 ```{r}
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
@@ -302,13 +302,13 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
 # 計算全球票房收入
 worldwide_vector <- rowSums(star_wars_matrix)
 
-# 將worldwide_vector加入star_wars_matrix
+# 將 worldwide_vector 加入 star_wars_matrix
 all_wars_matrix <- 
 ```
 
 *** =solution
 ```{r}
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
 star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
                            dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
@@ -317,7 +317,7 @@ star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
 # 計算全球票房收入
 worldwide_vector <- rowSums(star_wars_matrix)
 
-# 將worldwide_vector加入star_wars_matrix
+# 將 worldwide_vector 加入 star_wars_matrix
 all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
 ```
 
@@ -348,38 +348,38 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#25509;&#19979;&#20358;&#25105;&#2
 
 就如同作用力與反作用力，有[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)自然也會有[`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)(我們實在不太會用譬喻法。) 
 
-在R工作區已經宣告好兩個矩陣([工作區是什麼](http://www.statmethods.net/interface/workspace.html))：
+在 R 工作區已經宣告好兩個矩陣([工作區是什麼](http://www.statmethods.net/interface/workspace.html))：
 
 - 我們一直在使用的第一個三部曲電影矩陣 `star_wars_matrix`。
-- 第二個三部曲電影矩陣`star_wars_matrix2`。 
+- 第二個三部曲電影矩陣 `star_wars_matrix2`。 
 
-在R Console輸入 `ls()` 可以檢視工作區的內容，輸入已經宣告好的2個矩陣可以看到內容。
+在 R Console 輸入 `ls()` 可以檢視工作區的內容，輸入已經宣告好的 2 個矩陣可以看到內容。
 
 *** =instructions
-用 `rbind()` 把 `star_wars_matrix` 和 `star_wars_matrix2` 合併並將結果指派給 `all_wars_matrix`。
+用 `rbind()` 把 `star_wars_matrix` 和 `star_wars_matrix2` 合併並將結果指派給 `all_wars_matrix` 之後，把 `all_wars_matrix` 印出來。
 
 *** =hint
 合併兩個矩陣：
 ```
 rbind(matrix1, matrix2)
 ```
-把結果指派給 `all_wars_matrix`。
+把結果指派給 `all_wars_matrix` 並印出來。
 
 
 *** =pre_exercise_code
 ```{r}
-# 建立star_wars_matrix
+# 建立 star_wars_matrix
 box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
 movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
 col_titles <- c("US","non-US")
 star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
 
-# 建立star_wars_matrix2
+# 建立 star_wars_matrix2
 box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
 movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
 star_wars_matrix2 <- matrix(box_office_all2, nrow=3, byrow = TRUE, dimnames = list(movie_names2, col_titles))
 
-# 移除所有物件只留下all_wars_matrix
+# 移除所有物件只留下 all_wars_matrix
 rm(box_office_all)
 rm(movie_names)
 rm(col_titles)
@@ -389,22 +389,28 @@ rm(movie_names2)
 
 *** =sample_code
 ```{r}
-# star_wars_matrix與star_wars_matrix2已經存在於工作區中
+# star_wars_matrix 與 star_wars_matrix2 已經存在於工作區中
 star_wars_matrix  
 star_wars_matrix2 
 
-# 合併2個三部曲
+# 合併 2 個三部曲
 all_wars_matrix <- 
+
+# 將 all_wars_matrix 印出來
+
 ```
 
 *** =solution
 ```{r}
-# star_wars_matrix與star_wars_matrix2已經存在於工作區中
+# star_wars_matrix 與 star_wars_matrix2 已經存在於工作區中
 star_wars_matrix  
 star_wars_matrix2 
 
-# 合併2個三部曲
+# 合併 2 個三部曲
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
+
+# 將 all_wars_matrix 印出來
+all_wars_matrix
 ```
 
 *** =sct
@@ -412,6 +418,7 @@ all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 msg = "&#19981;&#38656;&#35201;&#26356;&#25913;`star_wars_matrix` &#33287; `star_wars_matrix2`&#12290;"
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("all_wars_matrix", incorrect_msg = "&#21029;&#24536;&#35352;&#25226; `all_wars_matrix` &#21360;&#20986;&#20358;&#65281;")
 
 # Fix until testwhat gets updated again
 # TODO: Fix in testwhat
@@ -434,7 +441,7 @@ success_msg("&#22826;&#23436;&#32654;&#20102;&#65292;&#21069;&#36914;&#19979;&#1
 --- type:NormalExercise xp:100 skills:1 key:7dfd6a4e59e15742efd72fee93321ec289165846
 ## 星際大戰六部曲票房總收入
 
-如同[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)與[`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)，[`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)也有對應的[`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)。R工作區已經有你在前一個練習建立的 `all_wars_matrix`， 輸入 `all_wars_matrix` 看看，接著我們要計算六部曲的票房總收入。
+如同[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)與[`rbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)，[`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)也有對應的[`rowSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)。R 工作區已經有你在前一個練習建立的 `all_wars_matrix`， 輸入 `all_wars_matrix` 看看，接著我們要計算六部曲的票房總收入。
 
 *** =instructions
 - 計算美國與非美國的票房總收入並指派給 `total_revenue_vector`，你可以使用[`colSums()`](http://www.rdocumentation.org/packages/base/functions/colSums)函數。
@@ -450,24 +457,24 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars
 
 *** =sample_code
 ```{r}
-# all_wars_matrix已經存在於工作區中
+# all_wars_matrix 已經存在於工作區中
 all_wars_matrix
 
 # 美國與非美國的票房收入
 total_revenue_vector <- 
   
-# 印出total_revenue_vector
+# 印出 total_revenue_vector
 ```
 
 *** =solution
 ```{r}
-# all_wars_matrix已經存在於工作區中
+# all_wars_matrix 已經存在於工作區中
 all_wars_matrix
 
 # 美國與非美國的票房收入
 total_revenue_vector <- colSums(all_wars_matrix)
 
-# 印出total_revenue_vector
+# 印出 total_revenue_vector
 total_revenue_vector
 ```
 
@@ -486,10 +493,10 @@ success_msg("&#22826;&#32654;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 --- type:NormalExercise xp:100 skills:1 key:3f713b0c9ff675bf457941041819813ad7a5c19d
 ## 選擇矩陣中的元素
 
-跟向量一樣都是使用中括號 `[ ]` 來選擇矩陣中的一個或多個元素，因為矩陣具有2個維度，你應該使用逗號分格哪些列要選、哪些欄要選，例如：
+矩陣與向量一樣，皆使用中括號 `[ ]` 來選擇當中的一個或多個元素，因為矩陣具有2個維度，我們需要使用逗號來區分所選擇的列與欄，例如：
 
-- `my_matrix[1,2]` 可以將矩陣中第一列與第二欄的元素選出。
-- `my_matrix[1:3,2:4]` 可以將矩陣中第一列至第三列與第二欄至第四欄的資料選出。
+- `my_matrix[1,2]` 可選出位於矩陣中第一列與第二欄的元素。
+- `my_matrix[1:3,2:4]` 可選出矩陣中第一列至第三列與第二欄至第四欄的元素。
 
 如果你希望選出列或欄的所有元素，就不需要在逗號前後加上數字，例如：
 
@@ -514,7 +521,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars
 
 *** =sample_code
 ```{r}
-# all_wars_matrix已經存在於工作區中
+# all_wars_matrix 已經存在於工作區中
 all_wars_matrix
 
 # 選出全部電影的非美國票房收入
@@ -532,7 +539,7 @@ non_us_some <-
 
 *** =solution
 ```{r}
-# all_wars_matrix已經存在於工作區中
+# all_wars_matrix 已經存在於工作區中
 all_wars_matrix
 
 # 選出全部電影的非美國票房收入
@@ -570,16 +577,16 @@ success_msg("&#22826;&#21426;&#23475;&#20102;&#65292;&#21069;&#36914;&#19979;&#1
 
 跟你在向量學到的相同，標準運算子 `+` 、 `-` 、 `/` 、 `*` 等等都可以用在矩陣計算。
 
-例如 `2 * my_matrix` 會將每個 `my_matrix` 中的元素均乘以2。
+例如 `2 * my_matrix` 會將每個 `my_matrix` 中的每個元素乘以 2。
 
-身為盧卡斯影業新聘雇的資料分析師，你想找出不同地理區的六部曲觀看人數。你已經建立好總票房收入的 `all_wars_matrix`，現在假設電影票價格為5元，將票房收入除以5就可以得到觀看人數。
+身為盧卡斯影業新聘雇的資料分析師，你想找出不同地理區的六部曲觀看人數。你已經建立好總票房收入的 `all_wars_matrix`，現在假設電影票價格為 5 元，將票房收入除以 5 就可以得到觀看人數。
 
 *** =instructions
-- 將 `all_wars_matrix` 除以5得到觀看人數(百萬人)，指派結果給 `visitors`。
+- 將 `all_wars_matrix` 除以 5 得到觀看人數（百萬人），指派結果給 `visitors`。
 - 印出 `visitors` 看看。
 
 *** =hint
-觀看人數為 `all_wars_matrix` 除以5。
+觀看人數為 `all_wars_matrix` 除以 5。
 
 *** =pre_exercise_code
 ```{r}
@@ -588,7 +595,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars
 
 *** =sample_code
 ```{r}
-# all_wars_matrix已經存在於工作區中
+# all_wars_matrix 已經存在於工作區中
 all_wars_matrix
 
 # 估計觀看人數
@@ -600,7 +607,7 @@ visitors <-
 
 *** =solution
 ```{r}
-# all_wars_matrix已經存在於工作區中
+# all_wars_matrix 已經存在於工作區中
 all_wars_matrix
 
 # 估計觀看人數
@@ -625,14 +632,14 @@ success_msg("&#35336;&#31639;&#32080;&#26524;&#21578;&#35380;&#20320;&#65292;&#2
 --- type:NormalExercise xp:100 skills:1 key:6c34c3c66d9f2d2996cb8288112f2e604feac8ab
 ## 一點點矩陣數學運算 (2) 
 
-如同 `2 * my_matrix` 會將 `my_matrix` 中的每個元素都乘以2， `my_matrix1 * my_matrix2` 會產生一個對應元素相乘的矩陣。 
+如同 `2 * my_matrix` 會將 `my_matrix` 中的每個元素都乘以 2， `my_matrix1 * my_matrix2` 則是將對應相同位置的元素作乘法運算。 
 
 老闆盧卡斯看了前一個練習的結果後指出電影票價其實是有隨著時間調漲，要求你利用 `ticket_prices_matrix` 中的票價資料(資料來源：imagination) 重做一次分析。
 
-_對於矩陣熟悉的使用者要注意這裡不是使用標準矩陣運算子，標準矩陣運算子要使用 `%*%`。_
+_對於熟悉矩陣的使用者，須留意上述的運算並非標準矩陣運算子，標準矩陣運算子要使用 `%*%`。_
 
 *** =instructions
-- `all_wars_matrix` 除以 `ticket_prices_matrix` 可以得到美國與非美國的六部曲觀看人數，將結果指派給 `visitors`。
+- `all_wars_matrix` 除以 `ticket_prices_matrix` 可以得到美國與非美國的六部曲觀看人數，將結果指派給 `visitors` 並印出結果。
 - 選擇 `visitors` 中代表美國觀看人數的第一欄資料指派給 `us_visitors`。
 - 計算美國的平均觀看人數並印出結果。
 
@@ -657,6 +664,9 @@ ticket_prices_matrix
 # 估計觀看人數
 visitors <- 
 
+# 印出估計觀看人數
+  
+  
 # 美國觀看人數
 us_visitors <- 
 
@@ -673,6 +683,9 @@ ticket_prices_matrix
 # 估計觀看人數
 visitors <- all_wars_matrix / ticket_prices_matrix
 
+# 印出估計觀看人數
+visitors
+
 # 美國觀看人數
 us_visitors <- visitors[ ,1]
 
@@ -688,6 +701,9 @@ test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
 
 test_object("visitors",
             incorrect_msg = "&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#24314;&#31435;&#30697;&#38499; `visitors`&#65311; &#23559; `all_wars_matrix` &#38500;&#20197; `ticket_prices_matrix` &#23601;&#21487;&#20197;&#31639;&#20986;&#12290;")
+
+test_output_contains("visitors", incorrect_msg = "&#35352;&#24471;&#35201;&#23559; `visitors` &#21360;&#20986;&#20358;&#12290;")
+
 test_object("us_visitors", incorrect_msg = "&#20320;&#21487;&#20197;&#20351;&#29992; `[,1]` &#20358;&#36984;&#20986; `visitors` &#30340;&#31532;&#19968;&#27396;&#20006;&#25351;&#27966;&#32102; `us_visitors`&#65281;")
 test_output_contains("mean(us_visitors)", incorrect_msg = "&#19968;&#26086;&#20320;&#24314;&#31435;&#22909; `us_visitors` &#23601;&#21487;&#20197;&#20351;&#29992; `mean()` &#20358;&#35336;&#31639;&#32654;&#22283;&#24179;&#22343;&#35264;&#30475;&#20154;&#25976;&#20006;&#35352;&#24471;&#35201;&#25226;&#32080;&#26524;&#21360;&#20986;&#20358;&#12290;")
 

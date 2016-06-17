@@ -42,7 +42,7 @@ success_msg("&#28310;&#20633;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:d6f368841ef8395b0cf19fbaa2e23c7ce2c8672d
-## 為什麼會需要清單？ (2)
+## 為什麼會需要清單？（2）
 
 **清單**在R中跟你的工作項目或學習項目很像，這些要完成的項目長度、特性或者活動類型都不一樣。
 
@@ -153,7 +153,7 @@ my_list <- list(name1 = your_comp1,
                 name2 = your_comp2)
 ``` 
 
-這段程式會宣告一個將項目命名的清單 `name1` 、 `name2` 以此類推，如果你希望在建立清單後才命名，你可以之後再使用 `names()` 函數，例如以下這段程式跟前面是完全相同的：
+上述程式中 `name1` 、 `name2` 分別對清單中的每個項目命名，如果希望在建立清單後才命名，我們可以在建立清單後再使用 `names()` 函數，例如下面這兩行程式，執行後的結果與上述程式完全相同：
 
 ```
 my_list <- list(your_comp1, your_comp2)
@@ -228,7 +228,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#29694;&#22312;&#19981;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:cf2bc8104cc549cdd4eab9773bfe0d234effa9d5
-## 建立一個有項目名稱的清單 (2)
+## 建立一個有項目名稱的清單（2）
 
 別忘了你是盧卡斯影業的員工，身為一個超級電影迷，你決定把好看的電影資訊儲存在清單中。
 
@@ -288,15 +288,15 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#29694;&#22312;&#30693;&#3
 --- type:NormalExercise xp:100 skills:1 key:5bbf2c7bd99765106af3ccb1ee48649d763161ef
 ## 從清單中選擇元素
 
-清單常包含多種的元素與項目，因此從清單中選取單一元素、多個元素或某部分並不是非常地直觀。
+清單常包含多種的元素與項目。因此，從清單中選取單一元素、多個元素或部分項目，並不是件非常直觀的事。
 
-利用索引值選取是一種方式，例如將 `shining_list` 的第一個項目抓出來你可以輸入
+利用索引值選取是一種方式，例如輸入下列程式可取出 `shining_list` 中的第一個項目：
 
 ```
 shining_list[[1]]
 ```
 
-可別跟用單一個中括號 `[ ]` 從向量中選擇元素搞混了，你可以在R Console中快速輸入並檢視結果！
+可別跟用單一個中括號 `[ ]` 從向量中選擇元素搞混了，你可以在 R Console 中快速輸入並檢視結果！
 
 你也可以使用項目的名稱選擇，使用 `[[ ]]` 或 `$` 都可以達成同樣目的：
 
@@ -305,7 +305,7 @@ shining_list[["reviews"]]
 shining_list$reviews
 ``` 
 
-除了選出清單中的項目以外，你也常需要選出特定元素，例如 `shining_list[[2]][1]` 可以選出第二個項目 `actors` (`shining_list[[2]]`)中的第一個元素(`[1]`)，R Console將會回傳Jack Nicholson。
+除了選出清單中的項目以外，你也常需要選出特定元素，例如 `shining_list[[2]][1]` 可以選出第二個項目 `actors` (`shining_list[[2]]`)中的第一個元素(`[1]`)，R Console 將會回傳 Jack Nicholson。
 
 *** =instructions
 - 從 `shining_list` 中選出演員向量，並將該向量印出。
@@ -327,7 +327,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 # 將儲存演員資訊的向量印出
 
 
-# 印出演員資訊的向量
+# 查詢第二位演員的名字
 
 ```
 
@@ -338,7 +338,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 # 將儲存演員資訊的向量印出
 shining_list$actors
 
-# 印出演員資訊的向量
+# 查詢第二位演員的名字
 shining_list$actors[2]
 ```
 
@@ -355,7 +355,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#24478;&#28165;&#21934;&#20013;&#3
 --- type:NormalExercise xp:100 skills:1 key:4cec127e7811993251c89ede9a6e976958f66be5
 ## 在清單中增加更多電影資訊
 
-你跟幾個電影愛好者分享了你建立的清單，其中一個叫M. McDowell的資深成員跟你說你忘了把上映年份這個重要資訊放入，基於對自我的高標準要求，你決定要把這個遺漏的資訊加入清單中。 
+你向幾位電影愛好者分享了你的清單，其中一位資深成員 M. McDowell 點出清單中遺漏了上映年份這個重要的資訊，基於對自我的高標準要求，你決定要把這個遺漏的資訊補入清單中。
 
 使用[`c()`](http://www.rdocumentation.org/packages/base/functions/c)函數可以為清單增加資訊：
 
@@ -370,11 +370,11 @@ ext_list <- c(my_list, my_name = my_val)
 ```
 
 *** =instructions
-- 完成以下的程式把 `year` 1980加入 `shining_list` 中並將結果指派給 `shining_list_full`。
+- 完成以下的程式把 `year = 1980`加入 `shining_list` 中，並將結果指派給 `shining_list_full`。
 - 最後，利用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數觀察 `shining_list_full` 的結構。
 
 *** =hint
-看一下範例程式碼：
+看一下範例程式：
 ```
 shining_list <- c(shining_list, ...)
 ```

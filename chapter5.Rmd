@@ -55,9 +55,9 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 你常常需要分析龐大的資料，你的第一件事應該是對資料結構與主要元素有清晰的認知，先觀察小部份的資料是很有用的。
 
-在R中可以使用[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)函數幫助你呈現資料框的前幾個觀測值，相同地，[`tail()`](http://www.rdocumentation.org/packages/utils/functions/head)函數可以印出資料框的最後幾個觀測值。
+在 R 中我們可以使用[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)函數來展示資料框的前幾個觀測值，相同地，[`tail()`](http://www.rdocumentation.org/packages/utils/functions/head)函數則可以展示資料框的最終幾個觀測值。
 
-[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)與[`tail()`](http://www.rdocumentation.org/packages/utils/functions/head)函數都會將欄位的名稱印出。
+[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)與[`tail()`](http://www.rdocumentation.org/packages/utils/functions/head)函數都會一併展示欄位名稱。
 
 *** =instructions
 對[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)資料框使用[`head()`](http://www.rdocumentation.org/packages/utils/functions/head)函數來看看它的欄位名稱與前幾列觀測值。
@@ -86,19 +86,19 @@ head(mtcars)
 ```{r}
 test_function("head", "x", incorrect_msg = "&#30906;&#35469;&#26159;&#21542;&#26377;&#23565; `mtcars` &#20351;&#29992; `head()` &#20989;&#25976;&#65311;")
 test_output_contains("head(mtcars)", incorrect_msg = "&#21482;&#38656;&#35201;&#23559;&#21628;&#21483; `head()` &#30340;&#32080;&#26524;&#21360;&#20986;&#21363;&#21487;&#65292;&#19981;&#38656;&#35201;&#25351;&#27966;&#26032;&#35722;&#25976;&#12290;")
-success_msg("&#22826;&#26834;&#20102;&#65292;&#35731;&#25105;&#20497;&#30475;&#30475;&#36039;&#26009;&#38598;&#20013;&#26377;&#20160;&#40636;&#36039;&#26009;&#65292;&#20363;&#22914; `hp` &#20195;&#34920;&#36554;&#23376;&#30340;&#39340;&#21147;&#65292;Datsun&#22312;&#21576;&#29694;&#20986;&#20358;&#30340;6&#36635;&#36554;&#23376;&#20013;&#26159;&#39340;&#21147;&#26368;&#20302;&#30340;&#37027;&#36635;&#65292;&#22312;R Console&#36664;&#20837; `?mtcars` &#21487;&#20197;&#38321;&#35712;&#35443;&#32048;&#30340;&#35722;&#25976;&#23450;&#32681;&#33287;&#39006;&#22411;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;");
+success_msg("&#22826;&#26834;&#20102;&#65292;&#35731;&#25105;&#20497;&#30475;&#30475; `mtcars` &#36039;&#26009;&#38598;&#20013;&#21738;&#20123;&#26377;&#36039;&#26009;&#65292;&#20363;&#22914; `hp` &#20195;&#34920;&#36554;&#23376;&#30340;&#39340;&#21147;&#65292;&#19988;&#36889; 6 &#36635;&#36554;&#23376;&#20013;&#39340;&#21147;&#26368;&#20302;&#30340;&#28858; Datsun710&#65292;&#22312; R Console&#36664;&#20837; `?mtcars` &#21487;&#26597;&#38321;&#35443;&#32048;&#30340;&#35722;&#25976;&#23450;&#32681;&#33287;&#39006;&#22411;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;");
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:44c05f378266cbc25079ec804787fdc09e111aa0
 ## 觀察一下結構
 
-還有另外一種常用的方式可以幫助你快速地瞭解資料概觀，那就是使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數，[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數顯示資料的結構，告訴你資料框的資訊有：
+另外一種常用來快速瞭解資料的方式為使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數，[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數顯示資料的結構，告訴我們下列資料框的資訊：
 
-- 觀測值總計(32種車型)
-- 變數總計(11種車輛資訊)
-- 變數名稱清單(`mpg`, `cyl` ... )
-- 變數的資料類型(`數值`)
+- 觀測值的總數（ 32 種車型）
+- 變數的總數（ 11 種車輛資訊）
+- 變數名稱的清單（`mpg`, `cyl` ...）
+- 變數的資料類型（`數值`）
 - 前幾個觀測值
 
 當你拿到一個新資料框，在你開始做分析之前通常會使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數了解資料的樣態。
@@ -137,16 +137,16 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#20320;&#30475;&#21040;&#20102;&#3
 
 用內建的資料框一點都不有趣對吧！接下來的練習我們要使用你自己建立的資料框，讓我們穿上太空衣，做一點星際探索吧！
 
-首先我們來建立一個描述太陽系八個行星特性的資料框，根據好友巴斯光年的說法，星球的主要特性有：
+首先，我們建立一個描述太陽系八個行星的資料框，根據好友巴斯光年的說法，星球的主要特性有：
 
-- 星球種類(陸地或氣體)。
+- 星球種類（陸地或氣體）。
 - 星球相對於地球的直徑。
 - 星球相對於地球的自轉頻率。
-- 星球是否有環(TRUE或FALSE)。
+- 星球是否有環（`TRUE` 或 `FALSE`）。
 
-經過在維基百科[Wikipedia](http://en.wikipedia.org/wiki/Planet)上的精密研究以後，你很有自信地建立了這些向量： `name` 、 `type` 、 `diameter` 、 `rotation` 與 `rings`，建立這些向量的程式碼已經寫好在編輯區中。
+在維基百科[Wikipedia](http://en.wikipedia.org/wiki/Planet)上精細地研究後，我們很有自信地建立了 5 個向量： `name` 、 `type` 、 `diameter` 、 `rotation` 與 `rings`（建立這 5 個向量的程式已經寫好在編輯區中。）
 
-使用[`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame)函數建立資料框，這些向量都會成為資料框中的欄位，它們的長度都相同，但是資料格式有所不同。
+使用[`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame)函數建立資料框，這 5 個向量將會成為資料框中的欄位，它們的長度都相等，但資料格式卻不盡相同。
 
 *** =instructions
 使用[`data.frame()`](http://www.rdocumentation.org/packages/base/functions/data.frame)函數建立資料框，將`name` 、 `type` 、 `diameter` 、 `rotation` 與 `rings` 做為參數放入 `data.frame()`並將建立的資料框命名為 `planets_df`。
@@ -209,7 +209,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:72d24b916b842527b40bd19ff3093b823980c234
-## 建立一個資料框 (2)
+## 建立一個資料框（2）
 
 `planets_df` 資料框已經載入至工作區，它有8個觀測值與5個欄位，你可以直接使用它。
 
@@ -252,7 +252,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#29694;&#22312;&#23565; `p
 - `my_df[1,2]` 將 `my_df` 第一列第二欄的元素選出。
 - `my_df[1:3,2:4]` 將 `my_df` 第一到三列與第二至四欄選出。
 
-有時候你想要選擇整列或整欄的所有元素，例如使用 `my_df[1, ]` 可以將第一列所有的元素選出，接下來我們將對 `planets_df` 練習這些技巧！
+有時候想選出整列或整欄的所有元素，例如使用 `my_df[1, ]` 將會把第一列所有的元素選出。接下來我們將利用 `planets_df` 練習這些技巧！
 
 *** =instructions
 - 從 `planets_df` 的第一列第三欄將水星的直徑選出，並印出結果。
@@ -298,7 +298,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#38500;&#20102;&#29992;&#32034;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:1b1be7e1473994d9d6762816f15ea282787be250
-## 從資料框中選擇元素 (2)
+## 從資料框中選擇元素（2）
 
 除了使用索引值從資料框中選擇元素，你也可以使用變數名稱進行選擇。 
 
@@ -308,7 +308,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#38500;&#20102;&#29992;&#32034;&#2
 planets_df[1:3,1]
 ```
 
-這個做法有一個缺點就是你必須要去查詢 `type` 在第幾欄，當你的變數變多時，這個做法就會變得很困難，這時用變數名稱就會顯得比較輕鬆：
+上述做法有一個缺點，就是必須先知道 `type` 位於資料框中地第幾個欄位，然而，當資料框的欄位很多時，這種做法就顯得很困難，這時使用變數名稱會相對輕鬆許多：
 
 ```
 planets_df[1:3,"type"]
@@ -411,19 +411,19 @@ success_msg("&#22826;&#22909;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:0aa1fd7d080afe1bb1031562e8004121943632c6
-## 有環的星球 (2)
+## 有環的星球（2）
 
-回憶一下高中教材你可能想起太陽系中有些行星有環而有些沒有，但你大概記不起他們的名稱，更別說他們的自轉頻率...等。
+回憶一下高中教材，你可能記得太陽系中某些行星有環而某些沒有，但你大概想不起它們的名稱，更別說自轉頻率...等了。
 
-R可以幫助你辦到嗎？
+R 可以幫助你辦到嗎？
 
-在R Console輸入 `rings_vector` 你可以得到：
+在 R Console 輸入 `rings_vector` 你可以得到：
 
 ```
 [1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
 ```
 
-這個結果表示前四個觀測值(即前四個星球)沒有環(`FALSE`)，但另外四個有環(`TRUE`)，讓我們利用 `rings_vector` 將有環的四個星球選出來。 
+上面結果顯示前四個觀測值（即前四個星球）沒有環（`FALSE`），但另外四個有環（`TRUE`），讓我們利用 `rings_vector` 將有環的四個星球選出來。 
 
 *** =instructions
 右方編輯區的程式將有環的星球名稱選出，修改程式改為將有環的星球_所有_欄位都選出。
@@ -529,7 +529,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 
 人們總是很喜歡排名，像是世界上最好的大學、最有影響力的電影明星或者最像007情報員的人。
 
-你可以根據某個變數排序你的資料，在R中你需要使用[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數。
+在 R 中使用[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數可依據某個變數排序我們的資料。
 
 [`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數會回傳投入變數的排序順位，例如：
 

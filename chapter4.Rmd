@@ -44,7 +44,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:86d03f14e0b95e7cdc8cc5163493a156313bf8c6
-## 因素向量是什麼？你為什麼要使用它？ (2)
+## 因素向量是什麼？你為什麼要使用它？（2）
 
 R 使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數來宣告因素向量，首先，建立一個具有類別型觀測值的向量，例如 5 個人的性別 `gender_vector`：
 
@@ -106,7 +106,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21482;&#35201;&#22312;R Console&#
 
 
 --- type:NormalExercise xp:100 skills:1 key:43072d1299a99d76130f1e45dedf09baac8c8481
-## 因素向量是什麼？你為什麼要使用它？ (3)
+## 因素向量是什麼？你為什麼要使用它？（3）
 
 類別型變數可分為**名目類別型變數**與**順序類別型變數**兩種。
 
@@ -408,7 +408,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:52c40d180e9661fd82e138f210eef258a81e51e1
-## 順序型因素向量 (2)
+## 順序型因素向量（2）
 
 `speed_vector` 接下來會被轉換為順序型因素向量因為速度是有快慢之分的。直接使用[`factor()`](http://www.rdocumentation.org/packages/base/functions/factor)函數預設會將 `speed_vector` 轉換成非順序型的因素向量，為了建立一個順序型因素向量，你必須加入 2 個額外參數： `ordered` 與 `levels`。
 

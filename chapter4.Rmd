@@ -118,7 +118,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21482;&#35201;&#22312;R Console&#
 按下 Submit Answer 來檢查 R 如何建立並印出名目與順序變數，不需要擔心不了解這些程式，我們之後會學。
 
 *** =hint
-按下 Submit Answer 並觀察 R Console，注意R如何為順序類別型變數編排因素類別。
+按下 Submit Answer 並觀察 R Console，注意 R 如何為順序類別型變數編排因素類別。
 
 *** =pre_exercise_code
 ```{r}
@@ -181,7 +181,7 @@ survey_vector <- c("M", "F", "F", "M", "M")
 
 為了對資料能夠一目瞭然，我們想將男性與女性分別用 `"Male"` 與 `"Female"` 來表示，取代原本的 `"M"` 與 `"F"`。 
 
-**注意：**在改變名稱的時候輸入順序非常重要，在 R Console 輸入 `levels(factor_survey_vector)` 會得到輸出為 `[1] "F" "M"` ，這代表 R 預設是以字母順序排列，因此當你要重新編名稱的時候，你應該要輸入 `levels(factor_survey_vector) <- c("Female", "Male")` 這樣才能正確地把  "F" 對應到 "Female"、把 "M" 對應到"Male"。
+**注意：**在改變名稱的時候輸入順序非常重要，在 R Console 輸入 `levels(factor_survey_vector)` 會得到輸出為 `[1] "F" "M"` ，這代表 R 預設是以字母順序排列，因此當你要重新編名稱的時候，你應該要輸入 `levels(factor_survey_vector) <- c("Female", "Male")` 這樣才能正確地把  "F" 對應到 "Female"、把 "M" 對應到 "Male"。
 
 *** =instructions
 - 檢視將 `survey_vector` 宣告為因素級別的程式，接下來你要使用 `factor_survey_vector`。

@@ -8,17 +8,17 @@ description : 清單與向量最大的不同是清單可以儲存不同類型的
 
 恭喜你，課程進行到這裡你已經對以下的資料類別非常熟悉：
 
-- **向量**(單一維度的陣列)：可以包含數值、字串或邏輯值，向量中的元素均屬於同一種資料類型。
-- **矩陣**(兩個維度的陣列)：可以包含數值、字串或邏輯值，矩陣中的元素均屬於同一種資料類型。
-- **資料框**(兩個維度的物件)：可以包含數值、字串或邏輯值，在同一個欄位中所有的元素均屬於同一種資料類型，但不同的欄位可以各自屬於不同的資料類型。
+- **向量**（單一維度的陣列）：可以包含數值、字串或邏輯值，向量中的元素均屬於同一種資料類型。
+- **矩陣**（兩個維度的陣列）：可以包含數值、字串或邏輯值，矩陣中的元素均屬於同一種資料類型。
+- **資料框**（兩個維度的物件）：可以包含數值、字串或邏輯值，在同一個欄位中所有的元素均屬於同一種資料類型，但不同的欄位可以各自屬於不同的資料類型。
 
-這樣的整理對R的新手很貼心對吧？ ;-)
+這樣的整理對 R 的新手很貼心對吧？ ;-)
 
 *** =instructions
-按下Submit Answer開始學習清單吧！
+按下 Submit Answer 開始學習清單吧！
 
 *** =hint
-按下Submit Answer按鈕。
+按下 Submit Answer 按鈕。
 
 *** =pre_exercise_code
 ```{r}
@@ -27,12 +27,12 @@ description : 清單與向量最大的不同是清單可以儲存不同類型的
 
 *** =sample_code
 ```{r}
-# 按下Submit Answer按鈕
+# 按下 Submit Answer 按鈕
 ```
 
 *** =solution
 ```{r}
-# 按下Submit Answer按鈕
+# 按下 Submit Answer 按鈕
 ```
 
 *** =sct
@@ -44,17 +44,17 @@ success_msg("&#28310;&#20633;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 --- type:NormalExercise xp:100 skills:1 key:d6f368841ef8395b0cf19fbaa2e23c7ce2c8672d
 ## 為什麼會需要清單？（2）
 
-**清單**在R中跟你的工作項目或學習項目很像，這些要完成的項目長度、特性或者活動類型都不一樣。
+**清單**在 R 中跟你的工作項目或學習項目很像，這些要完成的項目長度、特性或者活動類型都不一樣。
 
 清單可以蒐集多樣性的物件，包含矩陣、向量、資料框甚至清單，這些物件甚至不需要跟彼此相關。
 
 你可以將清單視為一種超級資料類型，基本上你可以將任何資訊都儲存在清單中！
 
 *** =instructions
-按下Submit Answer開始第一個清單的練習。
+按下 Submit Answer 開始第一個清單的練習。
 
 *** =hint
-按下Submit Answer開始第一個清單的練習。
+按下 Submit Answer 開始第一個清單的練習。
 
 *** =pre_exercise_code
 ```{r}
@@ -63,12 +63,12 @@ success_msg("&#28310;&#20633;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 *** =sample_code
 ```{r}
-# 按下Submit Answer開始第一個清單的練習
+# 按下 Submit Answer 開始第一個清單的練習
 ```
 
 *** =solution
 ```{r}
-# 按下Submit Answer開始第一個清單的練習
+# 按下 Submit Answer 開始第一個清單的練習
 ```
 
 *** =sct
@@ -86,7 +86,7 @@ success_msg("&#37239;&#25987;&#20102;&#65292;&#25226;&#34966;&#23376;&#25458;&#3
 my_list <- list(comp1, comp2 ...)
 ```
 
-list函數的參數即為清單中的物件，這些物件可以是矩陣、向量或者其他清單。
+list 函數的參數即為清單中的物件，這些物件可以是矩陣、向量或者其他清單。
 
 *** =instructions
 宣告一個清單，指派為 `my_list` 包含變數 `my_vector` 、 `my_matrix` 與 `my_df` 。
@@ -101,13 +101,13 @@ list函數的參數即為清單中的物件，這些物件可以是矩陣、向�
 
 *** =sample_code
 ```{r}
-# 數值1到10的向量
+# 數值 1 到 10 的向量
 my_vector <- 1:10 
 
-# 數值1到9的矩陣
+# 數值 1 到 9 的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# 内建資料框mtcars的前10列
+# 内建資料框 mtcars 的前 10 列
 my_df <- mtcars[1:10,]
 
 # 宣告清單
@@ -116,13 +116,13 @@ my_list <-
 
 *** =solution
 ```{r}
-# 數值1到10的向量
+# 數值 1 到 10 的向量
 my_vector <- 1:10 
 
-# 數值1到9的矩陣
+# 數值 1 到 9 的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# 内建資料框mtcars的前10列
+# 内建資料框 mtcars 的前 10 列
 my_df <- mtcars[1:10,]
 
 # 宣告清單
@@ -178,37 +178,37 @@ my_list <- list(vec = my_vector)
 
 *** =sample_code
 ```{r}
-# 數值1到10的向量
+# 數值 1 到 10 的向量
 my_vector <- 1:10 
 
-# 數值1到9的矩陣
+# 數值 1 到 9 的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# 内建資料框mtcars的前10列
+# 内建資料框 mtcars 的前 10 列
 my_df <- mtcars[1:10,]
 
-# 使用list()為這些元素命名
+# 使用 list() 為這些元素命名
 my_list <- list(my_vector, my_matrix, my_df)
 
-# 印出my_list
+# 印出 my_list
 
 ```
 
 *** =solution
 ```{r}
-# 數值1到10的向量
+# 數值 1 到 10 的向量
 my_vector <- 1:10 
 
-# 數值1到9的矩陣
+# 數值 1 到 9 的矩陣
 my_matrix <- matrix(1:9, ncol = 3)
 
-# 内建資料框mtcars的前10列
+# 内建資料框 mtcars 的前 10 列
 my_df <- mtcars[1:10,]
 
-# 使用list()為這些元素命名
+# 使用 list() 為這些元素命名
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 
-# 印出my_list
+# 印出 my_list
 my_list
 ```
 
@@ -232,16 +232,16 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#20320;&#29694;&#22312;&#19981;&#2
 
 別忘了你是盧卡斯影業的員工，身為一個超級電影迷，你決定把好看的電影資訊儲存在清單中。
 
-讓我們建立一個電影清單"The Shining"，變數 `mov` 、 `act` 與 `rev` 已經預先建立在工作空間，你可以在R Console中檢視這些變數。
+讓我們建立一個電影清單 "The Shining"，變數 `mov` 、 `act` 與 `rev` 已經預先建立在工作空間，你可以在 R Console 中檢視這些變數。
 
 *** =instructions
-完成編輯區的程式建立 `shining_list`，這個清單包含了3個元素：
+完成編輯區的程式建立 `shining_list`，這個清單包含了 3 個元素：
 
-- 電影名稱：電影名稱是一個字串(儲存於 `mov` 中)
-- 演員：主要演員姓名向量(儲存於 `act` 中)
-- 評論：電影評論資訊的資料框(儲存於 `rev` 中)
+- 電影名稱：電影名稱是一個字串（儲存於 `mov` 中）
+- 演員：主要演員姓名向量（儲存於 `act` 中）
+- 評論：電影評論資訊的資料框（儲存於 `rev` 中）
 
-不要忘了為清單中的項目命名(依序為moviename、actors與reviews)。
+不要忘了為清單中的項目命名（依序為 moviename、actors 與 reviews)。
 
 *** =hint
 `shining_list <- list(moviename = mov)` 只包含了部份的解答，你還需要在清單中加入 `act` 與 `rev` 並給予適當命名。
@@ -259,17 +259,17 @@ rm(scores, sources, comments)
 
 *** =sample_code
 ```{r}
-# 變數mov、act與rev已經預先載入
+# 變數 mov、act 與 rev 已經預先載入
 
-# 完成這段程式建立shining_list
+# 完成這段程式建立 shining_list
 shining_list <- list(moviename = mov)
 ```
 
 *** =solution
 ```{r}
-# 變數mov、act與rev已經預先載入
+# 變數 mov、act 與 rev 已經預先載入
 
-# 完成這段程式建立shining_list
+# 完成這段程式建立 shining_list
 shining_list <- list(moviename = mov, actors = act, reviews = rev)
 ```
 
@@ -322,7 +322,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 
 *** =sample_code
 ```{r}
-# shining_list已經預先載入
+# shining_list 已經預先載入
 
 # 將儲存演員資訊的向量印出
 
@@ -333,7 +333,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 
 *** =solution
 ```{r}
-# shining_list已經預先載入
+# shining_list 已經預先載入
 
 # 將儲存演員資訊的向量印出
 shining_list$actors
@@ -378,7 +378,7 @@ ext_list <- c(my_list, my_name = my_val)
 ```
 shining_list <- c(shining_list, ...)
 ```
-你要在...的部分加入一些程式。
+你要在 ... 的部分加入一些程式。
 
 *** =pre_exercise_code
 ```{r, eval = FALSE}
@@ -388,24 +388,24 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_
 *** =sample_code
 
 ```{r}
-# 包含電影名稱、演員與評論的shining_list已經預先載入
+# 包含電影名稱、演員與評論的 shining_list 已經預先載入
 
-# 利用c()把上映年份加入shining_list
+# 利用 c() 把上映年份加入 shining_list
 shining_list_full <- 
 
-# 看看shining_list_full的結構
+# 看看 shining_list_full 的結構
 
 ```
 
 *** =solution
 
 ```{r}
-# 包含電影名稱、演員與評論的shining_list已經預先載入
+# 包含電影名稱、演員與評論的 shining_list 已經預先載入
 
-# 利用c()把上映年份加入shining_list
+# 利用 c() 把上映年份加入 shining_list
 shining_list_full <- c(shining_list, year = 1980)
 
-# 看看shining_list_full的結構
+# 看看 shining_list_full 的結構
 str(shining_list_full)
 ```
 

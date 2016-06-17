@@ -9,20 +9,20 @@ description : 實務上你面對的多數資料都是儲存為資料框的格式
 矩陣中所有的元素都應該是相同類型的，記得你在前一個章節中建立的星際大戰票房矩陣嗎？矩陣裡面的元素全部都是數值。
 
 當你做市場調查時，問卷中常常有問題像是：
-- 請問你結婚了嗎？回答為是/否的問題(`邏輯值`)
-- 請問你的年紀為？(`數值`)
-- 對於本產品的意見？或其他開放式問題(`字元`)
+- 請問你結婚了嗎？回答為是/否的問題（`邏輯值`）
+- 請問你的年紀為？（`數值`）
+- 對於本產品的意見？或其他開放式問題（`文字`）
 - ...
 
 因此問卷的調查結果通常包含了不同類型的資料。 
 
-資料框中將觀測值儲存為列，將變數儲存為欄，這與其他統計軟體像是SAS或SPSS的概念是相似的。
+資料框中將觀測值儲存為列，將變數儲存為欄，這與其他統計軟體像是 SAS 或 SPSS 的概念是相似的。
 
 *** =instructions
 按下Submit Answer。將內建的範例資料框[`mtcars`](http://www.rdocumentation.org/packages/datasets/functions/mtcars)印出在R Console中。
 
 *** =hint
-按下Submit Answer並觀察結果！
+按下 Submit Answer 並觀察結果！
 
 *** =pre_exercise_code
 ```{r}
@@ -31,13 +31,13 @@ description : 實務上你面對的多數資料都是儲存為資料框的格式
 
 *** =sample_code
 ```{r}
-# 印出內建的R資料框
+# 印出內建的 R 資料框
 mtcars 
 ```
 
 *** =solution
 ```{r}
-# 印出內建的R資料框
+# 印出內建的 R 資料框
 mtcars 
 ```
 
@@ -72,13 +72,13 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 *** =sample_code
 ```{r}
-# 對mtcars呼叫head()
+# 對 mtcars 呼叫 head()
 
 ```
 
 *** =solution
 ```{r}
-# 對mtcars呼叫head()
+# 對 mtcars 呼叫 head()
 head(mtcars)
 ```
 
@@ -121,7 +121,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#35731;&#25105;&#20497;&#30475;&#3
 
 *** =solution
 ```{r}
-# 查看mtcars的結構
+# 查看 mtcars 的結構
 str(mtcars)
 ```
 
@@ -211,7 +211,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 --- type:NormalExercise xp:100 skills:1 key:72d24b916b842527b40bd19ff3093b823980c234
 ## 建立一個資料框（2）
 
-`planets_df` 資料框已經載入至工作區，它有8個觀測值與5個欄位，你可以直接使用它。
+`planets_df` 資料框已經載入至工作區，它有 8 個觀測值與 5 個欄位，你可以直接使用它。
 
 *** =instructions
 使用[`str()`](http://www.rdocumentation.org/packages/utils/functions/str)函數來檢視 `planets_df` 的結構與變數。
@@ -226,12 +226,12 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# 檢查planets_df的結構
+# 檢查 planets_df 的結構
 ```
 
 *** =solution
 ```{r}
-# 檢查planets_df的結構
+# 檢查 planets_df 的結構
 str(planets_df)
 ```
 
@@ -268,7 +268,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
 # 印出水星的直徑(第一列第三欄)
 
@@ -279,7 +279,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =solution
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
 # 印出水星的直徑(第一列第三欄)
 
@@ -315,10 +315,10 @@ planets_df[1:3,"type"]
 ```
 
 *** =instructions
-從 `planets_df` 中選擇並印出 `"diameter"` 的前5個值。
+從 `planets_df` 中選擇並印出 `"diameter"` 的前 5 個觀測值。
 
 *** =hint
-你可以使用 `planets_df[1:5, ...]` 選出前5個值，將 `...` 替換成 `"diameter"` 這個欄位。
+你可以使用 `planets_df[1:5, ...]` 選出前 5 個觀測值，將 `...` 替換成 `"diameter"` 這個欄位。
 
 *** =pre_exercise_code
 ```{r}
@@ -327,17 +327,17 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
-# 選出diameter欄位的前5個值
+# 選出 diameter 欄位的前 5 個值
 
 ```
 
 *** =solution
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
-# 選出diameter欄位的前5個值
+# 選出 diameter 欄位的前 5 個值
 planets_df[1:5, "diameter"]
 ```
 
@@ -380,22 +380,22 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
-# 從planets_df選出變數rings 
+# 從 planets_df 選出變數 rings 
 rings_vector <- 
   
-# 印出rings_vector
+# 印出 rings_vector
 ```
 
 *** =solution
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
-# 從planets_df選出變數rings
+# 從 planets_df 選出變數 rings
 rings_vector <- planets_df$rings
 
-# 印出rings_vector
+# 印出 rings_vector
 rings_vector
 ```
 
@@ -439,7 +439,7 @@ rings_vector <- planets_df$rings
 
 *** =sample_code
 ```{r}
-# planets_df與rings_vector已經預先載入
+# planets_df 與 rings_vector 已經預先載入
 
 # 修改程式選擇有環星球的所有欄位
 planets_df[rings_vector, "name"]
@@ -447,7 +447,7 @@ planets_df[rings_vector, "name"]
 
 *** =solution
 ```{r}
-# planets_df與rings_vector已經預先載入
+# planets_df 與 rings_vector 已經預先載入
 
 # 修改程式選擇有環星球的所有欄位
 planets_df[rings_vector, ]
@@ -474,7 +474,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#36889;&#20491;&#35299;&#27861;&#2
 subset(my_df, subset = some_condition)
 ``` 
 
-[`subset()`](http://www.rdocumentation.org/packages/base/functions/subset)函數中的第一個參數指定了要被篩選的資料，第二個參數則要告訴R篩選的邏輯為何。 
+[`subset()`](http://www.rdocumentation.org/packages/base/functions/subset)函數中的第一個參數指定了要被篩選的資料，第二個參數則要告訴 R 篩選的邏輯為何。 
 
 以下的程式會得到跟前一個練習一樣的結果，但這次你不需要另外宣告 `rings_vector`。
 
@@ -495,17 +495,17 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
-# 選出直徑<1的星球
+# 選出直徑 <1 的星球
 
 ```
 
 *** =solution
 ```{r}
-# planets_df資料框已經預先載入
+# planets_df 資料框已經預先載入
 
-# 選出直徑<1的星球
+# 選出直徑 <1 的星球
 subset(planets_df, subset = diameter < 1)
 ```
 
@@ -527,7 +527,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 --- type:NormalExercise xp:100 skills:1 key:2397d0f7cdf728961c9f5b8208c3b2694e20e2df
 ## 排序
 
-人們總是很喜歡排名，像是世界上最好的大學、最有影響力的電影明星或者最像007情報員的人。
+人們總是很喜歡排名，像是世界上最好的大學、最有影響力的電影明星或者最像 007 情報員的人。
 
 在 R 中使用[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數可依據某個變數排序我們的資料。
 
@@ -539,9 +539,9 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 [1] 2 1 3
 ```
 
-10是最小的元素，所以回傳結果的第二個元素為1，而100是第二小的元素，故回傳結果的第一個元素為2。
+10 是最小的元素，所以回傳結果的第二個元素為 1，而 100 是第二小的元素，故回傳結果的第一個元素為 2。
 
-這表示我們可以利用 `order(a)` 的輸出重洗 `a` 的順序：
+這表示我們可以利用 `order(a)` 的輸出重新排序 `a` 的順序：
     
 ```
 > a[order(a)]
@@ -549,10 +549,10 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 ``` 
 
 *** =instructions
-在R Console體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數，準備好後按下Submit Answer。
+在 R Console 體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數，準備好後按下 Submit Answer。
 
 *** =hint
-在R Console中體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數！
+在 R Console 中體驗一下[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數！
 
 *** =pre_exercise_code
 ```{r}
@@ -561,12 +561,12 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 
 *** =sample_code
 ```{r}
-# 在R Console中玩玩order函數
+# 在 R Console 中玩玩 order 函數
 ```
 
 *** =solution
 ```{r}
-# 在R Console中玩玩order函數
+# 在 R Console 中玩玩 order 函數
 ```
 
 *** =sct
@@ -595,23 +595,23 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 
 *** =sample_code
 ```{r}
-# planets_df已經預先載入
+# planets_df 已經預先載入
 
-# 使用order()建立positions
+# 使用 order() 建立 positions
 positions <-  
 
-# 使用positions排序planets_df
+# 使用 positions 排序 planets_df
 
 ```
 
 *** =solution
 ```{r}
-# planets_df已經預先載入
+# planets_df 已經預先載入
 
-# 使用order()建立positions
+# 使用 order() 建立 positions
 positions <- order(planets_df$diameter)
 
-# 使用positions排序planets_df
+# 使用 positions 排序 planets_df
 planets_df[positions, ]
 ```
 

@@ -630,7 +630,7 @@ success_msg("&#35336;&#31639;&#32080;&#26524;&#21578;&#35380;&#20320;&#65292;&#2
 
 
 --- type:NormalExercise xp:100 skills:1 key:6c34c3c66d9f2d2996cb8288112f2e604feac8ab
-## 一點點矩陣數學運算 (2) 
+## 一點點矩陣數學運算（2）
 
 如同 `2 * my_matrix` 會將 `my_matrix` 中的每個元素都乘以 2， `my_matrix1 * my_matrix2` 則是將對應相同位置的元素作乘法運算。 
 
@@ -657,7 +657,7 @@ ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7, 4, 4, 4.5, 4.5, 4.9, 4.9), nr
 
 *** =sample_code
 ```{r}
-# all_wars_matrix與ticket_prices_matrix已建立於工作區
+# all_wars_matrix 與 ticket_prices_matrix 已建立於工作區
 all_wars_matrix
 ticket_prices_matrix
 
@@ -676,7 +676,7 @@ us_visitors <-
 
 *** =solution
 ```{r}
-# all_wars_matrix與ticket_prices_matrix已建立於工作區
+# all_wars_matrix 與 ticket_prices_matrix 已建立於工作區
 all_wars_matrix
 ticket_prices_matrix
 

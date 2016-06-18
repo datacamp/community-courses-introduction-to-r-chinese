@@ -282,6 +282,7 @@ load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.
 # planets_df 資料框已經預先載入
 
 # 印出水星的直徑(第一列第三欄)
+planets_df[1, 3]
 
 # 印出火星的資訊(第四列)
 planets_df[4, ]
@@ -308,7 +309,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#38500;&#20102;&#29992;&#32034;&#2
 planets_df[1:3,1]
 ```
 
-上述做法有一個缺點，就是必須先知道 `type` 位於資料框中地第幾個欄位，然而，當資料框的欄位很多時，這種做法就顯得很困難，這時使用變數名稱會相對輕鬆許多：
+上述做法有一個缺點，就是必須先知道 `type` 位於資料框中第幾個欄位，然而，當資料框的欄位很多時，這種做法就顯得很困難，這時使用變數名稱會相對輕鬆許多：
 
 ```
 planets_df[1:3,"type"]
@@ -529,7 +530,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 
 人們總是很喜歡排名，像是世界上最好的大學、最有影響力的電影明星或者最像 007 情報員的人。
 
-在 R 中使用[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數可依據某個變數排序我們的資料。
+在 R 中使用[`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數可以讓我們依照某個欄位排序資料框的觀測值。
 
 [`order()`](http://www.rdocumentation.org/packages/base/functions/order)函數會回傳投入變數的排序順位，例如：
 
@@ -561,12 +562,12 @@ success_msg("&#22826;&#26834;&#20102;&#65292; `subset()` &#19981;&#20677;&#24456
 
 *** =sample_code
 ```{r}
-# 在 R Console 中玩玩 order 函數
+# 在 R Console 中試用 order 函數，或直接按 Submit Answer 即可
 ```
 
 *** =solution
 ```{r}
-# 在 R Console 中玩玩 order 函數
+# 在 R Console 中試用 order 函數，或直接按 Submit Answer 即可
 ```
 
 *** =sct

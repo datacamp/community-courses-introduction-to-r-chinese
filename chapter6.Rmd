@@ -187,7 +187,7 @@ my_matrix <- matrix(1:9, ncol = 3)
 # 内建資料框 mtcars 的前 10 列
 my_df <- mtcars[1:10,]
 
-# 使用 list() 為這些元素命名
+# 使用 list() 建立清單
 my_list <- list(my_vector, my_matrix, my_df)
 
 # 印出 my_list
@@ -205,7 +205,7 @@ my_matrix <- matrix(1:9, ncol = 3)
 # 内建資料框 mtcars 的前 10 列
 my_df <- mtcars[1:10,]
 
-# 使用 list() 為這些元素命名
+# 使用 list() 建立清單
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 
 # 印出 my_list

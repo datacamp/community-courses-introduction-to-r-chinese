@@ -236,7 +236,7 @@ success_msg("&#23436;&#32654;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#3
 --- type:NormalExercise xp:100 skills:1 key:1a2235a13a67daf9c186b963a57c9a206a7f43ba
 ## 因素向量的摘要
 
-在這個練習之後，[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數會變成你最喜歡的函數之一， `summary()` 會讓你快速看到一個變數的摘要：
+在這個練習之後，[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數會變成你最喜歡的函數之一！`summary()` 能讓我們快速得到一組資料的摘要：
 
 ```
 summary(my_var)

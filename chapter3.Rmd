@@ -274,7 +274,7 @@ success_msg("&#20570;&#24471;&#22909;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 
 前一個練習中，我們已計算出 3 部星際大戰電影的全球票房收入，但是結果並未合併至 `star_wars_matrix` 中。
 
-使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數來增加矩陣的欄位，例如：
+使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數來增加矩陣的欄位，例如這段程式可以結合 matrix1 、 matrix2 與 vector1 成為一個 big_matrix：
 
 ```
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
@@ -284,7 +284,7 @@ big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 使用[`cbind()`](http://www.rdocumentation.org/packages/base/functions/cbind)函數加入 `worldwide_vector` 做為 `star_wars_matrix` 中新的一欄，並將結果指派給 `all_wars_matrix`。
 
 *** =hint
-將 2 個變數 `star_wars_matrix` 與 `worldwide_vector` 做為 `cbind()` 的參數然後指派給 `all_wars_matrix`。
+將矩陣 `star_wars_matrix` 與向量 `worldwide_vector` 做為 `cbind()` 的 2 個參數然後指派給 `all_wars_matrix`。
 
 *** =pre_exercise_code
 ```{r}
@@ -508,7 +508,7 @@ success_msg("&#22826;&#32654;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#2
 *** =instructions
 - 把六部曲非美國的電影票房收入( `all_wars_matrix` 中第二欄所有的元素)指派給 `non_us_all`。
 - 對 `non_us_all` 使用 `mean()` 函數來計算非美國票房收入的平均值並簡單印出結果。
-- 從 `all_wars_matrix` 選出前兩部電影的非美國票房收入並指派給 `non_us_some`。
+- 從 `all_wars_matrix` 選出前兩集的非美國票房收入，並指派給 `non_us_some`。
 - 對 `non_us_some` 使用 `mean()` 函數計算平均值並印出。
 
 *** =hint

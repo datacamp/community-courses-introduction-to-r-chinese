@@ -244,7 +244,7 @@ success_msg("&#22826;&#22909;&#20102;&#65281;&#21069;&#36914;&#21040;&#19979;&#1
 --- type:NormalExercise xp:100 skills:1 key:a666eb3fb98a7b8cc5930d9c8d2a6997a47561e2
 ## 宣告變數（3）
 
-美味的水果籃可不能沒有柳橙！當你決定加入6個柳橙，身為資料分析師，你的直覺反應會是宣告變數 my_oranges 並指派 6 給它。既然已經完成變數宣告，接下來，如果要計算水果籃內的水果總數，就可以用清楚的方式來寫程式計算：
+美味的水果籃可不能沒有柳橙！當你決定加入 6 個柳橙，身為資料分析師，你的直覺反應會是宣告變數 my_oranges 並指派 6 給它。既然已經完成變數宣告，接下來，如果要計算水果籃內的水果總數，就可以用清楚的方式來寫程式計算：
 
 ```
 my_apples + my_oranges
@@ -325,34 +325,34 @@ success_msg("&#20316;&#24471;&#22826;&#22909;&#20102;&#65281;&#20351;&#29992;&#3
 
 *** =sample_code
 ```{r}
-# 宣告變數my_apples並將5指派給它
+# 宣告變數 my_apples 並將 5 指派給它
 my_apples <- 5 
 
-# 將my_apples的值印出
+# 將 my_apples 的值印出
 my_apples       
 
-# 宣告變數my_oranges並將"six"指派給它，然後再把my_oranges印出
+# 宣告變數 my_oranges 並將 "six" 指派給它，然後再把 my_oranges 印出
 my_oranges <- "six" 
 my_oranges 
 
-# 宣告變數my_fruit並將my_apples與my_oranges相加後指派給它
+# 宣告變數 my_fruit 並將 my_apples 與 my_oranges 相加後指派給它
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
 
 *** =solution
 ```{r}
-# 宣告變數my_apples並將5指派給它
+# 宣告變數 my_apples 並將 5 指派給它
 my_apples <- 5  
 
-# 將my_apples的值印出
+# 將 my_apples 的值印出
 my_apples  
 
-# 宣告變數my_oranges並將"six"指派給它，然後再把my_oranges印出
+# 宣告變數 my_oranges 並將 "six" 指派給它，然後再把 my_oranges 印出
 my_oranges <- 6
 my_oranges 
 
-# 宣告變數my_fruit並將my_apples與my_oranges相加後指派給它
+# 宣告變數 my_fruit 並將 my_apples 與 my_oranges 相加後指派給它
 my_fruit <- my_apples + my_oranges 
 my_fruit
 ```
@@ -376,7 +376,7 @@ success_msg("&#22826;&#26834;&#20102;&#65292;&#35531;&#32380;&#32396;&#20445;&#2
 --- type:NormalExercise xp:100 skills:1 key:40c0d484b0ed0826822600b7c1d896d155e3e411
 ## R 的基本資料類別
 
-R可以運算多種的資料類別，其中較為基本的有：
+R 可以運算多種的資料類別，其中較為基本的有：
 
 - 有小數點的如 `4.5` 稱為**數值**。
 - 自然數如 `4` 稱為**整數**，整數同時也屬於數值。
@@ -461,13 +461,13 @@ my_numeric <- 42
 my_character <- "universe"
 my_logical <- FALSE 
 
-# 檢查my_numeric的類別
+# 檢查 my_numeric 的類別
 class(my_numeric)
 
-# 檢查my_character的類別
+# 檢查 my_character 的類別
 
 
-# 檢查my_logical的類別 
+# 檢查 my_logical 的類別 
 
 ```
 
@@ -478,13 +478,13 @@ my_numeric <- 42
 my_character <- "universe"
 my_logical <- FALSE
 
-# 檢查my_numeric的類別
+# 檢查 my_numeric 的類別
 class(my_numeric)
 
-# 檢查my_character的類別
+# 檢查 my_character 的類別
 class(my_character)
 
-# 檢查my_logical的類別
+# 檢查 my_logical 的類別
 class(my_logical)
 ```
 

@@ -101,7 +101,7 @@ factor_gender_vector
 test_object("factor_gender_vector",
             incorrect_msg = "&#30906;&#35469;&#26159;&#21542;&#23559; `gender_vector` &#36681;&#21270;&#25104; `factor_gender_vector`&#65311;")
 test_output_contains("factor_gender_vector", incorrect_msg = "&#21029;&#24536;&#20102;&#25226; `factor_gender_vector` &#21360;&#20986;&#65281;")
-success_msg("&#22826;&#26834;&#20102;&#65292;&#21482;&#35201;&#22312;R Console&#36664;&#20837; `?factor` &#23601;&#21487;&#20197;&#20102;&#35299;&#26356;&#22810;&#38364;&#26044; `factor()`&#20989;&#25976;&#30340;&#20839;&#23481;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;");
+success_msg("&#22826;&#26834;&#20102;&#65292;&#21482;&#35201;&#22312; R Console &#36664;&#20837; `?factor` &#23601;&#21487;&#20197;&#20102;&#35299;&#26356;&#22810;&#38364;&#26044; `factor()`&#20989;&#25976;&#30340;&#20839;&#23481;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;");
 ```
 
 
@@ -245,10 +245,10 @@ summary(my_var)
 讓我們繼續看問卷，你想知道分別有多少男性與女性的受試者填寫了問卷，[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數會給你答案。
 
 *** =instructions
-對 `survey_vector` 與 `factor_survey_vector` 使用[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數，並且比較這兩個結果是否相同？
+對 `survey_vector` 與 `factor_survey_vector` 使用 [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) 函數，並且比較這兩個結果是否相同？
 
 *** =hint
-對 `survey_vector` 與 `factor_survey_vector` 使用[`summary()`](http://www.rdocumentation.org/packages/base/functions/summary)函數，就這麼單純！
+對 `survey_vector` 與 `factor_survey_vector` 使用 [`summary()`](http://www.rdocumentation.org/packages/base/functions/summary) 函數，就這麼單純！
 
 *** =pre_exercise_code
 ```{r}
@@ -293,7 +293,7 @@ test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg,
 msg <- "&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#20351;&#29992; `summary()` &#20358;&#29986;&#20986; `%s` &#30340;&#25688;&#35201;&#65311;"
 test_function("summary", index = 1, args = "object", not_called_msg = sprintf(msg, "survey_vector"), incorrect_msg = sprintf(msg, "survey_vector"))
 test_function("summary", index = 2, args = "object", not_called_msg = sprintf(msg, "factor_survey_vector"), incorrect_msg = sprintf(msg, "factor_survey_vector"))
-success_msg("&#22826;&#26834;&#20102;&#65292;&#35264;&#23519;&#19968;&#19979;R Console&#30340;&#36664;&#20986;&#65292;&#22240;&#28858;&#20320;&#23559; `factor_survey_vector` &#25351;&#27966;&#28858;&#22240;&#32032;&#21521;&#37327;&#65292;&#25152;&#20197;R&#26371;&#39023;&#31034;&#20986;&#27599;&#20491;&#39006;&#21029;&#30340;&#20491;&#25976;&#65281;")
+success_msg("&#22826;&#26834;&#20102;&#65292;&#35264;&#23519;&#19968;&#19979; R Console &#30340;&#36664;&#20986;&#65292;&#22240;&#28858;&#20320;&#23559; `factor_survey_vector` &#25351;&#27966;&#28858;&#22240;&#32032;&#21521;&#37327;&#65292;&#25152;&#20197; R &#26371;&#39023;&#31034;&#20986;&#27599;&#20491;&#39006;&#21029;&#30340;&#20491;&#25976;&#65281;")
 ```
 
 
@@ -355,7 +355,7 @@ test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg,
 test_object("male", undefined_msg = msg, incorrect_msg = msg)
 test_object("female", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("male > female", incorrect_msg = msg)
-success_msg("&#21628;...&#22909;&#38570;&#65292;&#30475;&#36215;&#20358;R&#26159;&#27794;&#26377;&#24615;&#21029;&#27495;&#35222;&#30340;&#65281;")
+success_msg("&#21628;...&#22909;&#38570;&#65292;&#30475;&#36215;&#20358; R &#26159;&#27794;&#26377;&#24615;&#21029;&#27495;&#35222;&#30340;&#65281;")
 ```
 
 
@@ -466,14 +466,14 @@ test_function("factor", "levels", incorrect_msg = "&#30906;&#35469;&#26159;&#215
 test_object("factor_speed_vector", eq_condition = "equal",
             incorrect_msg = "`factor_speed_vector` &#30475;&#36215;&#20358;&#36996;&#26159;&#26377;&#40670;&#21839;&#38988;&#65292;&#35531;&#30906;&#35469;&#20320;&#26377;&#23559;&#21443;&#25976; `speed_vector` &#12289; `ordered = TRUE` &#33287; `levels = c(\"slow\", \"fast\", \"insane\")` &#25918;&#20837; `factor()` &#20013;&#12290;")
 test_function("summary", incorrect_msg = "&#35352;&#24471;&#23559; `factor_speed_vector` &#30340;&#25688;&#35201;&#21360;&#20986;&#20358;&#65281;")
-success_msg("&#22826;&#26834;&#20102;&#65292;&#24478; R Console &#20013;&#21487;&#20197;&#30475;&#21040;R&#29992; `<` &#31526;&#34399;&#27161;&#31034;&#20102;&#24555;&#24930;&#38918;&#24207;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
+success_msg("&#22826;&#26834;&#20102;&#65292;&#24478; R Console &#20013;&#21487;&#20197;&#30475;&#21040; R &#29992; `<` &#31526;&#34399;&#27161;&#31034;&#20102;&#24555;&#24930;&#38918;&#24207;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")
 ```
 
 
 --- type:NormalExercise xp:100 skills:1 key:6195cdd81bcd1b66d8dde93500dc2e4df63c58d0
 ## 比較順序型因素向量
 
-經過一天辛苦的工作，'資料分析師 2'進來你的辦公室並開始抱怨'資料分析師 5'拖垮了整個專案。由於你知道 '資料分析師 2'是很精明的，你想先檢查一下他說的是否屬實。
+經過一天辛苦的工作，資料分析師 2進來你的辦公室並開始抱怨資料分析師 5 拖垮了整個專案。由於你知道資料分析師 2 是很精明的，你想先檢查一下他說的是否屬實。
 
 既然 `factor_speed_vector` 已經排好順序，你可以用 `>` 這個運算子來比較快慢。
 
@@ -503,7 +503,7 @@ da2 <-
 # 選出資料分析師 5
 da5 <-
 
-# 資料分析師 2是否比資料分析師 5快？
+# 資料分析師 2 是否比資料分析師 5 快？
 
 ```
 
@@ -519,7 +519,7 @@ da2 <- factor_speed_vector[2]
 # 選出資料分析師 5
 da5 <- factor_speed_vector[5] 
 
-# 資料分析師 2是否比資料分析師 5快？
+# 資料分析師 2 是否比資料分析師 5 快？
 da2 > da5
 ```
 

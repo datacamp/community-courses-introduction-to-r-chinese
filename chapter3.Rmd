@@ -1,7 +1,7 @@
 --- 
 title_meta  : 第三章
 title       : 矩陣
-description : 在本章節你將學會如何在 R 使用矩陣，包括宣告以及運算，你會用矩陣來分析星際大戰的票房記錄，願原力與你同在！
+description : 在本章節我們將學習如何在 R 使用矩陣，包括宣告以及運算，我們將要使用矩陣來分析星際大戰的票房記錄，願原力與我們同在！
 
 --- type:NormalExercise xp:100 skills:1 key:61a40bda779e572e5cc17be23357c98bceb73943
 ## 矩陣是什麼？

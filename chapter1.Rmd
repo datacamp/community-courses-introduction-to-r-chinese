@@ -1,7 +1,7 @@
 --- 
 title_meta  : 第一章
 title       : 基本介紹
-description : "在本章節你初次與 R 接觸，學習如何使用 R 做數學運算以及如何宣告變數，也會學習 R 的基本資料類別，讓我們趕快開始吧！"
+description : "本章節是我們與 R 的第一次接觸，我們將學習如何使用 R 做數學運算以及如何宣告變數，也會學習 R 的基本資料類別，讓我們趕快開始吧！"
 
 --- type:NormalExercise xp:100 skills:1 key:dd8bfba816aff286aa9d14ea7f632bec1e58a1e6
 ## 熟悉環境

@@ -331,13 +331,6 @@ test_object("worldwide_vector",
 
 # TODO: Fix in testwhat
 msg <- "&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#20351;&#29992; `cbind()` &#20358;&#21512;&#20341; `worldwide_vector` &#33287; `star_wars_matrix`&#65311;&#20320;&#25033;&#35442;&#20381;&#24207;&#23559; `star_wars_matrix` &#33287; `world_wide_vector` &#20316;&#28858; `cbind()` &#30340;&#20841;&#20491;&#21443;&#25976;&#65292;&#22914;&#27492;&#19968;&#20358; `all_wars_matrix` &#23559;&#26377;&#19977;&#21015;&#33287;&#19977;&#27396;&#12290;"
-test_object("all_wars_matrix", eval = FALSE)
-test_what(
-  expect_equal(
-    dim(get("all_wars_matrix", get_solution_env())), 
-    dim(get("all_wars_matrix", .GlobalEnv))),
-  feedback = msg)
-
 test_object("all_wars_matrix", incorrect_msg = msg)
 success_msg("&#20316;&#24471;&#22909;&#65292;&#25509;&#19979;&#20358;&#25105;&#20497;&#20358;&#35430;&#33879;&#21152;&#21015;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;");
 ```
@@ -419,19 +412,6 @@ msg = "&#19981;&#38656;&#35201;&#26356;&#25913;`star_wars_matrix` &#33287; `star
 test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
 test_output_contains("all_wars_matrix", incorrect_msg = "&#21029;&#24536;&#35352;&#25226; `all_wars_matrix` &#21360;&#20986;&#20358;&#65281;")
-
-# Fix until testwhat gets updated again
-# TODO: Fix in testwhat
-test_object("all_wars_matrix", eval = FALSE)
-test_what(
-  expect_equal(
-    dim(get("all_wars_matrix", get_solution_env())), 
-    dim(get("all_wars_matrix", .GlobalEnv))),
-  feedback = 
-    paste("&#35531;&#30906;&#35469; `rbind()` &#21443;&#25976;&#20013;&#30340;2&#20491;&#21443;&#25976;&#65306; `star_wars_matrix`",
-          "&#33287; `star_wars_matrix2`&#65292;&#32080;&#26524;&#25033;&#35442;&#26159;&#19968;&#20491;&#20855;&#26377;",
-          "6&#21015;&#33287;2&#27396;&#30340;&#30697;&#38499;&#12290;"))
-
 test_object("all_wars_matrix", incorrect_msg = "&#35531;&#30906;&#35469;&#26159;&#21542;&#27491;&#30906;&#20351;&#29992; `rbind()` &#21109;&#36896; `all_wars_matrix()`&#65311; `rbind()` &#25033;&#35442;&#35201;&#20381;&#24207;&#26377;2&#20491;&#21443;&#25976;&#65306; `star_wars_matrix` &#33287; `star_wars_matrix2`&#12290;")
 
 success_msg("&#22826;&#23436;&#32654;&#20102;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#20006;&#21152;&#20837; `colSums()` &#20989;&#25976;&#65281;")

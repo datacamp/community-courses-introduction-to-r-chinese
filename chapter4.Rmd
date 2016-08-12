@@ -226,7 +226,7 @@ factor_survey_vector
 msg = "&#19981;&#38656;&#35201;&#26356;&#25913; `survey_vector` &#30340;&#23459;&#21578;&#12290;"
 test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
 msg = "&#19981;&#38656;&#35201;&#26356;&#25913;&#25110;&#31227;&#38500;&#24314;&#31435;&#22240;&#32032;&#21521;&#37327;&#30340;&#31243;&#24335;&#12290;"
-test_function("factor","x",allow_extra = FALSE, not_called_msg = msg, incorrect_msg = msg)
+test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
 test_object("factor_survey_vector", eq_condition = "equal",
             incorrect_msg = paste("&#30906;&#35469;&#26159;&#21542;&#25351;&#27966;&#27491;&#30906;&#30340;&#21517;&#31281;&#32102;&#20102; `factor_survey_vector`&#65311;&#21033;&#29992; `levels(factor_survey_vector) <- c(\"Female\", \"Male\")` &#20006;&#27880;&#24847;&#22823;&#23567;&#23531;&#23565;R&#26159;&#19981;&#19968;&#27171;&#30340;&#65281;"))
 success_msg("&#23436;&#32654;&#65292;&#21069;&#36914;&#19979;&#19968;&#20491;&#32244;&#32722;&#65281;")

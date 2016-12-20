@@ -9,3 +9,4 @@
 !datasets/
 !datasets/*
 !convert.R
+!requirements.r

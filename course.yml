@@ -11,11 +11,12 @@ author_bio: "郭耀仁畢業於臺灣大學商學研究所碩士班，是資料�
 閒暇時熱愛長跑與乒乓球，參加 2016 年波士頓馬拉松時初次拜訪 DataCamp，與我們一同討論課程的中文化。
 <br/>
 <br/>
-Yao-Jen is enthusiastic about data science and education. 
-He works full-time as senior data analyst at Coupang, a Korean e-commerce startup. 
+Yao-Jen is enthusiastic about data science and education.
+He works full-time as senior data analyst at Coupang, a Korean e-commerce startup.
 During weekends, he lectures on \"Data Science and R\" at System Training Program of NTU.
 Active students in class helps him elaborate the localized courses.
 Before joining Coupang, he was an analytical consultant at SAS Software, and was responsible for implementation.
 He holds a M.B.A. at NTU, however his career so far is quite different from most of his peers.
 In his spare time, he enjoys Marathons and ping-pong. In fact, the first time we met him was the 2016 Boston Marathon.
 He came to our office after the race and discussed localization of our courses."
+from: 'r-base-prod:10'
